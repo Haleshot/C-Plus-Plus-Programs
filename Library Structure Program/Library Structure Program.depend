@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1639800007 source:d:\internet_downloads\programming_languages\c++\c++_programs\1st year\library structure program\main.cpp
+	<iostream>
+	<cstring>
+

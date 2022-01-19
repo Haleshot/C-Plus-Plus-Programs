@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1638268632 source:d:\internet_downloads\programming_languages\c++\c++_programs\test_program\main.cpp
+	<iostream>
+	<string>
+
