@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1632064956 source:d:\internet_downloads\programming_languages\c++\c++_programs\myfirstprog\main.cpp
+	<iostream>
+	<string>
+	<map>
+
+1630932639 source:d:\internet_downloads\programming_languages\c++\c++_programs\myfirstprog\books.cpp
+	"Books.h"
+
+1630932641 d:\internet_downloads\programming_languages\c++\c++_programs\myfirstprog\books.h
+	<iostream>
+	<string>
+

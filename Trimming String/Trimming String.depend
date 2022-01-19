@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1638878848 source:d:\internet_downloads\programming_languages\c++\c++_programs\1st year\trimming string\main.cpp
+	<iostream>
+	<string>
+	<string_view>
+	<algorithm>
+
