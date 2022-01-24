@@ -1,3 +1,4 @@
+// Program that inputs Rain fall Distribution of 31 days and displays the wettest week and driest day.
 #include <iostream>
 
 using namespace std;

@@ -1,3 +1,4 @@
+// Program that selects best all round player with class Encapsulation.
 #include <iostream>
 #include <string>
 using namespace std;

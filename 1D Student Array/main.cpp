@@ -1,3 +1,4 @@
+// Program that compares students marks with average marks of class using 1D Array
 #include <iostream>
 using namespace std;
 int main()

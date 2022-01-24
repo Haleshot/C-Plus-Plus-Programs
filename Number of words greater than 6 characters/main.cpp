@@ -1,3 +1,4 @@
+// Program that checks for Number of words greater than 6 characters.
 #include<iostream>
 #include <string>
 using namespace std;

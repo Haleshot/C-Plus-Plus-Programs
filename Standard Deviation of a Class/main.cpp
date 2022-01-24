@@ -1,3 +1,4 @@
+// Program that calculates Standard Deviation of a class using functions.
 #include <iostream>
 #include <math.h>
 using namespace std;

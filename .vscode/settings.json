@@ -1,4 +1,7 @@
 {
+  "files.associations": {
+    "ostream": "cpp"
+  },
   "C_Cpp_Runner.cCompilerPath": "D:/Internet_Downloads/Programming_Languages/C++/C++_Files/CodeBlocks/MinGW/bin/gcc.exe",
   "C_Cpp_Runner.cppCompilerPath": "D:/Internet_Downloads/Programming_Languages/C++/C++_Files/CodeBlocks/MinGW/bin/g++.exe",
   "C_Cpp_Runner.debuggerPath": "D:/Internet_Downloads/Programming_Languages/C++/C++_Files/CodeBlocks/MinGW/bin/gdb.exe",
@@ -26,5 +29,10 @@
     "**/.*/**",
     "**/.vscode",
     "**/.vscode/**"
-  ]
+  ],
+  "files.associations": {
+    "iostream": "cpp",
+    "ostream": "cpp",
+    "algorithm": "cpp"
+  }
 }

@@ -1,3 +1,4 @@
+// Program that calculates counter of Vowels, Consonants and Words.
 #include<iostream>
 #include <string>
 using namespace std;
