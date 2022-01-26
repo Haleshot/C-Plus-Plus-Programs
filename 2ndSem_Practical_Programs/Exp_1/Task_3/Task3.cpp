@@ -1,3 +1,4 @@
+//Task 3 done without functions.
 #include <iostream>
 using namespace std;
 const int x = 0;
