@@ -1,7 +1,9 @@
 #include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-void DisplayScaleImage(int rows, int columns, int a[][10])
+template <int rows, int columns>
+void DisplayScaleImage(int (&a)[rows][columns])
 {
     //DisplayScaleImage
     for(int i = 0; i < rows; i++)
@@ -16,7 +18,8 @@ void DisplayScaleImage(int rows, int columns, int a[][10])
     }
 }
 
-void GrayScaleImage(int rows, int columns, int a[][10])
+template <int rows, int columns>
+void GrayScaleImage(int (&a)[rows][columns])
 {
     //GrayScaleImage
     for(int i = 0; i < rows; i++)
@@ -26,22 +29,25 @@ void GrayScaleImage(int rows, int columns, int a[][10])
             a[i][j] = {0};
         }
     }
-    DisplayScaleImage(rows, columns, a);
+    DisplayScaleImage(a);
 }
 
-void Return_Width(int rows, int columns, int a[][10])
+template <int rows, int columns>
+void Return_Width(int (&a)[rows][columns])
 {
     cout << "The Width of the image : " << columns << endl;
 }
 
-void Return_Height(int rows, int columns, int a[][10])
+template <int rows, int columns>
+void Return_Height(int (&a)[rows][columns])
 {
     cout << "The Height of the image : " << rows << endl;
 }
 
-void clear_value(int rows, int columns, int a[][10])
+template <int rows, int columns>
+void clear_value(int (&a)[rows][columns])
 {
-    int i, j, value_1;
+    int value_1;
     cout << "Enter Value : ";
     cin >> value_1;
 
@@ -54,24 +60,26 @@ void clear_value(int rows, int columns, int a[][10])
         value_1 = 0;
     }
     
-    for(i = 0; i < rows; i++)
+    for(int i = 0; i < rows; i++)
     {
-        for(j = 0; j < columns; j++)
+        for(int j = 0; j < columns; j++)
         {
-            a[i][j] = value_1;
+            a[i][j] = {value_1};
         }
     }
-    DisplayScaleImage(rows, columns, a);
+    DisplayScaleImage(a);
 }
 
-void get_item(int rows, int columns, int a[][10])
+template <int rows, int columns>
+void get_item(int (&a)[rows][columns])
 {
     cout << "Enter Height and Width to find Intensity value : " << endl;
     cin >> rows >> columns;
     cout << a[rows][columns];
 }
 
-void set_item(int rows, int columns, int a[][10])
+template <int rows, int columns>
+void set_item(int (&a)[rows][columns])
 {
     int value_2;
     cout << "Enter Height and Width whose Intensity value is to be changed :" << endl;
@@ -88,14 +96,14 @@ void set_item(int rows, int columns, int a[][10])
     {
         value_2 = 0;
     }
-    a[rows][columns] = value_2;
-    DisplayScaleImage(rows, columns, a);
+    a[rows][columns] = {value_2};
+    DisplayScaleImage(a);
 }
 
 
 int main()
 {
-    int i, j, value_1, value_2, ch;
+    int ch;
     int row, column;
     bool run = true;
 
@@ -112,30 +120,30 @@ int main()
     {
         if(ch == 1)
         {
-            GrayScaleImage(row, column, Image_Matrix);
-            DisplayScaleImage(row, column, Image_Matrix);
+            GrayScaleImage(Image_Matrix);
+            DisplayScaleImage(Image_Matrix);
         }
         else if(ch == 2)
         {
-            Return_Width(row, column, Image_Matrix);
+            Return_Width(Image_Matrix);
         }
         else if(ch == 3)
         {
-            Return_Height(row, column, Image_Matrix);
+            Return_Height(Image_Matrix);
         }
         else if(ch == 4)
         {
-            clear_value(row, column, Image_Matrix);
-            DisplayScaleImage(row, column, Image_Matrix);
+            clear_value(Image_Matrix);
+            DisplayScaleImage(Image_Matrix);
         }
         else if(ch == 5)
         {
-            get_item(row, column, Image_Matrix);
+            get_item(Image_Matrix);
         }
         else if(ch == 6)
         {
-            set_item(row, column, Image_Matrix);
-            DisplayScaleImage(row, column, Image_Matrix);
+            set_item(Image_Matrix);
+            DisplayScaleImage(Image_Matrix);
         }
     } while (run == true);
 
