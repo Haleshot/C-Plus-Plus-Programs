@@ -1,3 +1,4 @@
+//Task 3 done with functions
 #include <iostream>
 using namespace std;
 
