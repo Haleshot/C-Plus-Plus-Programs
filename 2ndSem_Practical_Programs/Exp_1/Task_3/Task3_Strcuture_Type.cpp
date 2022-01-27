@@ -1,6 +1,5 @@
 //Task 3 done with functions
 #include <iostream>
-#include <bits/stdc++.h>
 using namespace std;
 
 template <int rows, int columns>
