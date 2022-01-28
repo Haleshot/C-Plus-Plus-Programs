@@ -1,6 +1,7 @@
 /* 
 Task 3 done using POP with functions
 Code only works when matrix dimension is known at compile time
+Need to find a way in which variables can be taken as a parameter rather than integers 
 Reference Website - https://stackoverflow.com/questions/8767166/passing-a-2d-array-to-a-c-function
 */
 #include <iostream>
