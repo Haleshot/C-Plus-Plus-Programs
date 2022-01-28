@@ -1,9 +1,6 @@
 /* 
 Task 3 done using POP with functions
-The function call in int main don't seem to work when rows and columns are passed but when integer is used, they work.
-Example when Image_Matrix[row][column] is defined, calling GrayScaleImage(Image_Matrix) doesn't work
-But when Image_Matrix[3][3] is defined, GrayScaleImage(Image_Matrix); works. 
-Try using this to see what causes the error
+Code only works when matrix dimension is known at compile time
 Reference Website - https://stackoverflow.com/questions/8767166/passing-a-2d-array-to-a-c-function
 */
 #include <iostream>
