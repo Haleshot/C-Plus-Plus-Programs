@@ -1,4 +1,4 @@
-//Task 3 done without functions.
+//Task 3 done using POP without functions.
 #include <iostream>
 using namespace std;
 const int x = 0;

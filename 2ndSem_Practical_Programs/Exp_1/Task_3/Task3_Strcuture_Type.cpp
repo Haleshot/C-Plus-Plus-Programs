@@ -1,5 +1,5 @@
 /* 
-Task 3 done with functions
+Task 3 done using POP with functions
 The function call in int main don't seem to work when rows and columns are passed but when integer is used, they work.
 Example when Image_Matrix[row][column] is defined, calling GrayScaleImage(Image_Matrix) doesn't work
 But when Image_Matrix[3][3] is defined, GrayScaleImage(Image_Matrix); works. 
