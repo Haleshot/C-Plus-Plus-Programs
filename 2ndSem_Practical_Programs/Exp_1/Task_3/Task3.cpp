@@ -1,4 +1,6 @@
 //Task 3 done using POP without functions.
+// Works fine. The respective choices in the main function could be made into individual functions outside the main to make it easier to read the code and avoid repetition.
+// Task 3 Structure type contains the same code divided into functions.
 #include <iostream>
 using namespace std;
 const int x = 0;
