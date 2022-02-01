@@ -1,14 +1,10 @@
-/* 
-Task 3 done using POP with functions
-Code only works when matrix dimension is known at compile time
-Need to find a way in which variables can be taken as a parameter rather than integers 
-Reference Website - https://stackoverflow.com/questions/8767166/passing-a-2d-array-to-a-c-function
-*/
+//Task 3 done using POP with functions
+
 #include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-template <int rows, int columns>
-void DisplayScaleImage(int (&a)[rows][columns])
+void DisplayScaleImage(int **a, int rows, int columns)
 {
     //DisplayScaleImage
     for(int i = 0; i < rows; i++)
@@ -23,8 +19,7 @@ void DisplayScaleImage(int (&a)[rows][columns])
     }
 }
 
-template <int rows, int columns>
-void GrayScaleImage(int (&a)[rows][columns])
+void GrayScaleImage(int **a, int rows, int columns)
 {
     //GrayScaleImage
     for(int i = 0; i < rows; i++)
@@ -36,20 +31,17 @@ void GrayScaleImage(int (&a)[rows][columns])
     }
 }
 
-template <int rows, int columns>
-void Return_Width(int (&a)[rows][columns])
+void Return_Width(int **a, int rows, int columns)
 {
     cout << "The Width of the image : " << columns << endl;
 }
 
-template <int rows, int columns>
-void Return_Height(int (&a)[rows][columns])
+void Return_Height(int **a, int rows, int columns)
 {
     cout << "The Height of the image : " << rows << endl;
 }
 
-template <int rows, int columns>
-void clear_value(int (&a)[rows][columns])
+void clear_value(int **a, int rows, int columns)
 {
     int value_1;
     cout << "Enter Value : ";
@@ -73,14 +65,12 @@ void clear_value(int (&a)[rows][columns])
     }
 }
 
-template <int rows, int columns>
-void get_item(int (&a)[rows][columns], int enter_row, int enter_column)
+void get_item(int **a, int rows, int columns, int enter_row, int enter_column)
 {
     cout << a[enter_row - 1][enter_column - 1];
 }
 
-template <int rows, int columns>
-void set_item(int (&a)[rows][columns], int enter_row, int enter_column)
+void set_item(int **a, int rows, int columns, int enter_row, int enter_column)
 {
     int value_2;
 
@@ -109,42 +99,46 @@ int main()
     cin >> row;
     cout << "Enter Limit for Width(Column of matrix)  of Image : ";
     cin >> column;
-    int Image_Matrix[3][3];
+    int **Image_Matrix = new int *[row];
+    for(int i = 0;i < row; i++)
+    {
+        Image_Matrix[i] = new int[column];
+    }
 
     do
     {
-        cout << "Menu\n 1. Creation of a 2D array which consists of n rows x n columns \n  2. Display 2D array \n 3. Returns the width of the image. \n 4. Returns the height of the image. \n 5. Clears the entire image by setting each pixel to the entered intensity value(Please enter value between 0 and 255). \n 6. Returns the intensity level of the given pixel. \n 7. Sets the intensity level of the given pixel to the given value(Please enter value between 0 and 255). \n" ;
+        cout << "Menu\n 1. Creation of a 2D array which consists of n rows x n columns \n 2. Display 2D array \n 3. Returns the width of the image. \n 4. Returns the height of the image. \n 5. Clears the entire image by setting each pixel to the entered intensity value(Please enter value between 0 and 255). \n 6. Returns the intensity level of the given pixel. \n 7. Sets the intensity level of the given pixel to the given value(Please enter value between 0 and 255). \n" ;
         cout << "Enter Choice\n" ;
         cin >> ch;
         if(ch == 1)
         {
-            GrayScaleImage(Image_Matrix);
-            DisplayScaleImage(Image_Matrix);
+            GrayScaleImage(Image_Matrix, row, column);
+            DisplayScaleImage(Image_Matrix, row, column);
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
         else if(ch == 2)
         {
-            DisplayScaleImage(Image_Matrix);
+            DisplayScaleImage(Image_Matrix, row, column);
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
         else if(ch == 3)
         {
-            Return_Width(Image_Matrix);
+            Return_Width(Image_Matrix, row, column);
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
         else if(ch == 4)
         {
-            Return_Height(Image_Matrix);
+            Return_Height(Image_Matrix, row, column);
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
         else if(ch == 5)
         {
-            clear_value(Image_Matrix);
-            DisplayScaleImage(Image_Matrix);
+            clear_value(Image_Matrix, row, column);
+            DisplayScaleImage(Image_Matrix, row, column);
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
@@ -156,9 +150,9 @@ int main()
             cout << "Enter Limit for Width(Column of matrix)  of Image : ";
             cin >> column_value_1;
             cout << endl;
-            get_item(Image_Matrix, row_value_1, column_value_1);
+            get_item(Image_Matrix, row, column, row_value_1, column_value_1);
 
-            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+            cout << "\nWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
         else if(ch == 7)
@@ -168,8 +162,8 @@ int main()
             cin >> row_value_2;
             cout << "Enter Limit for Width(Column of matrix)  of Image : ";
             cin >> column_value_2;
-            set_item(Image_Matrix, row_value_2, column_value_2);
-            DisplayScaleImage(Image_Matrix);
+            set_item(Image_Matrix, row, column, row_value_2, column_value_2);
+            DisplayScaleImage(Image_Matrix, row, column);
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
