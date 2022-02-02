@@ -1,4 +1,4 @@
-//Stores Car Records and cehcks for Car Number(exists or not)
+//Stores Car Records and checks for Car Number(exists or not).
 #include <iostream>
 using namespace std;
 
