@@ -1,4 +1,4 @@
-// Program that checks for Leap Year.
+// Program that checks for Leap Year according to year entered by user.
 #include <iostream>
 
 using namespace std;
