@@ -1,4 +1,4 @@
-// Program that adds two numbers using class Encapsulation.
+// Program that adds two numbers using class Encapsulation method.
 #include <iostream>
 using namespace std;
 
