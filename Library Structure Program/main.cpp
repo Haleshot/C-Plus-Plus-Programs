@@ -1,4 +1,4 @@
-// Program that records Library Book details and searches for Book Numbers using structure.
+// Program that records Library Book details and searches for Book Numbers using structure method.
 #include <iostream>
 #include <cstring>
 using namespace std;
