@@ -1,4 +1,4 @@
-// Program that performs addition, subtraction and multiplication of 2 complex numbers with class Encapsulation.
+// Program that performs addition, subtraction and multiplication of 2 complex numbers with class Encapsulation method.
 #include <iostream>
 #define pi 3.14
 using namespace std;
