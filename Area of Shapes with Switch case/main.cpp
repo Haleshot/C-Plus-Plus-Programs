@@ -1,4 +1,4 @@
-// Program that calculates area of different shapes using Switch Case.
+// Program that calculates area of different shapes using Switch Case method.
 #include <iostream>
 #define pi 3.14
 using namespace std;
