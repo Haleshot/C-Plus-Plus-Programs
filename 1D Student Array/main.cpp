@@ -1,4 +1,5 @@
 // Program that compares students marks with average marks of class using 1D Array
+// Creates separate 2 lists for Students (less and greater than average marks of class)
 #include <iostream>
 using namespace std;
 int main()
