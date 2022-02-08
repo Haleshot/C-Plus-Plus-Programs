@@ -5,7 +5,7 @@ int Stack[Max], top = -1;
 
 void Push(int top_value)
 {
-    if (top_value == Max - 1)
+    if (top == Max - 1)
     {
         cout << "Overflow!" << endl;
     }

@@ -5,22 +5,22 @@ using namespace std;
 #define Max 100
 int Stack[Max], top = -1;
 
-void Push(int top_value)
+void Push(int x)
 {
-    if (top_value == Max - 1)
+    if (top == Max - 1)
     {
         cout << "Overflow!" << endl;
     }
     else
     {
-        top_value += 1;
-        Stack[top] = top_value;
+        top += 1;
+        Stack[top] = x;
     }
 }
 
 int Pop()
 {
-    if (top < -1)
+    if (top < 0)
     {
         cout << "Underflow!" << endl;
     }
@@ -34,29 +34,29 @@ int Pop()
 
 int main()
 {
-    int ch, i;
+    int i;
     bool run = true;
-    char expression_array[100];
     for(int i = 0; i < 100; i++)
     {
-        expression_array[i] = 0;
+        Stack[i] = 0;
     }
 
     do while (run == true)
     {
         string expression;
         cout << "Enter the postfix expression to be evaluated : ";
-        int length = sizeof(expression);
-        char expression_array[length];
+        cin >> expression;
+        int length = expression.length();
+        Stack[length];
         for(int i = 0; i < length; i++)
         {
-            expression_array[i] = expression[i];
+            Stack[i] = expression[i];
         }
 
         for(i = 0; i < length; i++)
         {
             int A, B, C;
-            switch (expression_array[i])
+            switch(Stack[i])
             {
                     case '+':
                         A = Pop();
@@ -94,11 +94,11 @@ int main()
                         break;
                         
                     default:
-                        Push(expression_array[i] - '0');
+                        Push(Stack[i] - '0');
             }
         }
 
-        cout << "The Value of the expression " << expression << " is = " << expression_array[0] << endl;
+        cout << "The Value of the expression " << expression << " is = " << Stack[0] << endl;
         
         cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
         cin >> run;
