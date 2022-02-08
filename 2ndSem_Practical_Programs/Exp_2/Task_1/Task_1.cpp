@@ -1,3 +1,4 @@
+//Stack STL program (done with functions)
 #include <iostream>
 using namespace std;
 #define Max 100
