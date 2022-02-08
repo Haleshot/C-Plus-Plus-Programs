@@ -1,4 +1,4 @@
-// Program that calculates Factorial of a number entered with function.
+// Program that calculates Factorial of a number entered with functions.
 #include <iostream>
 using namespace std;
 

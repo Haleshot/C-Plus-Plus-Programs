@@ -1,4 +1,4 @@
-// Program that records Service Centre Records with class Encapsulation.
+// Program that records Service Centre Records with class Encapsulation method.
 #include <iostream>
 #include <string>
 #include <string.h>

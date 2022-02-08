@@ -1,4 +1,4 @@
-// Program that creates Array Transpose of 2D array.
+// Program that creates Array Transpose of 2D array as entered by user.
 #include<iostream>
 using namespace std;
 int main()

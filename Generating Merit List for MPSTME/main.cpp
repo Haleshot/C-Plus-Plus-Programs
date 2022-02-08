@@ -1,4 +1,4 @@
-// Program that generates Merit List of students with Class Encapsulation.
+// Program that generates Merit List of students with Class Encapsulation method.
 #include <iostream>
 using namespace std;
 

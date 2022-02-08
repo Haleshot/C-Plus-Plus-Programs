@@ -1,4 +1,4 @@
-// Program that swaps 2 numbers using pointers with function.
+// Program that swaps 2 numbers using pointers with function method.
 #include <iostream>
 using namespace std;
 

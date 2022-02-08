@@ -1,4 +1,4 @@
-// Program that checks for Number of words greater than 6 characters.
+// Program that checks for Number of words greater than 6 characters according to sentence entered by user.
 #include<iostream>
 #include <string>
 using namespace std;
