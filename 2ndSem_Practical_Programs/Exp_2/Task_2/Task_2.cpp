@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstring>
 #include <math.h>
+#include <stdio.h>
 using namespace std;
 #define Max 100
 int Stack[Max], top = -1;
@@ -42,9 +43,9 @@ int main()
         Stack[i] = 0;
     }
 
-    do while (run == true)
-    {
-        string expression;
+    do
+    { 
+        string expression = "";
         cout << "Enter the postfix expression to be evaluated : ";
         cin >> expression;
         int length = expression.length();

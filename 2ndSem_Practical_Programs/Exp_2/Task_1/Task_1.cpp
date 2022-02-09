@@ -55,7 +55,7 @@ int main()
 {
     int ch;
     bool run = true;
-    do while (run == true)
+    do
     {
         cout << "Menu\n 1.Push Value \n 2.Pop Value \n 3.Peek Value \n 4.Display Stack \n 5. Exit \n" ;
         cout << "Enter Choice\n" ;
