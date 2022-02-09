@@ -1,4 +1,5 @@
-//Stack STL program (done with functions)
+// Stack STL program (done with functions)
+// Contains Pop, Push, Peek, and Display Functions
 #include <iostream>
 using namespace std;
 #define Max 100
