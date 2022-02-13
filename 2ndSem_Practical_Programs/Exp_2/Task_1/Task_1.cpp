@@ -5,6 +5,7 @@ using namespace std;
 #define Max 100
 int Stack[Max], top = -1;
 
+// Push Function
 void Push(int top_value)
 {
     if (top == Max - 1)
@@ -17,6 +18,8 @@ void Push(int top_value)
         Stack[top] = top_value;
     }
 }
+
+// Peek Function
 void Peek()
 {
     if (top < 0)
@@ -28,6 +31,8 @@ void Peek()
         cout << "Element at Stack's Top = " << Stack[top] << endl;
     }
 }
+
+// Pop Function
 void Pop()
 {
     if (top < 0)
@@ -41,6 +46,8 @@ void Pop()
         cout << "Popped out element is = " << x << endl;
     }
 }
+
+// Display Function
 void Display()
 {
     if(top >= 0)
@@ -52,6 +59,8 @@ void Display()
             }
     }
 }
+
+// Main function to perform Stack operations according to user
 int main()
 {
     int ch;

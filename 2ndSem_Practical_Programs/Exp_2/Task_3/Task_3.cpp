@@ -4,6 +4,7 @@ using namespace std;
 char Character_stack[MAX], top = -1;
 char x;
 
+// Function to check for matching parantheses
 int check_match(char x_, char y_)
 {
         // Check for matching brackets
@@ -22,6 +23,7 @@ int check_match(char x_, char y_)
         return 0;
 }
 
+// Checks for Empty Stack
 int isEmpty()
 {
     if (top < 0)
@@ -34,6 +36,7 @@ int isEmpty()
     }
 }
 
+// Push Function
 int push(char alp)
 {
     if(top == MAX - 1)
@@ -46,6 +49,8 @@ int push(char alp)
         Character_stack[top] = alp;
     }
 }
+
+// Pop Function
 int pop()
 {
     if(top < 0)

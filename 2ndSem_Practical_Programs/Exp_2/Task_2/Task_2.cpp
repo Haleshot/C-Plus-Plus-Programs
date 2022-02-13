@@ -7,6 +7,7 @@ using namespace std;
 #define Max 100
 int Stack[Max], top = -1;
 
+// Push Function
 void Push(int x)
 {
     if (top == Max - 1)
@@ -20,6 +21,7 @@ void Push(int x)
     }
 }
 
+// Pop Function
 int Pop()
 {
     if (top < 0)
@@ -34,6 +36,7 @@ int Pop()
     }
 }
 
+// Main function which asks for postfix expression to be evaluated
 int main()
 {
     int i;
