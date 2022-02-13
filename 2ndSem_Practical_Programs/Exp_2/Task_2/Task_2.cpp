@@ -1,4 +1,5 @@
-//Program to evaluate Postfix Expression (done with functions)
+// Program to evaluate Postfix Expression (done with functions)
+// Pushes Items into the Stack and performs the operations accordingly.
 #include <iostream>
 #include <cstring>
 #include <math.h>
