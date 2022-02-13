@@ -47,7 +47,6 @@ int main()
     { 
         string expression = "";
         cout << "Enter the postfix expression to be evaluated : ";
-        cin >> expression;
         int length = expression.length();
         Stack[length];
         for(int i = 0; i < length; i++)
