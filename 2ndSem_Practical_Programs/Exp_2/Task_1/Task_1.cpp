@@ -38,7 +38,7 @@ void Pop()
     {
         int x = Stack[top];
         top -= 1;
-        cout << "Popped out element is = " << x;
+        cout << "Popped out element is = " << x << endl;
     }
 }
 void Display()
