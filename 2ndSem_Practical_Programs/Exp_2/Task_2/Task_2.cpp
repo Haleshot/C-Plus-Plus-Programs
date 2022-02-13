@@ -1,5 +1,4 @@
-// Program to evaluate Postfix Expression (done with functions)
-// Pushes Items into the Stack and performs the operations accordingly.
+//Program to evaluate Postfix Expression (done with functions)
 #include <iostream>
 #include <cstring>
 #include <math.h>
@@ -45,11 +44,14 @@ int main()
     }
 
     do
-    { 
+    {
+        top = -1;
         string expression = "";
         cout << "Enter the postfix expression to be evaluated : ";
+        cin >> expression;
         int length = expression.length();
         Stack[length];
+        
         for(int i = 0; i < length; i++)
         {
             Stack[i] = expression[i];
