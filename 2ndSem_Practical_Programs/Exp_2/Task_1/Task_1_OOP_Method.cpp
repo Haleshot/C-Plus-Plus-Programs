@@ -1,3 +1,5 @@
+// Stack STL program (done with Classes and Member functions)
+// Contains Pop, Push, Peek, and Display Functions
 #include <iostream>
 using namespace std;
 #define MAX 100
@@ -5,7 +7,7 @@ using namespace std;
 class Stack
 {
     public:
-    int Stack[100], top = -1;
+    int Stack[MAX], top = -1;
 
     void Push(int value);
     void Pop();
@@ -14,6 +16,7 @@ class Stack
 
 };
 
+// Push Function
 void Stack::Push(int value)
 {
     if (top == MAX - 1)
@@ -27,6 +30,7 @@ void Stack::Push(int value)
     }
 }
 
+// Pop Function
 void Stack::Pop()
 {
     if (top < 0)
@@ -41,6 +45,7 @@ void Stack::Pop()
     }
 }
 
+// Peek Function
 void Stack::Peek()
 {
     if (top < 0)
@@ -53,6 +58,7 @@ void Stack::Peek()
     }
 }
 
+// Display Function
 void Stack::Display()
 {
     if (top < 0)
