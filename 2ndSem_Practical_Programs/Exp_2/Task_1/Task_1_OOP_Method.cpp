@@ -37,7 +37,7 @@ void Stack::Pop()
     {
         int x = Stack[top];
         top -= 1;
-        cout << "Popped out Element is = " << x;
+        cout << "Popped out Element is = " << x << endl;
     }
 }
 
@@ -49,7 +49,7 @@ void Stack::Peek()
     }
     else
     {
-        cout << "Element at the Stack's Top is = " << Stack[top];
+        cout << "Element at the Stack's Top is = " << Stack[top] << endl;
     }
 }
 
