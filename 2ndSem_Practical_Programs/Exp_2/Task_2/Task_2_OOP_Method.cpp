@@ -1,10 +1,10 @@
 //Program to evaluate Postfix Expression (done with Classes and Member functions)
 #include <iostream>
 #include <math.h>
-using namespace  std;
+using namespace std;
 #define MAX 100
 
-class Stack
+class Postfix_Expression_Evaluation
 {
     public:
     int Stack[MAX], top = -1;
@@ -14,7 +14,7 @@ class Stack
 };
 
 // Push Function
-int Stack::Push(int value)
+int Postfix_Expression_Evaluation::Push(int value)
 {
     if (top == MAX - 1)
     {
@@ -28,7 +28,7 @@ int Stack::Push(int value)
 }
 
 // Pop Function
-int Stack::Pop()
+int Postfix_Expression_Evaluation::Pop()
 {
     if (top < 0)
     {
@@ -45,7 +45,8 @@ int Stack::Pop()
 int main()
 {
     bool run = true;
-    class Stack stk;
+    string expression;
+    class Postfix_Expression_Evaluation stk;
     for(int i = 0; i < MAX; i++)
     {
         stk.Stack[i] = 0;
@@ -53,14 +54,20 @@ int main()
     do
     {
         stk.top = -1;
-        string expression;
         cout << "Enter the postfix expression to be evaluated : ";
         cin >> expression;
+        int length = expression.length();
 
-        for(int i = 0; i < expression.length(); i++)
+
+        for(int i = 0; i < length; i++)
+        {
+            stk.Stack[i] = expression[i];
+        }
+
+        for(int i = 0; i < length; i++)
         {
             int A, B, C;
-            switch (expression[i])
+            switch (stk.Stack[i])
             {
                 case '+' :
                 A = stk.Pop();
@@ -102,10 +109,13 @@ int main()
             stk.Push(stk.Stack[i] - '0');
             }
         }
-
-
+    
     } while (run == true);
     
+    cout << "The Value of the expression " << expression << " is = " << stk.Stack[0] << endl;
+        
+    cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+    cin >> run;
 
 
 
