@@ -41,7 +41,7 @@ int main()
 {
     int i;
     bool run = true;
-    for(int i = 0; i < 100; i++)
+    for(int i = 0; i < Max; i++)
     {
         Stack[i] = 0;
     }
