@@ -1,39 +1,33 @@
-// Stack STL program (done with functions)
-// Contains Pop, Push, Peek, and Display Functions
 #include <iostream>
 using namespace std;
-#define Max 100
-int Stack[Max], top = -1;
+#define MAX 100
 
-// Push Function
-void Push(int top_value)
+class Stack
 {
-    if (top == Max - 1)
+    public:
+    int Stack[100], top = -1;
+
+    void Push(int value);
+    void Pop();
+    void Peek();
+    void Display();
+
+};
+
+void Stack::Push(int value)
+{
+    if (top == MAX - 1)
     {
         cout << "Overflow!" << endl;
     }
     else
     {
         top += 1;
-        Stack[top] = top_value;
+        Stack[top] = value;
     }
 }
 
-// Peek Function
-void Peek()
-{
-    if (top < 0)
-    {
-        cout << "Emtpy" << endl;
-    }
-    else
-    {
-        cout << "Element at Stack's Top = " << Stack[top] << endl;
-    }
-}
-
-// Pop Function
-void Pop()
+void Stack::Pop()
 {
     if (top < 0)
     {
@@ -43,58 +37,72 @@ void Pop()
     {
         int x = Stack[top];
         top -= 1;
-        cout << "Popped out element is = " << x << endl;
+        cout << "Popped out Element is = " << x;
     }
 }
 
-// Display Function
-void Display()
+void Stack::Peek()
 {
-    if(top >= 0)
+    if (top < 0)
     {
-        cout << "Stacks Elements are : " << endl;
-        for(int i = top; i >= 0; i--)
-            {
-                cout <<  Stack[i] << endl;
-            }
+        cout << "Stack is Empty!" << endl;
+    }
+    else
+    {
+        cout << "Element at the Stack's Top is = " << Stack[top];
     }
 }
 
-// Main function to perform Stack operations according to user
+void Stack::Display()
+{
+    if (top < 0)
+    {
+        cout << "Stack is Empty!" << endl;
+    }
+    else
+    {
+        cout << "The Stack's Elements are : \n";
+        for(int i  = top; i >= 0; i--)
+        {
+            cout << Stack[i] << endl;
+        }
+    }
+}
+
 int main()
 {
     int ch;
+    class Stack stk;
     bool run = true;
     do
     {
         cout << "Menu\n 1.Push Value \n 2.Pop Value \n 3.Peek Value \n 4.Display Stack \n 5. Exit \n" ;
         cout << "Enter Choice\n" ;
         cin >> ch;
-
         if (ch == 1)
         {
             int value_push;
             cout << "Enter Value to be pushed into the Stack \n";
             cin >> value_push;
-            Push(value_push);
+            stk.Push(value_push);
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
         if (ch == 2)
         {
-            Pop();
+            stk.Pop();
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
         if (ch == 3)
         {
-            Peek();
+            stk.Peek();
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
         if (ch == 4)
         {
-            Display();
+            stk.Display();
             cout << "\nWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
@@ -102,6 +110,8 @@ int main()
         {
             return 0;
         }
-    }while (run == true);
+
+    } while (run == true);
+    
     return 0;
 }
