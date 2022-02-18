@@ -3,14 +3,13 @@
 #include <iostream>
 using namespace std;
 #define MAX 100
-int Queue[MAX], front = -1, rear = -1;
+int Circular_Queue[MAX], front = -1, rear = -1;
 
 // To Check if Function is Empty
 int IsEmpty()
 {
     if(front == -1)
     {
-        front = rear = 0;
         return 1;
     }
     return 0;
@@ -19,7 +18,7 @@ int IsEmpty()
 // To Check if Function is Full
 int IsFull()
 {
-    if(rear == MAX - 1)
+    if((rear + 1) % MAX == front)
     {
         return 1;
     }
@@ -29,15 +28,18 @@ int IsFull()
 // Function for pushing value into the stack.
 void Enqueue(int value)
 {
+    if(IsEmpty())
+    {
+        front = rear = 0;
+    }
     if(IsFull())
     {
         cout << "Queue is Full!" << endl;
     }
     else
     {
-        front = 0;
-        rear += 1;
-        Queue[rear] = value;
+        rear = (rear +1) % MAX;
+        Circular_Queue[rear] = value;
     }
 }
 
@@ -50,7 +52,7 @@ void Dequeue()
     }
     else
     {
-        cout << "Element popped from the queue is " << Queue[front] <<  endl;
+        cout << "Element popped from the queue is " << Circular_Queue[front] <<  endl;
         front += 1;
     }
 }
@@ -66,7 +68,7 @@ void Display()
         cout << "Queue Elements are :" << endl;
         for(int i = front; i <= rear; i++)
         {
-            cout << Queue[i] << endl;
+            cout << Circular_Queue[i] << endl;
         }
     }
 }
@@ -79,7 +81,7 @@ void Peek()
     }
     else
     {
-        cout << "Element at Queue's Top is : " << Queue[front] << endl;
+        cout << "Element at Queue's Top is : " << Circular_Queue[front] << endl;
     }
 }
 
