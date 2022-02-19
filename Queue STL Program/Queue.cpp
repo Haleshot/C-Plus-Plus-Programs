@@ -8,7 +8,7 @@ int Queue[MAX], front = -1, rear = -1;
 // To Check if Function is Empty
 int IsEmpty()
 {
-    if(front == -1 )
+    if(front == -1)
     {
         front = rear = 0;
         return 1;

@@ -1,21 +1,22 @@
-// Queue STL program (done with functions)
-// Contains Dequeue, Enqueue, Peek, and Display Functions
+// Circular Queue STL program (done with functions)
+// Contains Enqueue, Dequeue, Peek, and Display Functions
 #include <iostream>
 using namespace std;
 #define MAX 100
 int Circular_Queue[MAX], front = -1, rear = -1;
 
-// To Check if Function is Empty
+// Function to check if Queue is Empty
 int IsEmpty()
 {
     if(front == -1)
-    {
+    {        
+        front = rear = 0;
         return 1;
     }
     return 0;
-    
 }
-// To Check if Function is Full
+
+// Function to check if Queue is Full
 int IsFull()
 {
     if((rear + 1) % MAX == front)
@@ -25,104 +26,100 @@ int IsFull()
     return 0;
 }
 
-// Function for pushing value into the stack.
+// Function to Push Values into the Queue
 void Enqueue(int value)
 {
     if(IsEmpty())
     {
-        front = rear = 0;
+        Circular_Queue[rear] = value;
     }
-    if(IsFull())
+    else if(IsFull())
     {
         cout << "Queue is Full!" << endl;
     }
     else
     {
-        rear = (rear + 1 ) % MAX;
+        rear = (rear + 1) % MAX;
         Circular_Queue[rear] = value;
     }
 }
 
-// Function for removing and element from the stack.
+// Function to Pop Values into the Queue
 void Dequeue()
 {
     if(IsEmpty())
     {
         cout << "Queue is Empty!" << endl;
     }
-    if(front == rear)
+    else if(front == rear)
     {
+        int x;
+        x = Circular_Queue[front];
+        cout << "Popped out Element fron Queue is = " << x << endl;
         front = rear = -1;
     }
     else
     {
-        cout << "Element popped from the queue is " << Circular_Queue[front] <<  endl;
-        front += 1;
+        int x;
+        x = Circular_Queue[front];
+        cout << "Popped out Element fron Queue is = " << x << endl;
+        front = (front + 1) % MAX;
     }
 }
-// Function for displaying the elements of the stack.
-void Display()
-{
-    if (front == -1)
-    {
-        cout << "Queue is Empty!" << endl;
-    }
-    else
-    {
-        if (front <= rear)
-        {
-            cout << "Queue Elements are :" << endl;
-            for(int i = front; i <= rear; i++)
-            {
-                cout << Circular_Queue[i] << endl;
-            }
-        }
-        else
-        {
-            cout << "Queue Elements are :" << endl;
-            for(int i = front; i < MAX; i++)
-            {
-                cout << Circular_Queue[i] << endl;
-            }
-        }
 
-    }
-}
-// Function for peeking the top element of the stack.
+// Function to Peek the Front Element of the Queue
 void Peek()
 {
-    if (front == -1)
+    if(front == -1)
     {
         cout << "Queue is Empty!" << endl;
     }
     else
     {
-        cout << "Element at Queue's Top is : " << Circular_Queue[front] << endl;
+        cout << "The Element at the Queue's Front is : " << Circular_Queue[front] << endl;
     }
 }
 
+// Function to Display the values of the Queue
+void Display()
+{
+    if(front == -1)
+    {
+        cout << "Queue is Empty!" << endl;
+    }
+    else
+    {
+        cout << "Elements of the Queue are : " << endl;
+        for(int i = front;i <= rear; i++)
+        {
+            cout << Circular_Queue[i] << endl;
+        }
+    }
 
+}
 
+// Main Function
 int main()
 {
-    int ch;
     bool run = true;
+    int ch;
+
     do
     {
-        cout << "Menu\n 1.Enqueue Value \n 2.Dequeue Value \n 3.Peek Value \n 4.Display Stack \n 5. Exit \n" ;
-        cout << "Enter Choice\n" ;
+        cout << "Menu \n1. Enqueue Value\n2. Dequeue Value\n3. Peek Value\n4. Display Values\n5. Exit\n";
+        cout << "Enter your choice : " << endl;
         cin >> ch;
 
         if (ch == 1)
         {
             int value_push;
-            cout << "Enter Value to be pushed into the Queue \n";
+            cout << "Enter Value to be pushed into the Queue : ";
             cin >> value_push;
             Enqueue(value_push);
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
-
+        
         if (ch == 2)
         {
             Dequeue();
@@ -140,7 +137,7 @@ int main()
         if (ch == 4)
         {
             Display();
-            cout << "\nWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
 
@@ -151,6 +148,5 @@ int main()
         
     } while (run == true);
     
-
     return 0;
 }
