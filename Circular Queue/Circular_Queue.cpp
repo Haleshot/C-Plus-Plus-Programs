@@ -38,7 +38,7 @@ void Enqueue(int value)
     }
     else
     {
-        rear = (rear +1) % MAX;
+        rear = (rear +1 ) % MAX;
         Circular_Queue[rear] = value;
     }
 }
@@ -49,6 +49,10 @@ void Dequeue()
     if(IsEmpty())
     {
         cout << "Queue is Empty!" << endl;
+    }
+    if(front == rear)
+    {
+        front = rear = -1;
     }
     else
     {
@@ -65,11 +69,23 @@ void Display()
     }
     else
     {
-        cout << "Queue Elements are :" << endl;
-        for(int i = front; i <= rear; i++)
+        if (front <= rear)
         {
-            cout << Circular_Queue[i] << endl;
+            cout << "Queue Elements are :" << endl;
+            for(int i = front; i <= rear; i++)
+            {
+                cout << Circular_Queue[i] << endl;
+            }
         }
+        else
+        {
+            cout << "Queue Elements are :" << endl;
+            for(int i = front; i < MAX; i++)
+            {
+                cout << Circular_Queue[i] << endl;
+            }
+        }
+
     }
 }
 // Function for peeking the top element of the stack.
