@@ -8,7 +8,7 @@ int Queue[MAX], front = -1, rear = -1;
 // To Check if Function is Empty
 int IsEmpty()
 {
-    if(front == -1)
+    if(front == -1 )
     {
         front = rear = 0;
         return 1;
@@ -57,7 +57,7 @@ void Dequeue()
 // Function for displaying the elements of the stack.
 void Display()
 {
-    if (front == -1)
+    if (IsEmpty())
     {
         cout << "Queue is Empty!" << endl;
     }
@@ -73,7 +73,7 @@ void Display()
 // Function for peeking the top element of the stack.
 void Peek()
 {
-    if (front == -1)
+    if (IsEmpty())
     {
         cout << "Queue is Empty!" << endl;
     }
