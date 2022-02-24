@@ -1,3 +1,4 @@
+// Contains functions to calculate Sum, Average, Max, Min of array elements entered by user as well as inserting and deleting array elements in accordance to the user.
 #include <iostream>
 using namespace std;
 
