@@ -1,5 +1,5 @@
 // Program to check for Balanced Parantheses.
-// Done using Stack
+// Done using Stack.
 
 #include <iostream>
 using namespace std;
