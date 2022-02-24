@@ -9,7 +9,7 @@ class Stack
     public:
     int Stack[MAX], top = -1;
 
-    void Push(int value);
+    void Push(int);
     void Pop();
     void Peek();
     void Display();
