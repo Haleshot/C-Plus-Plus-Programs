@@ -1,3 +1,6 @@
+// Program to check for Balanced Parantheses.
+// Done using Stack
+
 #include <iostream>
 using namespace std;
 #define MAX 100
