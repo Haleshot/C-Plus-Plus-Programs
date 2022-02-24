@@ -1,5 +1,5 @@
 // Circular Queue STL program (done with functions)
-// Contains Enqueue, Dequeue, Peek, and Display Functions
+// Contains IsEmpty, Is Full, Enqueue, Dequeue, Peek, and Display Functions
 #include <iostream>
 using namespace std;
 #define MAX 100
