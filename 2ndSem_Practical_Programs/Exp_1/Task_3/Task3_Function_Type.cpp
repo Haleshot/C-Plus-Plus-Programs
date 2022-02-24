@@ -1,4 +1,5 @@
-//Task 3 done using POP with functions
+// Task 3 done using POP with functions
+// Double pointer method used to pass 2D array of unknown dimensions through the functions.
 
 #include <iostream>
 #include <bits/stdc++.h>
