@@ -1,4 +1,5 @@
-//Program to evaluate Postfix Expression (done with functions)
+// Program to evaluate Postfix Expression (done with functions)
+// Contains Pop, Push, Peek, and Display Functions
 #include <iostream>
 #include <cstring>
 #include <math.h>
