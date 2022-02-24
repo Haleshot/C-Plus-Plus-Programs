@@ -1,4 +1,4 @@
-// Circular Queue STL program (done with Classes and Member Functions)
+// Circular Queue STL program (done with Classes and Member Functions).
 // Contains IsEmpty, Is Full, Enqueue, Dequeue, Peek, and Display Functions along with instance of class to access functions inside the class.
 #include <iostream>
 using namespace std;
