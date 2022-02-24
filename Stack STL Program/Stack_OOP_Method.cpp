@@ -1,5 +1,5 @@
-// Stack STL program (done with Classes and Member functions)
-// Contains Pop, Push, Peek, and Display Functions
+// Stack STL program (done with Classes and Member functions).
+// Contains Pop, Push, Peek, and Display Functions.
 #include <iostream>
 using namespace std;
 #define MAX 100
