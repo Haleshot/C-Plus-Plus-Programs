@@ -1,3 +1,4 @@
+// Contains functions to change the value of counter according to the user.
 #include <iostream>
 using namespace std;
 int counter = 0;
