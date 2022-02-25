@@ -112,7 +112,7 @@ int main()
     bool run = true;
     do
     {
-        cout << "Menu \n 1.Insert Value at the Beginning \n 2. Insert Value at the End \n 3. Delete Value at the Beginning \n 4. Delete Value at the End \n 5. Display Values \n 6. Exit \n" ;
+        cout << "Menu \n 1. Insert Value at the Beginning \n 2. Insert Value at the End \n 3. Delete Value at the Beginning \n 4. Delete Value at the End \n 5. Display Values \n 6. Exit \n" ;
         cout << "Enter Choice\n" ;
         cin >> ch;
 
@@ -152,10 +152,7 @@ int main()
         
         if (ch == 5)
         {
-            int value_push;
-            cout << "Enter Value to be pushed into the Linked List : ";
-            cin >> value_push;
-            Insert_Beg(value_push);
+            Display();
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
