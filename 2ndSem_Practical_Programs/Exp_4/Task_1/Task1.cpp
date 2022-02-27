@@ -47,7 +47,7 @@ void Insert_Pos(int index, int value)
 void Display()
 {
     Node *current = head;
-    if(head == NULL)
+    if(current == NULL)
     {
         cout << "Linked List is Empty!" << endl;
     }
@@ -56,7 +56,7 @@ void Display()
         cout << "Values of the Linked List are : " << endl;
         while(current->next != NULL)
         {
-            cout << current->data;
+            cout << current->data << endl;
             current = current->next;
         }
     }
