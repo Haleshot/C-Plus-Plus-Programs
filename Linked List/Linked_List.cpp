@@ -29,26 +29,27 @@ void Insert_End(int value)
 {
     Node *last;
     Node *current;
-    
-        last = new Node();
-        last->data = value;
-        last->next = NULL;
-        if(Head == NULL)
+    last = new Node();
+    last->data = value;
+    last->next = NULL;
+    if(Head == NULL)
+    {
+        Head  = last;
+    }
+    else
+    {
+        current = Head;
+        while (current->next != NULL)
         {
-            Head  = last;
+            current = current->next;
         }
-        else
-        {
-            current = Head;
-            while (current->next != NULL)
-            {
-                current = current->next;
-            }
-            current->next = last;
+        current->next = last;
         
-        }
+    }
+
 
 }
+
 // Function to Delete value at the Beginning of the Linked List
 void Delete_Beg()
 {
