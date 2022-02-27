@@ -98,7 +98,7 @@ void Display()
     else
     {
         cout << "Values of the Linked List are : " << endl;
-        while (current->next != NULL)
+        while (current != NULL)
         {
             cout << current->data << endl;
             current = current->next;

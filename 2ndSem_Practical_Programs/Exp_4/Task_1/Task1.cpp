@@ -44,17 +44,32 @@ void Insert_Pos(int index, int value)
 
 }
 
+void Delete_Beg()
+{
+    if(head == NULL)
+    {
+        cout << "Linked List is Empty!" << endl;
+    }
+    else
+    {
+        Node *current;
+        current = head;
+        head = head->next;
+        delete current;
+    }
+}
+
 void Display()
 {
     Node *current = head;
-    if(current == NULL)
+    if(head == NULL)
     {
         cout << "Linked List is Empty!" << endl;
     }
     else
     {
         cout << "Values of the Linked List are : " << endl;
-        while(current->next != NULL)
+        while(current != NULL)
         {
             cout << current->data << endl;
             current = current->next;
@@ -64,6 +79,28 @@ void Display()
 }
 void Delete(int index)
 {
+    if(head == NULL)
+    {
+        cout << "Linked List is Empty!" << endl;
+    }
+    Node *current = head;
+    Node *temp;
+    if(index == 0)
+    {
+        Delete_Beg();
+    }
+    else
+    {
+        for(int i = 0; i < index - 1 && current->next != NULL; i++)
+        {
+            current = current->next;
+        }
+        temp = current->next->next;
+        delete temp->next;
+        temp->next = temp;
+    }
+    delete(current);
+
 
 }
 void Modify(int index)
@@ -107,6 +144,12 @@ int main()
         }
         if (ch == 3)
         {
+            int value_push;
+            cout << "Enter index from which element should be deleted from the Linked List : ";
+            cin >> value_push;
+            Delete(value_push);
+            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+            cin >> run;
 
         }
 
