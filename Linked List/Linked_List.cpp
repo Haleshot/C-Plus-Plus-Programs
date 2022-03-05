@@ -15,7 +15,7 @@ Node *Head = NULL;
 // Function to Insert value at the Beginning of the Linked List
 void Insert_Beg(int value)
 {
-        
+
     Node *first;
     first = new Node();
     first->data = value;
@@ -87,6 +87,80 @@ void Delete_End()
     }
 }
 
+// Modify the value at a position of the Linked List
+void Modify(int index, int value)
+{
+    Node *current = Head;
+    int counter = 0;
+    if(Head == NULL)
+    {
+        cout << "Linked List is Empty!" << endl;
+    }
+    else
+    {
+        while(current != NULL && counter < index - 1)
+        {
+            current = current->next;
+            counter++;
+        }
+        if(current != NULL)
+        {
+            current->data = value;
+        }
+    }
+}
+
+// Function to Insert the value at a position of the Linked List
+void Insert_Pos(int index, int value)
+{
+    Node *temp = Head;
+    Node *anode = new Node();
+    int counter = 0;
+
+    if(index == 0)
+    {
+        anode->data = value;
+        anode->next = temp->next;
+        Head = anode;
+    }
+    while(temp != NULL && counter < index - 1)
+    {
+        temp = temp->next;
+        counter++;
+
+    }
+    if(temp != NULL)
+    {
+        anode->data = value;
+        anode->next = temp->next;
+        temp->next = anode;
+    }
+}
+
+// Function to Delete the value at a position of the Linked List
+void Delete_Pos(int index)
+{
+    Node *temp = Head;
+    int counter = 0;
+
+    if(index == 0)
+    {
+        Head = temp->next;
+    }
+    while(temp != NULL && counter < index - 1)
+    {
+        temp = temp->next;
+        counter++;
+    }
+    if(temp != NULL)
+    {
+        Node *a = temp->next;
+        Node *b = a->next;
+        temp->next = b;
+        delete a;
+    }
+}
+
 // Function to Display the values of the Linked List
 void Display()
 {
@@ -115,7 +189,7 @@ int main()
     bool run = true;
     do
     {
-        cout << "Menu \n 1. Insert Value at the Beginning \n 2. Insert Value at the End \n 3. Delete Value at the Beginning \n 4. Delete Value at the End \n 5. Display Values \n 6. Exit \n" ;
+        cout << "Menu \n 1. Insert Value at the Beginning \n 2. Display Values \n 3. Insert Value at the End \n 4. Insert Value at a particular position \n 5. Modify value of Node at a position \n 6. Delete Value at a particular position \n 7. Delete Value at Beginning \n 8. Delete Value at the End \n 9. Exit \n" ;
         cout << "Enter Choice\n" ;
         cin >> ch;
 
@@ -128,8 +202,14 @@ int main()
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
-
         if (ch == 2)
+        {
+
+            Display();
+            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+            cin >> run;
+        }
+        if (ch == 3)
         {
             int value_push;
             cout << "Enter Value to be pushed into the Linked List : ";
@@ -137,30 +217,50 @@ int main()
             Insert_End(value_push);
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
+
         }
 
-        if (ch == 3)
+        if( ch == 4)
+        {
+            int value_push, Index;
+            cout << "Enter Value and Index to be pushed into the Linked List : ";
+            cin >> value_push >> Index;
+            Insert_Pos(Index, value_push);
+            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+            cin >> run;
+
+        }
+        if (ch == 5)
+        {
+            int value_push, Index;
+            cout << "Enter Value and Index to be modified in the Linked List : ";
+            cin >> value_push >> Index;
+            Modify(Index, value_push);
+            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+            cin >> run;
+        }
+        if( ch == 6)
+        {
+            int Index;
+            cout << "Enter Index from which element must be deleted from the Linked List : ";
+            cin >> Index;
+            Delete_Pos(Index);
+            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+            cin >> run;
+        }
+        if( ch == 7)
         {
             Delete_Beg();
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
-        
-        if (ch == 4)
+        if( ch == 8)
         {
             Delete_End();
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
-        
-        if (ch == 5)
-        {
-            Display();
-            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
-            cin >> run;
-        }
-        
-        if (ch == 6)
+        if ( ch == 9)
         {
             return 0;
         }

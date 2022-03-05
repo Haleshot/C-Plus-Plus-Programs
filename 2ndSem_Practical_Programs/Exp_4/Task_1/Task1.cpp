@@ -38,6 +38,7 @@ void Insert_End(int value)
         current->next = last;
     }
 }
+
 void Insert_Pos(int index, int value)
 {
     Node *temp = head;
@@ -61,12 +62,6 @@ void Insert_Pos(int index, int value)
         anode->data = value;
         anode->next = temp->next;
         temp->next = anode;
-
-        /*
-        Or you can also do
-        anode->next = temp->next;
-        temp->next = anode;
-        */
     }
 }
 
