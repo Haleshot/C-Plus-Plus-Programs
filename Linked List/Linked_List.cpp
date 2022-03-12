@@ -137,11 +137,33 @@ void Insert_Pos(int index, int value)
     }
 }
 
+
+/*
+// Another way to insert value at a position of the Linked List
+// Function to Insert the value at a position of the Linked List
+void Insert_Pos_2(int index, int value)
+{
+    Node *current = Head;
+    Node *temp = current;
+    Node *mid = new Node();
+    int counter = 1;
+    for(int i = 0; i < index; i++)
+    {
+        temp = current;
+        current = current->next;
+        counter ++;
+    }
+    mid->data = value;
+    mid->next = current;
+    temp->next = mid;
+}
+*/
+
 // Function to Delete the value at a position of the Linked List
 void Delete_Pos(int index)
 {
     Node *temp = Head;
-    int counter = 0;
+    int counter = 1;
 
     if(index == 0)
     {
@@ -160,6 +182,15 @@ void Delete_Pos(int index)
         delete a;
     }
 }
+
+/*
+// Another way to Delete value at a position of the Linked List 
+// Function to Delete the value at a position of the Linked List
+void Insert_Pos_2(int index, int value)
+{
+    
+}
+*/
 
 // Function to Display the values of the Linked List
 void Display()
@@ -181,6 +212,19 @@ void Display()
     }
 }
 
+void Length()
+{
+    Node *current = Head;
+    if(Head == NULL)
+    {
+        cout << "Length of Linked List is = 0 " << endl;
+    }
+    else
+    {
+        
+    }
+}
+
 
 // Main Function containing Function Call statements.
 int main()
@@ -189,7 +233,7 @@ int main()
     bool run = true;
     do
     {
-        cout << "Menu \n 1. Insert Value at the Beginning \n 2. Display Values \n 3. Insert Value at the End \n 4. Insert Value at a particular position \n 5. Modify value of Node at a position \n 6. Delete Value at a particular position \n 7. Delete Value at Beginning \n 8. Delete Value at the End \n 9. Exit \n" ;
+        cout << "Menu \n 1. Insert Value at the Beginning \n 2. Display Values \n 3. Insert Value at the End \n 4. Insert Value at a particular position \n 5. Modify value of Node at a position \n 6. Delete Value at a particular position \n 7. Delete Value at Beginning \n 8. Delete Value at the End \n 9. Display length of Linked List \n 10. Exit \n" ;
         cout << "Enter Choice\n" ;
         cin >> ch;
 
@@ -260,7 +304,13 @@ int main()
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
-        if ( ch == 9)
+        if( ch == 9)
+        {
+            Delete_End();
+            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+            cin >> run;
+        }
+        if ( ch == 10)
         {
             return 0;
         }
