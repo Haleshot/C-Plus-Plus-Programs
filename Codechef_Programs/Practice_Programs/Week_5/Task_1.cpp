@@ -66,16 +66,25 @@ int main()
             }
         }
     }
-
+/*
     int q = 0;
     for(int i = 0; i < m; i++)
     {
-            if(id[i] != list[i])
+        for(int j = 0; j < n; j++)
+        {
+            if(id[i] != list[j])
             {
-                cout << s[i] << endl;
+                int t = 0;
+                while(pop[t] < pop_sort[q])
+                {
+                    t += 1;
+                }
+                cout << s[t] << endl;
+                q += 1;
             }
+        }
     }
-
+*/
 
     return 0;
 }
