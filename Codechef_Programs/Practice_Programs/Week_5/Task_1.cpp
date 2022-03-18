@@ -15,7 +15,7 @@ int main()
     cout << "Enter the total number of posts" << endl;
     cin >> m;
 
-    int id[m], pop[m];
+    int id[m], pop[m], pop_sort[m];
     string s[m];
 
     cout << "Enter the identifiers of Special friends" << endl;
@@ -34,21 +34,43 @@ int main()
         cin >> id[i] >> pop[i] >> s[i];
     }
 
+    for(int i = 0; i < n; i++)
+    {
+        pop_sort[i] = pop[i];
+    }
+
+    for(int i = 0; i < m; i++)
+    {
+        sort(pop_sort, pop_sort + m, greater<int>());
+    }
+
     
     for(int i = 0; i < n; i++)
     {
         sort(list_sort, list_sort + n, greater<int>());
     }
 
-    int l;
+    int l = 0;
     for(int i = 0; i < m; i++)
     {
         for(int j = 0; j < n; j++)
         {
             if(id[i] == list[j])
             {   
-                cout << id[i] << " " << pop[i] << " " << s[i];
+                cout << id[l] << " " << pop[l] << " " << s[l];
                 l += 1;
+            }
+        }
+    }
+    int q = 0;
+    for(int i = 0; i < m; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            if(id[i] != list[j])
+            {  
+                cout << id[q] << " " << pop[q] << " " << s[q];
+                q += 1;
             }
         }
     }
