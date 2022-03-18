@@ -5,8 +5,7 @@ using namespace std;
 
 int main()
 {
-    int n, m;    
-    string s;
+    int n, m;
     cout << "Enter number for Special friends" << endl;
     cin >> n;
     int list[n], list_sort[n];
@@ -56,20 +55,31 @@ int main()
         for(int j = 0; j < n; j++)
         {
             if(id[i] == list[j])
-            {   
-                cout << id[l] << " " << pop[l] << " " << s[l];
+            {
+                int t = 0;
+                while(pop[t] < pop_sort[l])
+                {
+                    t += 1;
+                }
+                cout << s[t] << endl;
                 l += 1;
             }
         }
     }
+
     int q = 0;
     for(int i = 0; i < m; i++)
     {
         for(int j = 0; j < n; j++)
         {
             if(id[i] != list[j])
-            {  
-                cout << id[q] << " " << pop[q] << " " << s[q];
+            {
+                int t = 0;
+                while(pop[t] < pop_sort[q])
+                {
+                    t += 1;
+                }
+                cout << s[t] << endl;
                 q += 1;
             }
         }
