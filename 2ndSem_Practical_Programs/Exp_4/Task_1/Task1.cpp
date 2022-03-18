@@ -133,10 +133,6 @@ void Delete_Pos(int index)
 
 
 
-
-
-
-
 int main()
 {
     int ch;
