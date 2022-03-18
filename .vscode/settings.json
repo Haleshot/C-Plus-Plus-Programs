@@ -3,7 +3,8 @@
     "iostream": "cpp",
     "ostream": "cpp",
     "algorithm": "cpp",
-    "postfix_evaluation_oop_method": "cpp"
+    "*.tcc": "cpp",
+    "list": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "D:/Internet_Downloads/Programming_Languages/C++/C++_Files/CodeBlocks/MinGW/bin/gcc.exe",
   "C_Cpp_Runner.cppCompilerPath": "D:/Internet_Downloads/Programming_Languages/C++/C++_Files/CodeBlocks/MinGW/bin/g++.exe",
