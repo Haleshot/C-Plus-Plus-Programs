@@ -1,3 +1,4 @@
+// Program implementing functions of Linked List.
 #include <iostream>
 using namespace std;
 
