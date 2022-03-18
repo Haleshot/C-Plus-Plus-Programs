@@ -35,7 +35,7 @@ void Create_node(int x, int y, struct Node **current)
 }
 void Add_node(struct Node *p1, struct Node *p2, struct Node *result)
 {
-    while(p1 != NULL && p2 != NULL)
+    while(p1->next && p2->next)
     {
         if(p1->power > p2->power)
         {
@@ -60,15 +60,15 @@ void Add_node(struct Node *p1, struct Node *p2, struct Node *result)
         result = result->next;
         result->next = NULL;
     }
-    while(p1 != NULL || p2 != NULL)
+    while(p1->next || p2->next)
     {
-        if(p1 != NULL)
+        if(p1->next)
         {
             result->coeff = p1->coeff;
             result->power = p1->power;
             p1 = p1->next;
         }
-        if(p2 != NULL)
+        if(p2->next)
         {
             result->coeff = p2->coeff;
             result->power = p2->power;
@@ -97,9 +97,9 @@ void print_node(struct Node *current)
 int main()
 {
     bool run = true;
-    struct Node *node_1 = NULL, *node_2 = NULL, *result_ = NULL;
     do
     {
+        struct Node *node_1 = NULL, *node_2 = NULL, *result_ = NULL;
         int ch, n1, n2, x_, y_, a_, b_;
         cout << "Enter the total number of terms for the First Polynomial expression"  << endl;
         cin >> n1;
