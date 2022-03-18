@@ -43,13 +43,13 @@ void Add_node(struct Node *p1, struct Node *p2, struct Node *result)
             result->power = p1->power;
             p1 = p1->next;
         }
-        if(p1->power < p2->power )
+        else if(p1->power < p2->power )
         {
             result->coeff = p2->coeff;
             result->power = p2->power;
             p2 = p2->next;
         }
-        if(p1->power == p2->power)
+        else
         {
             result->power = p1->power;
             result->coeff = p1->coeff + p2->coeff;
@@ -100,7 +100,7 @@ int main()
     do
     {
         struct Node *node_1 = NULL, *node_2 = NULL, *result_ = NULL;
-        int ch, n1, n2, x_, y_, a_, b_;
+        int n1, n2, x_, y_, a_, b_;
         cout << "Enter the total number of terms for the First Polynomial expression"  << endl;
         cin >> n1;
 
