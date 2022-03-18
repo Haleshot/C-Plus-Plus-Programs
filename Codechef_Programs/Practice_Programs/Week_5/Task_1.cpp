@@ -70,9 +70,7 @@ int main()
     int q = 0;
     for(int i = 0; i < m; i++)
     {
-        for(int j = 0; j < n; j++)
-        {
-            if(id[i] != list[j])
+            while(id[i] != list[i])
             {
                 int t = 0;
                 while(pop[t] < pop_sort[q])
@@ -82,7 +80,6 @@ int main()
                 cout << s[t] << endl;
                 q += 1;
             }
-        }
     }
 
 
