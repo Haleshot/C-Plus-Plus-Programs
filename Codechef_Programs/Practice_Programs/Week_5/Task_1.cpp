@@ -9,19 +9,11 @@ int main()
     cout << "Enter number for Special friends" << endl;
     cin >> n;
     int list[n];
-    int id_sp[n], pop_sp[n];
-    string s_sp[n];
-
-    for(int i = 0; i < n; i++)
-    {
-        sort(pop_sp, pop_sp + n, greater<int>());
-    }
-
 
     cout << "Enter the total number of posts" << endl;
     cin >> m;
 
-    int id[m], pop[m], pop_sort[m];
+    int id[m], pop[m], pop_sort[m], pop_sp_sort[n];
     string s[m];
 
     cout << "Enter the identifiers of Special friends" << endl;
@@ -29,7 +21,6 @@ int main()
     {
         cin >> list[i];
     }
-
     
     cout << "Enter the identifiers of friends, the popularity of the posts and the contents of the posts:" << endl;
     for(int i = 0; i < m; i++)
@@ -37,9 +28,15 @@ int main()
         cin >> id[i] >> pop[i] >> s[i];
     }
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < m; i++)
     {
-        pop_sort[i] = pop[i];
+        for(int j = 0; i < n; j++)
+            {
+                if(id[i] != list[j])
+                {
+                    pop_sort[i] = pop[i];
+                }
+            }
     }
 
     for(int i = 0; i < m; i++)
@@ -47,38 +44,48 @@ int main()
         sort(pop_sort, pop_sort + m, greater<int>());
     }
 
-    int l = 0;
-    for(int i = 0; i < m; i++)
+    for (int i = 0; i < m; i++)
     {
-        for(int j = 0; j <= n; j++)
-        {
-            if(id[i] == list[j])
+        for(int j = 0; i < n; j++)
             {
-                int t = 0;
-                while(pop[t] < pop_sort[l])
+                if(id[i] == list[j])
                 {
-                    t += 1;
+                    pop_sp_sort[j] = pop[i];
                 }
-                cout << s[t] << endl;
-                l += 1;
             }
-        }
     }
 
-    int q = 0;
-    for(int i = 0; i < m; i++)
+    for(int i = 0; i < n; i++)
     {
-        for(int j = 0; j < n; j++)
+        sort(pop_sp_sort, pop_sp_sort + n, greater<int>());
+    }
+                
+    for(int i = 0; i < n; i++)
+    {
+        cout << pop_sp_sort[i] << endl;
+    }
+    for(int j = 0; j < m; j++)
+    {
+        cout << pop_sp_sort[j] << endl;
+    }
+    
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
         {
-            if(id[i] != list[j])
+            int t = j;
+            int max = pop_sp_sort[i];
+            if(id[j] == list[i])
             {
                 int t = 0;
-                while(pop[t] < pop_sort[q])
+                if(max == pop[j])
+                {
+                    cout << s[j] << endl;
+                }
+                else
                 {
                     t += 1;
                 }
-                cout << s[t] << endl;
-                q += 1;
             }
         }
     }
