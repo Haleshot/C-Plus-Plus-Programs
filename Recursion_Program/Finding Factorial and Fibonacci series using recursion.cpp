@@ -18,11 +18,7 @@ int fib(int n)
     }
     else
     {
-        for(int i = 0; i < n; i++)
-        {
-            int x = fib(i);
-            cout << x << ", ";
-        }
+        return fib(n - 1) + fib(n - 2);
     }
 
 }
@@ -45,7 +41,15 @@ int main()
         int n;
         cout << "Enter Fibonacci Number" << endl;
         cin >> n;
-        fib(n);
+        int i = 0;
+
+        while (i < n)
+        {
+            cout << fib(i) << " ";
+            i += 1;
+        }
+        
+        
     }
     else
     {
