@@ -12,66 +12,66 @@ int main()
     cout << "Enter the Number of Students" << endl;
     for(int i = 0; i < T; i++)
     {
-        int n;
-        
-        cin >> n;
-        counter[i] = n;
-        char exp[n];
-        cin >> exp;
-        list[n];
-        
+            int n;
+            
+            cin >> n;
+            counter[i] = n;
+            char exp[n];
+            cin >> exp;
+            list[n];
+            
 
-        for(int j = 0; j < n; j++)
-        {
-            if(isdigit(exp[j]))
+            for(int j = 0; j < n; j++)
             {
-                list[j] = int(exp[j]);
+                if(isdigit(exp[j]))
+                {
+                    list[j] = int(exp[j]);
+                }
             }
-        }
-    }
 
-    for(int i = 0; i<  T; i++)
-    {
-        int temp = counter[i];
-        int temp_list[temp];
-
-        for(int j = 0; j < temp; j++)
+        for(int i = 0; i <  T; i++)
         {
-            temp_list[j] = list[j];
-        }
-        int max = 0;
+            int temp = counter[i];
+            int temp_list[temp];
 
-        for(int k = 0; k < temp; k++)
-        {
-            if(max < temp_list[k])
+            for(int j = 0; j < temp; j++)
             {
-                max = temp_list[k];
+                temp_list[j] = list[j];
             }
-        }
+            int max = 0;
 
-        int c = 0;
-        for(int k = 0; k < temp; k++)
-        {
-            if(max == temp_list[k])
+            for(int k = 0; k < temp; k++)
             {
-                c++;
+                if(max > temp_list[k])
+                {
+                    max = temp_list[k];
+                }
             }
-        }
 
-        if(c > 1)
-        {
-            cout << "peace:)" << endl;
-        }
-        else
-        {
-            cout << "fight:(" << endl;
-        }
+            int c = 0;
+            for(int k = 0; k < temp; k++)
+            {
+                if(max == temp_list[k])
+                {
+                    c++;
+                }
+            }
 
-        for(int i = 0; i < temp; i++)
-        {
-            temp_list[i] = temp_list[i + 1];
-        }
+            if(c > 1)
+            {
+                cout << "peace:)" << endl;
+            }
+            else
+            {
+                cout << "fight:(" << endl;
+            }
 
+            for(int i = 0; i < temp; i++)
+            {
+                temp_list[i] = temp_list[i + 1];
+            }
+
+        }
     }
     
 
