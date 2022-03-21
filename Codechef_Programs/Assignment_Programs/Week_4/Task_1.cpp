@@ -30,5 +30,43 @@ int main()
         }
     }
 
+    for(int i = 0; i<  T; i++)
+    {
+        int temp = counter[i];
+        int temp_list[temp];
+
+        for(int j = 0; j < temp; j++)
+        {
+            temp_list[j] = list[j];
+        }
+        int max = 0;
+
+        for(int k = 0; k < temp; k++)
+        {
+            if(max < temp_list[k])
+            {
+                max = temp_list[k];
+            }
+        }
+
+        int c = 0;
+        for(int k = 0; k < temp; k++)
+        {
+            if(max == temp_list[k])
+            {
+                c++;
+            }
+        }
+
+        if(c > 1)
+        {
+            cout << "peace:)" << endl;
+        }
+        else
+        {
+            cout << "fight:(" << endl;
+        }
+    }
+
     return 0;
 }
