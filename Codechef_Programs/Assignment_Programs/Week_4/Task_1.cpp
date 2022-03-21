@@ -67,7 +67,7 @@ int main()
             cout << "fight:(" << endl;
         }
 
-        for(int i = 0; i < temp - 1; i++)
+        for(int i = 0; i < temp; i++)
         {
             temp_list[i] = temp_list[i + 1];
         }
