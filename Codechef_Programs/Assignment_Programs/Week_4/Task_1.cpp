@@ -9,11 +9,11 @@ int main()
     cin >> T;
     int list[10], counter[10];
 
-
+    cout << "Enter the Number of Students" << endl;
     for(int i = 0; i < T; i++)
     {
         int n;
-        cout << "Enter the Number of Students" << endl;
+        
         cin >> n;
         counter[i] = n;
         char exp[n];
