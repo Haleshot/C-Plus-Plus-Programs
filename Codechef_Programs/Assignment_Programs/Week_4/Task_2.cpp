@@ -1,5 +1,6 @@
 #include <iostream>
 #include <bits/stdc++.h>
+#include <algorithm>
 using namespace std;
 
 
@@ -38,13 +39,21 @@ int main()
 
         for(int i = 0; i < N; i++)
         {
-            if(s[i] > s[i] + 1)
+            if(s[i] > s[i + 1])
             {
-                s[i + 1] = s[i];
+                swap(s[i], s[i + 1]);
+
+                /*
+                char temp;
+                temp = s[i];
+                s[i] = s[i + 1];
+                s[i + 1] = temp;
+                */
                 goto check;
             }
         }
         check:
+            cout << s;
             if(IsAlphabeticalOrder(s, N))
             {
                 cout << "YES\n";
