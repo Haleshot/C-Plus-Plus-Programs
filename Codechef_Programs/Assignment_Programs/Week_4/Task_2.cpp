@@ -42,26 +42,17 @@ int main()
             if(s[i] > s[i + 1])
             {
                 swap(s[i], s[i + 1]);
-
-                /*
-                char temp;
-                temp = s[i];
-                s[i] = s[i + 1];
-                s[i + 1] = temp;
-                */
-                goto check;
+                break;
             }
         }
-        check:
-            cout << s;
-            if(IsAlphabeticalOrder(s, N))
-            {
-                cout << "YES\n";
-            }
-            else
-            {
-                cout << "NO\n";
-            }
+        if(IsAlphabeticalOrder(s, N))
+        {
+            cout << "YES\n";
+        }
+        else
+        {
+            cout << "NO\n";
+        }
     }
     return 0;
 }
