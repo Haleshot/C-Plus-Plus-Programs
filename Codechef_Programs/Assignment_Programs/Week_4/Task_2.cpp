@@ -1,4 +1,5 @@
 #include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 
@@ -9,6 +10,8 @@ bool IsAlphabeticalOrder(string sentence, int length)
     {
         c[i] = sentence[i];
     }
+
+    sort(c, c + length);
 
     for(int i = 0; i < length; i++)
     {
@@ -33,22 +36,23 @@ int main()
         string s;
         cin >> s;
 
-        for(int i = 0; i < N; i--)
+        for(int i = 0; i < N; i++)
         {
             if(s[i] > s[i] + 1)
             {
                 s[i + 1] = s[i];
-                break;
+                goto check;
             }
         }
-        if(IsAlphabeticalOrder(s, N))
-        {
-            cout << "YES\n";
-        }
-        else
-        {
-            cout << "NO\n";
-        }
+        check:
+            if(IsAlphabeticalOrder(s, N))
+            {
+                cout << "YES\n";
+            }
+            else
+            {
+                cout << "NO\n";
+            }
     }
     return 0;
 }
