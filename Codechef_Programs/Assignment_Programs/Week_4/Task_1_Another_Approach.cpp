@@ -4,34 +4,34 @@ using namespace std;
 int main() 
 {
     long t;
-    cin>>t;
-    while(t--)
+    cin >> t;
+    for(int i = 0; i < t; i++)
     {
         long n;
-        cin>>n;
+        cin >> n;
 
-        long te,max=0;
-        bool maxhasdoub=false;
-        for(long i=0;i<n;i++)
+        long max = 0, terms;
+        bool duplicate = false;
+        for(long i = 0; i < n; i++)
         {
-            cin>>te;
-            if(te==max)
+            cin >> terms;
+            if(terms == max)
             {
-               maxhasdoub=true; 
+               duplicate = true; 
             }
-            if(te>max)
+            if(terms > max)
             {
-                max=te;
-                maxhasdoub=false;
+                max = terms;
+                duplicate = false;
             }
         }
-        if(maxhasdoub)
+        if(duplicate)
         {
-            cout<<"fight:(\n";
+            cout<<"fight:(\n" << endl;;
         }
         else
         {
-            cout<<"peace:)\n";
+            cout<<"peace:)\n" << endl;
         }
     }
     return 0;
