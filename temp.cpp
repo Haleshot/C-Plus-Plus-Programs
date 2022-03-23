@@ -101,3 +101,20 @@ void Insert_Pos(int index, int value)
     mid->next = current;
     temp->next = current;
 }
+
+void Delete_Pos(int index)
+{
+    Node *temp = head;
+    int counter = 1;
+
+    if(index == 0)
+    {
+        head = temp->next;
+    }
+    while(temp != NULL && index < counter - 1)
+    {
+        temp = temp->next;
+        counter++;
+    }
+
+}
