@@ -58,6 +58,10 @@ void Display()
                 cout <<  Stack[i] << endl;
             }
     }
+    else
+    {
+        cout << "Emtpy" << endl;
+    }
 }
 
 // Main function to perform Stack operations according to user
