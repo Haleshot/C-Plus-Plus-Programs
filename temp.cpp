@@ -18,6 +18,7 @@ void Create_Node(int x, int y, struct Node **current)
         a = (struct Node*)malloc(sizeof(struct Node));
         a->coeff = x;
         a->power = y;
+        *current = a;
         a->next = (struct Node*)malloc(sizeof(struct Node));
         a = a->next;
         a->next = NULL;
@@ -88,7 +89,7 @@ void Print_Expression(struct Node *current)
     {
         cout << current->coeff << "x^" << current->power;
         current = current->next;
-        while(current->next != NULL)
+        if(current->next != NULL)
         {
             cout << " + ";
         }
