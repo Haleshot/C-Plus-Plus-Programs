@@ -3,240 +3,148 @@ using namespace std;
 
 struct Node
 {
-    int data;
+    int coeff;
+    int power;
     Node *next;
 };
 
-Node *head = NULL;
-
-
-void Display()
+void Create_Node(int x, int y, struct Node **current)
 {
-    Node *current = head;
-    while(current != NULL)
+    struct Node *a, *b;
+    b = *current;
+
+    if(b == NULL)
     {
-        cout << current->data;
-        current = current->next;
-    }
-}
-
-void Insert_Beg(int value)
-{
-    Node *first;
-    first = new Node();
-    first->data = value;
-    first->next = head;
-    head = first;
-}
-
-void Insert_End(int value)
-{
-    Node *last;
-    Node *current;
-    last = new Node();
-    last->data = value;
-    last->next = NULL;
-
-    if (head == NULL)
-    {
-        head = last;
+        a = (struct Node*)malloc(sizeof(struct Node));
+        a->coeff = x;
+        a->power = y;
+        a->next = (struct Node*)malloc(sizeof(struct Node));
+        a = a->next;
+        a->next = NULL;
     }
     else
     {
-        while(current != NULL)
+        a->coeff = x;
+        a->power = y;
+        a->next = (struct Node*)malloc(sizeof(struct Node));
+        a = a->next;
+        a->next = NULL;
+    }
+}
+
+
+void Add_Expression(struct Node *p1, struct Node *p2, struct Node *result)
+{
+    while(p1->next && p2->next)
+    {
+        if(p1->power > p2->power)
         {
-            current = current->next;
+            result->coeff = p1->coeff;
+            result->power = p1->power;
+            p1 = p1->next;
         }
-        current->next = last;
-    }
-}
-void Delete_Beg()
-{
-    if(head == NULL)
-    {
-        cout << "Linked List is Empty!" << endl;
-    }
-    else
-    {
-        Node *current;
-        current = head;
-        head = head->next;
-        delete current;
-    }
-}
-void Delete_End()
-{
-    Node *current = head;
-    Node *temp;
-    if(head == NULL)
-    {
-        cout << "Linked List is Empty!" << endl;
-    }
-    else
-    {
-        while(current != NULL)
+        else if(p1->power < p2->power)
         {
-            temp = current;
-            current = current->next;
+            result->coeff = p2->coeff;
+            result->power = p2->power;
+            p2 = p2->next;
         }
-        temp->next = NULL;
-        delete current;
+        else
+        {
+            result->coeff = p1->coeff + p2->coeff;
+            result->power = p1->power;
+            p1 = p1->next;
+            p2 = p2->next;
+        }
+        result->next = (struct Node*)malloc(sizeof(struct Node));
+        result = result->next;
+        result->next = NULL;
+    }
+
+    while(p1->next || p2->next)
+    {
+        if(p1->next)
+        {
+            result->coeff = p1->coeff;
+            result->power = p1->power;
+            p1 = p1->next;
+        }
+        if(p2->next)
+        {
+            result->coeff = p2->coeff;
+            result->power = p2->power;
+            p2 = p2->next;
+        }
+        result->next = (struct Node*)malloc(sizeof(struct Node));
+        result = result->next;
+        result->next = NULL;
+
     }
 }
 
-void Insert_Pos(int index, int value)
+void Print_Expression(struct Node *current)
 {
-    Node *current = head;
-    Node *temp = current;
-    Node *mid = new Node();
-
-    int counter = 1;
-    for(int i = 0; i < index; i++)
+    while(current->next != NULL)
     {
-        temp = current;
+        cout << current->coeff << "x^" << current->power;
         current = current->next;
-        counter++;
-    }
-    mid->data = value;
-    mid->next = current;
-    temp->next = current;
-}
-
-void Delete_Pos(int index)
-{
-    Node *temp = head;
-    int counter = 1;
-
-    if(index == 0)
-    {
-        head = temp->next;
-    }
-    while(temp != NULL && index < counter - 1)
-    {
-        temp = temp->next;
-        counter++;
-    }
-    if(temp != NULL)
-    {
-        Node *a = temp->next;
-        Node *b = a->next;
-        temp->next = b;
-        delete a;
-    }
-
-}
-
-void Modify(int index, int value)
-{
-    Node *current = head;
-    int counter = 0;
-
-    if(head == NULL)
-    {
-        cout << "Linked List is Empty!" << endl;
-    }
-    while(current != NULL && counter < index - 1)
-    {
-        current = current->next;
-        counter++;
-    }
-    if(current != NULL)
-    {
-        current->data = value;
+        while(current->next != NULL)
+        {
+            cout << " + ";
+        }
     }
 }
 
 int main()
 {
-    int ch;
     bool run = true;
     do
     {
-        cout << "Menu \n 1. Insert Value at the Beginning \n 2. Display Values \n 3. Insert Value at the End \n 4. Insert Value at a particular position \n 5. Modify value of Node at a position \n 6. Delete Value at a particular position \n 7. Delete Value at Beginning \n 8. Delete Value at the End \n 9. Display length of Linked List \n 10. Exit \n" ;
-        cout << "Enter Choice\n" ;
-        cin >> ch;
+        struct Node *poly1 = NULL, *poly2 = NULL, *result = NULL;
+        int n1, n2, x_, y_, a_, b_;
 
-        if (ch == 1)
-        {
-            int value_push;
-            cout << "Enter Value to be pushed into the Linked List : ";
-            cin >> value_push;
-            Insert_Beg(value_push);
-            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
-            cin >> run;
-        }
-        if (ch == 2)
-        {
+        cout << "Enter the Number of terms of the First Polynomial expression" << endl;
+        cin >> n1;
 
-            Display();
-            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
-            cin >> run;
-        }
-        if (ch == 3)
+        cout << "Enter the Coefficients and Powers of the Polynomial expression: " << endl;
+        for(int i = 0; i < n1; i++)
         {
-            int value_push;
-            cout << "Enter Value to be pushed into the Linked List : ";
-            cin >> value_push;
-            Insert_End(value_push);
-            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
-            cin >> run;
-
+            cin >> x_ >> y_;
+            Create_Node(x_, y_, &poly1);
         }
 
-        if( ch == 4)
-        {
-            int value_push, Index;
-            cout << "Enter Value and Index to be pushed into the Linked List : ";
-            cin >> value_push >> Index;
-            Insert_Pos(Index, value_push);
-            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
-            cin >> run;
+        cout << "Enter the Number of terms of the Second Polynomial expression" << endl;
+        cin >> n2;
 
-        }
-        if (ch == 5)
+        cout << "Enter the Coefficients and Powers of the Polynomial expression: " << endl;
+        for(int i = 0; i < n2; i++)
         {
-            int value_push, Index;
-            cout << "Enter Value and Index to be modified in the Linked List : ";
-            cin >> value_push >> Index;
-            Modify(Index, value_push);
-            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
-            cin >> run;
+            cin >> a_ >> b_;
+            Create_Node(a_, b_, &poly2);
         }
-        if( ch == 6)
-        {
-            int Index;
-            cout << "Enter Index from which element must be deleted from the Linked List : ";
-            cin >> Index;
-            Delete_Pos(Index);
-            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
-            cin >> run;
-        }
-        if( ch == 7)
-        {
-            Delete_Beg();
-            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
-            cin >> run;
-        }
-        if( ch == 8)
-        {
-            Delete_End();
-            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
-            cin >> run;
-        }
-        if( ch == 9)
-        {
-            Delete_End();
-            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
-            cin >> run;
-        }
-        if ( ch == 10)
-        {
-            return 0;
-        }
+
+        cout << "The First Polynomial Expression is" << endl;
+        Print_Expression(poly1);
+        cout << endl;
+
+        cout << "The Second Polynomial Expression is" << endl;
+        Print_Expression(poly2);
+        cout << endl;
+
+        result = (struct Node*)malloc(sizeof(struct Node));
+
+        Add_Expression(poly1, poly2, result);
+
         
-        
-    } while(run == true);
+        cout << "The Sum of the Polynomial Expressions is:" << endl;
+        Print_Expression(result);
 
+        cout << endl;
+        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+        cin >> run;
+
+    } while (run == true);
+    
 
     return 0;
 }
