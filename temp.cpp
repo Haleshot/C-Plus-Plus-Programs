@@ -30,36 +30,29 @@ void Pop()
     }
 }
 
-void Peek()
-{
-    if(top < 0)
-    {
-        cout << "Stack iS Empty!" << endl;
-    }
-    else
-    {
-        cout << "Element at Stack's Top = " << Stack[top] << endl;
-    }
-}
-
-void Display()
-{
-    if(top < 0)
-    {
-        cout << "Stack iS Empty!" << endl;
-    }
-    else
-    {
-        for(int i = top; i >= 0; i--)
-        {
-            cout << Stack[i] << endl;
-        }
-    }
-}
-
 
 int main()
 {
+    bool run = true;
+    for(int i = 0; i < MAX; i++)
+        {
+            Stack[i] = 0;
+        }
+    do
+    {
+        top = -1;
+        string exp;
+        cout << "Enter the expression" << endl;
+        cin >> exp;
+        int length = exp.length();
+        Stack[length];
 
+        for(int i = 0; i < length; i++)
+        {
+            Stack[i] = exp[i];
+        }
+        
+    } while (run == true);
+    
     return 0;
 }

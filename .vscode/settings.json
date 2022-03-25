@@ -3,7 +3,8 @@
     "iostream": "cpp",
     "ostream": "cpp",
     "algorithm": "cpp",
-    "random": "cpp"
+    "string_view": "cpp",
+    "regex": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "D:/Internet_Downloads/Programming_Languages/C++/C++_Files/CodeBlocks/MinGW/bin/gcc.exe",
   "C_Cpp_Runner.cppCompilerPath": "D:/Internet_Downloads/Programming_Languages/C++/C++_Files/CodeBlocks/MinGW/bin/g++.exe",
