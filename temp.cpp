@@ -2,26 +2,74 @@
 using namespace std;
 int counter = 0;
 
-void Increment_Counter()
+void Sum_Avg(int A[], int N)
 {
-    counter += 1;
+    float avg;
+    int sum = 0;
+
+    for(int i = 0; i < N; i++)
+    {
+        sum += A[i];
+    }
+    avg = sum/ N;
+
+    cout << sum << endl;
+    cout << avg << endl;
 }
 
-void Reset_Counter()
+void Max_Min(int A[], int N)
 {
-    counter = 0;
+    int max = A[0], min = A[0];
+    for(int i = 0; i < N; i++)
+    {
+        if(max < A[i])
+        {
+            max = A[i];
+        }
+
+        if(min > A[i])
+        {
+            min = A[i];
+        }
+
+    }
+    cout << max << endl;
+    cout << min << endl;
 }
 
-void Display_Counter()
+void Insert(int A[], int N, int index, int value)
 {
-    cout << counter << endl;
+    for(int i = 0; i < N; i++)
+    {
+        cout << A[i] << endl;
+    }
+
+    for(int i = N; i > index - 1; i--)
+    {
+        A[i + 1] = A[i];
+    }
+    A[index] = value;
+
+}
+
+void Delete(int A[], int N, int index)
+{
+    for(int i = 0; i < N; i++)
+    {
+        cout << A[i] << endl;
+    }
+    for(int i = index; i < N - 1; i++)
+    {
+        A[i] = A[i + 1];
+    }
+    for(int i = 0; i < N - 1; i++)
+    {
+        cout << A[i] << endl;
+    }
+
 }
 
 int main()
 {
-    Increment_Counter();
-    Display_Counter();
-    Reset_Counter();
-    Display_Counter();
     return 0;
 }
