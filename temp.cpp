@@ -85,3 +85,21 @@ void Display()
         }
     }
 }
+
+int main()
+{
+    Enqueue(10);
+    Enqueue(20);
+    Enqueue(30);
+    Enqueue(40);
+    Enqueue(50);
+    Enqueue(60);
+    Display();
+    Peek();
+    Dequeue();
+    Dequeue();
+    Dequeue();
+    Dequeue();
+    Dequeue();
+    Display();
+}
