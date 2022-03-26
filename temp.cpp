@@ -1,105 +1,151 @@
 #include <iostream>
 using namespace std;
-#define MAX 100
-int Circular_Queue[MAX], front = -1, rear = -1;
 
-int IsEmpty()
+struct Node
 {
-    if(front == -1)
-    {
-        front = rear = 0;
-        return 1;
-    }
+    int data;
+    Node *next;
+};
+
+Node *head = NULL;
+
+void Insert_Beg(int value)
+{
+    Node *first;
+    first = new Node();
+    first->data = value;
+    first->next = head;
+    head = first;
 }
 
-int IsFull()
-{
-    if((rear + 1) % MAX == front)
-    {
-        return 1;
-    }
-    return 0;
-}
 
-void Enqueue(int value)
+void Delete_Beg()
 {
-    if(IsEmpty())
+    if(head == NULL)
     {
-        Circular_Queue[rear] = value;
-    }
-    else if(IsFull())
-    {
-        cout << "Queue is Full!" << endl;
+        cout << "The Linked List is Empty!" << endl;
     }
     else
     {
-        rear = (rear + 1) % MAX;
-        Circular_Queue[rear] = value;
-    }
-}
-
-int Dequeue()
-{
-    if(IsEmpty())
-    {
-        cout << "Queue is Empty!" << endl;
-    }
-    else if(front == rear)
-    {
-        int x = Circular_Queue[front];
-        cout << "Popped out Element is = " << x << endl;
-        front = rear = -1;
-    }
-    else
-    {
-        int x = Circular_Queue[front];
-        cout << "Popped out Element is = " << x << endl;
-        front = (front + 1) % MAX;
-    }
-}
-
-void Peek()
-{
-    if(front < 0)
-    {
-        cout << "Queue is Empty!" << endl;
-    }
-    else
-    {
-        cout << "Element present at Queue's front is = " << Circular_Queue[front] << endl;
+        Node *current = head;
+        head = head->next;
+        delete current;
     }
 }
 
 
-void Display()
+void Insert_End(int value)
 {
-    if(front < 0)
+    Node *last;
+    Node *current;
+    last = new Node();
+    last->data = value;
+    last->next = head;
+
+    if(head == NULL)
     {
-        cout << "Queue is Empty!" << endl;
+        head = last;
     }
     else
     {
-        for(int i = front; i <= rear; i++)
+        current = head;
+        while (current->next != NULL)
         {
-            cout << Circular_Queue[i] << endl;
+            current = current->next;
         }
+        current->next = last;
+        
+    }
+
+
+}
+
+
+void Delete_End()
+{
+    Node *temp;
+    Node *current = head;
+
+    if(head == NULL)
+    {
+        cout << "The Linked List is Empty!" << endl;
+    }
+    else
+    {
+        while (current != NULL)
+        {  
+            temp = current;
+            current = current->next;
+        }
+        temp->next= NULL;
+        delete current;
+        
     }
 }
 
-int main()
+void Insert_Pos(int value, int index)
 {
-    Enqueue(10);
-    Enqueue(20);
-    Enqueue(30);
-    Enqueue(40);
-    Enqueue(50);
-    Enqueue(60);
-    Display();
-    Peek();
-    Dequeue();
-    Dequeue();
-    Dequeue();
-    Dequeue();
-    Dequeue();
-    Display();
+    Node *mid;
+    Node *current = head;
+    Node *temp = current;
+    int counter = 1;
+
+    for(int i = 0; i < counter; i++)
+    {
+        temp = current;
+        current = current->next;
+        counter++;
+    }
+    mid->data = value;
+    mid->next = current;
+    temp->next = mid;
 }
+
+void Delete_Pos(int index)
+{
+    Node *temp;
+    int counter = 1;
+
+    if(index == 0)
+    {
+        head = temp->next;
+    }
+    while(temp != NULL && counter < index -1 )
+    {
+        temp = temp->next;
+        counter++;
+    }
+    if(temp != NULL)
+    {
+        Node *a = temp->next;
+        Node *b = a->next;
+        temp->next = b;
+        delete a;
+    }
+
+}
+
+
+void Modify(int index, int value)
+{
+    Node *current = head;
+    int counter = 0;
+    if(head == NULL)
+    {
+        cout << "The Linked List is Empty!" << endl;
+    }
+    else
+    {
+        while(current != NULL && counter < index - 1)
+        {
+            current = current->next;
+            counter++;
+        }
+        if(current != NULL)
+        {
+            current->data = value;
+        }
+
+    }
+}
+
