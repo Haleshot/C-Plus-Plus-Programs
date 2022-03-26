@@ -70,7 +70,7 @@ void Add_Expressions(struct Node *p1, struct Node *p2, struct Node *result)
             result->power = p1->power;
             p1 = p1->next;
         }
-        else if(p1->power < p2->power)
+        else if(p2->next)
         {
             result->coeff = p2->coeff;
             result->power = p2->power;
