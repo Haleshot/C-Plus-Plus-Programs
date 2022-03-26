@@ -3,149 +3,127 @@ using namespace std;
 
 struct Node
 {
-    int data;
+    int power;
+    int coeff;
     Node *next;
 };
 
-Node *head = NULL;
-
-void Insert_Beg(int value)
+void Create_Node(int x, int y, struct Node **current)
 {
-    Node *first;
-    first = new Node();
-    first->data = value;
-    first->next = head;
-    head = first;
-}
+    struct Node *a, *b;
+    b = *current;
 
-
-void Delete_Beg()
-{
-    if(head == NULL)
+    if(b == NULL)
     {
-        cout << "The Linked List is Empty!" << endl;
+        a = (struct Node*)malloc(sizeof(struct Node));
+        a->coeff = x;
+        a->power = y;
+        *current = a;
+        a->next = (struct Node*)malloc(sizeof(struct Node));
+        a = a->next;
+        a->next = NULL;
     }
     else
     {
-        Node *current = head;
-        head = head->next;
-        delete current;
+        a->coeff = x;
+        a->power = y;
+        a->next = (struct Node*)malloc(sizeof(struct Node));
+        a = a->next;
+        a->next = NULL;
     }
 }
 
 
-void Insert_End(int value)
+void Add_Expressions(struct Node *p1, struct Node *p2, struct Node *result)
 {
-    Node *last;
-    Node *current;
-    last = new Node();
-    last->data = value;
-    last->next = head;
-
-    if(head == NULL)
+    while(p1->next && p2->next)
     {
-        head = last;
-    }
-    else
-    {
-        current = head;
-        while (current->next != NULL)
+        if(p1->power > p2->power)
         {
-            current = current->next;
+            result->coeff = p1->coeff;
+            result->power = p1->power;
+            p1 = p1->next;
         }
-        current->next = last;
-        
-    }
-
-
-}
-
-
-void Delete_End()
-{
-    Node *temp;
-    Node *current = head;
-
-    if(head == NULL)
-    {
-        cout << "The Linked List is Empty!" << endl;
-    }
-    else
-    {
-        while (current != NULL)
-        {  
-            temp = current;
-            current = current->next;
+        else if(p1->power < p2->power)
+        {
+            result->coeff = p2->coeff;
+            result->power = p2->power;
+            p2 = p2->next;
         }
-        temp->next= NULL;
-        delete current;
-        
+        else
+        {
+            result->coeff = p1->coeff + p2->coeff;
+            result->power = p1->power;
+            p1 = p1->next;
+            p2 = p2->next;
+        }
+        result->next = (struct Node*)malloc(sizeof(struct Node));
+        result = result->next;
+        result->next = NULL;
+
+    }
+    while(p1->next || p2->next)
+    {
+        if(p1->next)
+        {
+            result->coeff = p1->coeff;
+            result->power = p1->power;
+            p1 = p1->next;
+        }
+        else if(p1->power < p2->power)
+        {
+            result->coeff = p2->coeff;
+            result->power = p2->power;
+            p2 = p2->next;
+        }
+        result->next = (struct Node*)malloc(sizeof(struct Node));
+        result = result->next;
+        result->next = NULL;
+
     }
 }
-
-void Insert_Pos(int value, int index)
+void Display_Expression(struct Node *current)
 {
-    Node *mid;
-    Node *current = head;
-    Node *temp = current;
-    int counter = 1;
-
-    for(int i = 0; i < counter; i++)
+    while(current->next != NULL)
     {
-        temp = current;
+        cout << current->coeff << "x^" << current->power;
         current = current->next;
-        counter++;
+        while(current->next != NULL)
+        {
+            cout << " + ";
+        }
     }
-    mid->data = value;
-    mid->next = current;
-    temp->next = mid;
 }
 
-void Delete_Pos(int index)
+int main()
 {
-    Node *temp;
-    int counter = 1;
+    struct Node *poly1 = NULL, *poly2 = NULL, *result_expression = NULL;
+    int n1, n2, x_, y_, a_, b_;
+    cout << "Enter the limits of the first poly expression: " << endl;
+    cin >> n1;
 
-    if(index == 0)
+    cout << "Enther the Coefficients and Powers of the First poly exprresion";
+    for(int i = 0; i < n1; i++)
     {
-        head = temp->next;
+        cin >> x_ >> y_;
+        Create_Node(x_, y_, &poly1);
     }
-    while(temp != NULL && counter < index -1 )
+    cout << "Enter the limits of the second poly expression: " << endl;
+    cin >> n2;
+
+    cout << "Enther the Coefficients and Powers of the Second poly exprresion";
+    for(int i = 0; i < n2; i++)
     {
-        temp = temp->next;
-        counter++;
-    }
-    if(temp != NULL)
-    {
-        Node *a = temp->next;
-        Node *b = a->next;
-        temp->next = b;
-        delete a;
+        cin >> a_ >> b_;
+        Create_Node(a_, b_, &poly2);
     }
 
-}
+    result_expression = (struct Node*)malloc(sizeof(struct Node));
+    Add_Expressions(poly1, poly2, result_expression);
+
+    cout << result_expression;
 
 
-void Modify(int index, int value)
-{
-    Node *current = head;
-    int counter = 0;
-    if(head == NULL)
-    {
-        cout << "The Linked List is Empty!" << endl;
-    }
-    else
-    {
-        while(current != NULL && counter < index - 1)
-        {
-            current = current->next;
-            counter++;
-        }
-        if(current != NULL)
-        {
-            current->data = value;
-        }
-
-    }
+    return 0;
 }
 
