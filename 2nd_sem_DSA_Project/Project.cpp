@@ -86,8 +86,12 @@ void Restaurants::Show_nearby_restaurants()
 void Restaurants::Mia_Cucina()
 {
     cout << "The Menu is: " << endl;
-    cout << "I.Pizzas\n\nMargherita\n"
-
+    cout << "I.Pizzas\n\t1.Margherita (Mozzarella + tomato + basil) [Rs 245]\n\t2.Pizza Verdura (Roasted Veggies + black olives + jalepenos + parmesan + Mozzarella) [Rs 256]\n\t3.Pizza Arabiata (Spicy Paneer + cherry tomatoes + Mozzarella) [Rs 230]\n\t4.Chorizo (Spanish hotdog + Mozzarella) [Rs 400]\n\t5.Feta e Peparone (Feta + Mozzarella + roasted bell peppers)[Rs 350]\n";
+    cout << "II.Pastas\n\t1.Tagliatelle ai Pomodori (Homemade pasta + tomato + basil sauce) [Rs 200]\n\t2.Tagliatelle ai Pomodori (Homemade pasta in creamy basil sauce) [Rs 450]\n\t3.Penne Arabiata (Penne pasta + spicy tomato sauce + bell peppers + green olives) [Rs 300]\n\t4.Chorizo (Spanish hotdog + Mozzarella) [Rs 280]\n\t5.Spaghetti Aglio Olio (Spaghetti pasta + garlic + olive oil) [Rs 310]\n";
+    cout << "III.Sides\n\t1.Chocolate Cake [Rs 120]\n\t2.Affogato [Rs 150]\n\t3.Panacotta [Rs 180]\n\t4.Brownie Sundae [Rs 170]\n\t5.Blueberry Crumble [Rs 200]\n";
+    cout << "IV.Beverages\n\t1.Pepsi [Rs 80]\n\t2.Sprite [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
+    
+        
 
 }
 void Restaurants::Bayroute()
