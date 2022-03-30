@@ -85,7 +85,10 @@ void Restaurants::Show_nearby_restaurants()
 }
 void Restaurants::Mia_Cucina()
 {
-    cout << "The List of Veg Restaurants is: " << endl;
+    cout << "The Menu is: " << endl;
+    cout << "I.Pizzas\n\nMargherita\n"
+
+
 }
 void Restaurants::Bayroute()
 {
