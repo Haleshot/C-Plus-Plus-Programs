@@ -65,7 +65,7 @@ public:
     void Mia_Cucina();
     void Subway();
     void Tiara();
-    void Parabola();
+    void McDonalds();
     void Pizza_Express();
     void Mainland_China();
     void Sigree_Global_Grill();
@@ -105,9 +105,15 @@ void Restaurants::Subway()
 }
 void Restaurants::Tiara()
 {
+    cout << "The Menu is: " << endl;
+    cout << "I.Sandwiches\n\t1.Paneer Tikka Roll (Frankie + cottage cheese) [Rs 235]\n\t2.Tiara Vegetable Club Special (Triple Layered Sandwich + lettuce + tomato + cheese) [Rs 260]\n\t3.Mexican gardern sanwich (Guacomole + tomatoes + jalepenos + Mozzarella) [Rs 230]\n";
+    cout << "II.Pastas\n\t1.Tagliatelle ai Pomodori (Garlic + chilli + parmesan cheese + jalepeno) [Rs 320]\n\t2.Conchiglioni Al Funghi Porcini (Pasta with creamy Porcini mushroom + scallion sauce) [Rs 220]\n";
+    cout << "III.Sides\n\t1.Cookies [Rs 85]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n";
+    cout << "IV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
+
     
 }
-void Restaurants::Parabola()
+void Restaurants::McDonalds()
 {
     
 }
