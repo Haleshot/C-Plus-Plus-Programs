@@ -14,8 +14,13 @@ private:
     bool premium_pass_number_exists = true;
 
 public:
-    void Input_Details()
-    {
+    void Input_Customer_Details();
+    void Display_Customer_Details();
+
+};
+
+void Customer::Input_Customer_Details()
+{    
         cout << "Customer Details:\nEnter your Name : ";
         cin >> Name;
 
@@ -39,19 +44,34 @@ public:
             }
         }
 
+}
+
+void Customer::Display_Customer_Details()
+{
+        cout << "Customer Details: \n";
+
+        cout << "Name : " << Name << endl; 
+        cout << "Premium pass number : " << premium_pass_number << endl;
+        
+}
+
+
+class Restaurants
+{
+private:
+    /* data */
+public:
+    void Show_nearby_restaurants()
+    {
+        cout << "The List of Veg Restaurants is:\n1.Mia Cucina\n2.Bayroute\n3.Tiara\n4.Parabola\n5.Pizza Express\n6.Mainland China\n";
+        cout << "The List of Non-Veg Restaurants is:\n1.Sigree Global Grill\n2.The Fatty Bao\n3.Ticca Tikka\n4.Global Fusion\n5.Kofuku\n6.Shizusan\n";
+        
     }
-
-    void Nearby_Restaurant_Details();
-
+    
 };
 
-Customer::Customer(/* args */)
-{
-}
 
-Customer::~Customer()
-{
-}
+
 
 
 int main()
