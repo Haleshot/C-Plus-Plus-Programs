@@ -63,7 +63,7 @@ private:
 public:
     void Show_nearby_restaurants();
     void Mia_Cucina();
-    void Bayroute();
+    void Subway();
     void Tiara();
     void Parabola();
     void Pizza_Express();
@@ -79,7 +79,7 @@ public:
 
 void Restaurants::Show_nearby_restaurants()
 {
-    cout << "The List of Veg Restaurants is:\n1.Mia Cucina\n2.Bayroute\n3.Tiara\n4.Parabola\n5.Pizza Express\n6.Mainland China\n";
+    cout << "The List of Veg Restaurants is:\n1.Mia Cucina\n2.Subway\n3.Tiara\n4.Parabola\n5.Pizza Express\n6.Mainland China\n";
     cout << "The List of Non-Veg Restaurants is:\n1.Sigree Global Grill\n2.The Fatty Bao\n3.Ticca Tikka\n4.Global Fusion\n5.Kofuku\n6.Shizusan\n";
         
 }
@@ -90,12 +90,17 @@ void Restaurants::Mia_Cucina()
     cout << "II.Pastas\n\t1.Tagliatelle ai Pomodori (Homemade pasta + tomato + basil sauce) [Rs 200]\n\t2.Tagliatelle ai Pomodori (Homemade pasta in creamy basil sauce) [Rs 450]\n\t3.Penne Arabiata (Penne pasta + spicy tomato sauce + bell peppers + green olives) [Rs 300]\n\t4.Chorizo (Spanish hotdog + Mozzarella) [Rs 280]\n\t5.Spaghetti Aglio Olio (Spaghetti pasta + garlic + olive oil) [Rs 310]\n";
     cout << "III.Sides\n\t1.Chocolate Cake [Rs 120]\n\t2.Affogato [Rs 150]\n\t3.Panacotta [Rs 180]\n\t4.Brownie Sundae [Rs 170]\n\t5.Blueberry Crumble [Rs 200]\n";
     cout << "IV.Beverages\n\t1.Pepsi [Rs 80]\n\t2.Sprite [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
-    
-        
+
 
 }
-void Restaurants::Bayroute()
+void Restaurants::Subway()
 {
+    cout << "The Menu is: " << endl;
+    cout << "I.Subs\n\t1.Hara Bhara Kebab (Patty + tomato + jalepenos) [Rs 235]\n\t2.Chatpatta Channa (Patty + black olives + jalepenos + parmesan + Mozzarella) [Rs 260]\n\t3.Mexican Patty (Patty + Paneer + tomatoes + jalepenos + Mozzarella) [Rs 230]\n\t4.Veggie Delite (Patty + jalepenos + capsicum + Mozzarella) [Rs 250]\n\t5.Veg Seekh (Patty + jalepenos + cucumber)[Rs 250]\n";
+    cout << "II.Wraps\n\t1.Veg Shammi (Roll + cucumber + capsicum + jalepeno) [Rs 120]\n\t2.Chatpatta Shammi (Roll + capsicum + jalepeno) [Rs 120]\n";
+    cout << "III.Sides\n\t1.Cookie [Rs 45]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n";
+    cout << "IV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
+
 
 }
 void Restaurants::Tiara()
@@ -138,8 +143,6 @@ void Restaurants::Shizusan()
 {
     
 }
-
-
 
 
 
