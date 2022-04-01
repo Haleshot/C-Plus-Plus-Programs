@@ -172,13 +172,7 @@ public:
 
 void Veg::Show_Restaurants()
 {
-    Mia_Cucina();
-    Subway();
-    Tiara();
-    McDonalds();
-    Pizza_Express();
-    Mainland_China();
-    Show_Restaurants();
+    cout << "The List of Veg Restaurants is:\n1.Mia Cucina\n2.Subway\n3.Tiara\n4.Parabola\n5.Pizza Express\n6.Mainland China\n";
 }
 
 
@@ -199,13 +193,7 @@ public:
 
 void Non_Veg::Show_Restaurants()
 {
-    Sigree_Global_Grill();
-    The_Fatty_Bao();
-    Ticca_Tikka();
-    Global_Fusion();
-    Kofuku();
-    Shizusan();
-    Show_Restaurants();
+    cout << "The List of Non-Veg Restaurants is:\n1.Sigree Global Grill\n2.The Fatty Bao\n3.Ticca Tikka\n4.Global Fusion\n5.Kofuku\n6.Shizusan\n";
 }
 
 
@@ -238,7 +226,11 @@ int main()
             cout << "\t\t\t\t\t\tWhich type of restaurant would you like to place an order in?\n";
             if (type_restaurant == 1)
             {
-
+                veg.Show_nearby_restaurants();
+            }
+            else if (type_restaurant == 2)
+            {
+                non_Veg.Show_Restaurants();
             }
 
         }
