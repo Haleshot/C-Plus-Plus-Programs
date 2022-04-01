@@ -156,6 +156,33 @@ void Restaurants::Shizusan()
 }
 
 
+class Veg : public Restaurants
+{
+private:
+    int items;
+public:
+    void Mia_Cucina();
+    void Subway();
+    void Tiara();
+    void McDonalds();
+    void Pizza_Express();
+    void Mainland_China();
+};
+
+class Non_Veg : public Restaurants
+{
+private:
+    int items;
+public:
+    void Sigree_Global_Grill();
+    void The_Fatty_Bao();
+    void Ticca_Tikka();
+    void Global_Fusion();
+    void Kofuku();
+    void Shizusan();
+};
+
+
 
 
 int main()
@@ -168,13 +195,14 @@ int main()
     {
         int ch;
         cout << "Welcome to the <insertname> Food Delivery System!\n\n";
-        cout << "What would you like to do?/n1.Order Food to your house\n2.Takeaway (Pick up food from a restaurant)\n3.Exit\n";
+        cout << "What would you like to do?\n1.Order Food to your house\n2.Takeaway (Pick up food from a restaurant)\n3.Exit\n";
         cin >> ch;
 
         if(ch == 1)
         {
-            cout << "The Restuarants near you (Vg & Non Veg) are: \n";
+            cout << "The Restuarants near you (Veg & Non Veg) are: \n";
             restaurant.Show_nearby_restaurants();
+            cout << "Which type of restaurant would you like to place an order in?\n";
         }
 
     } while (run == true);
