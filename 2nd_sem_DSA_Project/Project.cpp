@@ -160,5 +160,27 @@ void Restaurants::Shizusan()
 
 int main()
 {
+
+    class Customer customer;
+    class Restaurants restaurant;
+    bool run = true;
+    do
+    {
+        int ch;
+        cout << "Welcome to the <insertname> Food Delivery System!\n\n";
+        cout << "What would you like to do?/n1.Order Food to your house\n2.Takeaway (Pick up food from a restaurant)\n3.Exit\n";
+        cin >> ch;
+
+        if(ch == 1)
+        {
+            cout << "The Restuarants near you (Vg & Non Veg) are: \n";
+            restaurant.Show_nearby_restaurants();
+        }
+
+    } while (run == true);
+    
+
+    
+
     return 0;
 }
