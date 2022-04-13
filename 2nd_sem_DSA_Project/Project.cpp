@@ -6,6 +6,16 @@
 #include <string>
 using namespace std;
 
+
+struct Order
+{
+    int order_id;
+    char order_name[100];
+    int quantity;
+    float price, disc;
+}order[20];
+
+
 class Customer
 {
 private:
