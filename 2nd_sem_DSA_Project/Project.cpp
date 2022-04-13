@@ -1,7 +1,7 @@
 // DSA Project.
 // Restaurant Billing system.
 #include <iostream>
-#include<iomanip>
+#include<iomanip> // For setw function
 #include <stdlib.h>
 #include <string>
 using namespace std;
