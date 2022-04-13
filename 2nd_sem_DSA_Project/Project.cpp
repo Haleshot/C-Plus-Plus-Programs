@@ -1,6 +1,7 @@
 // DSA Project.
 // Restaurant Billing system.
 #include <iostream>
+#include<iomanip>
 #include <stdlib.h>
 #include <string>
 using namespace std;
@@ -17,6 +18,23 @@ private:
 public:
     void Input_Customer_Details();
     void Display_Customer_Details();
+
+     int getcustid()
+      {
+            return cust_id;
+      }
+      char *getcustnm()
+      {
+            return Name;
+      }
+      char *getcustadd()
+      {
+            return address;
+      }
+      char *getphno()
+      {
+            return phonenumber;
+      }
 
 };
 
@@ -63,10 +81,12 @@ void Customer::Input_Customer_Details()
 
 void Customer::Display_Customer_Details()
 {
+    cout << "*************************************************************************" << endl;
         cout << "Customer Details: \n";
-
+        cout<<"   "<< cust_id << setw(15) << Name<< setw(23) << address << setw(27) << phonenumber <<endl;
         cout << "Name : " << Name << endl; 
         cout << "Premium pass number : " << premium_pass_number << endl;
+        cout << "*************************************************************************" << endl;
         
 }
 
