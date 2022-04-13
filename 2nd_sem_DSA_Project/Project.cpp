@@ -13,7 +13,7 @@ struct Order
     char order_name[100];
     int quantity;
     float price, disc;
-}order[20];
+};
 
 
 class Customer
@@ -105,18 +105,7 @@ private:
     /* data */
 public:
     void Show_nearby_restaurants();
-    void Mia_Cucina();
-    void Subway();
-    void Tiara();
-    void McDonalds();
-    void Pizza_Express();
-    void Mainland_China();
-    void Sigree_Global_Grill();
-    void The_Fatty_Bao();
-    void Ticca_Tikka();
-    void Global_Fusion();
-    void Kofuku();
-    void Shizusan();
+    void Place_Order();
 };
 
 
@@ -124,7 +113,13 @@ void Restaurants::Show_nearby_restaurants()
 {
     cout << "\t\t\t\t\t\t1.Veg Restaurants\n\n\n\n\n\n";
     cout << "\t\t\t\t\t\t2.Non-Veg Restaurants\n\n\n\n\n\n";
-        
+}
+
+void Restaurants::Place_Order()
+{
+    Order order[20];
+    float total = 0, atotal = 0, net_total = 0;
+
 }
 
 class Veg : public Restaurants
@@ -254,6 +249,7 @@ int main()
                 switch (type_choice_restaurant)
                 {
                 case 1:
+                    veg.Mia_Cucina();
                     
                     break;
                 
