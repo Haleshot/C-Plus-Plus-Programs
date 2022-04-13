@@ -267,8 +267,10 @@ int main()
             {
                 non_Veg.Show_Restaurants();
             }
-
+            
         }
+        cout << "\nWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+        cin >> run;
 
     } while (run == true);
     
