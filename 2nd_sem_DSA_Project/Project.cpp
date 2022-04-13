@@ -8,7 +8,8 @@ using namespace std;
 class Customer
 {
 private:
-    string Name;
+    int cust_id;
+    char Name[100], address[100], phonenumber[11];
     char premium_pass_number;
     int premium_pass_number_range = rand() % 1000 + 1000; // Generates a random number from 1000 to 1999 which helps in detecting the authenticity of the premium pass number.
     bool premium_pass_number_exists = true;
@@ -20,9 +21,19 @@ public:
 };
 
 void Customer::Input_Customer_Details()
-{    
+{
+        cout << "*************************************************************************" << endl;
         cout << "Customer Details:\nEnter your Name : ";
         cin >> Name;
+
+        
+        cout << "Enter your Address : ";
+        cin >> address;
+
+        
+        cout << "Enter your Phone Number : ";
+        cin >> phonenumber;
+
 
 
         cout << "Do you have a Premium pass number? If you do, then Input 1, otherwise Input 0" << endl;
@@ -43,6 +54,10 @@ void Customer::Input_Customer_Details()
                 }
             }
         }
+
+        cout << "*************************************************************************" << endl;
+
+
 
 }
 
