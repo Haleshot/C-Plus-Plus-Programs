@@ -11,8 +11,7 @@ class Customer
 private:
     int cust_id;
     char Name[100], address[100], phonenumber[11];
-    char premium_pass_number;
-    int premium_pass_number_range = rand() % 1000 + 1000; // Generates a random number from 1000 to 1999 which helps in detecting the authenticity of the premium pass number.
+    string premium_pass_number;
     bool premium_pass_number_exists = true;
 
 public:
@@ -60,16 +59,15 @@ void Customer::Input_Customer_Details()
         {
             cout << "Enter the Premium pass number : ";
             cin >> premium_pass_number;
-            if(!(isdigit(premium_pass_number)))
+            if(stoi(premium_pass_number) >= 1000 && stoi(premium_pass_number) <= 1999)
             {
-                throw "Enter a number please";
+                cout << endl;
+                cout << "Valid Premium Pass Number!\n(Priority given while ordering)...\n" << endl;
+                cout << endl;
             }
-            else if(isdigit(premium_pass_number))
+            else
             {
-                if(premium_pass_number >= 1000 && premium_pass_number <= 1999)
-                {
-                    cout << "Valid Premium Pass Number!\n(Priority given while ordering)\n" << endl;
-                }
+                cout << "Invalid Premium Pass Number!" << endl;
             }
         }
 
@@ -259,6 +257,7 @@ int main()
             cout << "\t\t\t\t\t\tThe Restuarants near you (Veg & Non Veg) are: \n";
             restaurant.Show_nearby_restaurants();
             cout << "\t\t\t\t\t\tWhich type of restaurant would you like to place an order in?\n";
+            cin >> type_restaurant;
             if (type_restaurant == 1)
             {
                 veg.Show_nearby_restaurants();
@@ -267,10 +266,19 @@ int main()
             {
                 non_Veg.Show_Restaurants();
             }
+            cout << "\nWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+            cin >> run;
             
         }
-        cout << "\nWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
-        cin >> run;
+        if(ch == 3)
+        {
+            return 0;
+        }
+        else
+        {
+            cout << "Invalid Choice!\n";
+        }
+        
 
     } while (run == true);
     
