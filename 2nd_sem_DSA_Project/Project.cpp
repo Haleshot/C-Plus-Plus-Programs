@@ -126,78 +126,6 @@ void Restaurants::Show_nearby_restaurants()
     cout << "\t\t\t\t\t\t2.Non-Veg Restaurants\n\n\n\n\n\n";
         
 }
-void Restaurants::Mia_Cucina()
-{
-    cout << "\t\t\t\t\t\tThe Menu is: " << endl;
-    cout << "\t\t\t\t\t\tI.Pizzas\n\t1.Margherita (Mozzarella + tomato + basil) [Rs 245]\n\t2.Pizza Verdura (Roasted Veggies + black olives + jalepenos + parmesan + Mozzarella) [Rs 256]\n\t3.Pizza Arabiata (Spicy Paneer + cherry tomatoes + Mozzarella) [Rs 230]\n\t4.Chorizo (Spanish hotdog + Mozzarella) [Rs 400]\n\t5.Feta e Peparone (Feta + Mozzarella + roasted bell peppers)[Rs 350]\n";
-    cout << "\t\t\t\t\t\tII.Pastas\n\t1.Tagliatelle ai Pomodori (Homemade pasta + tomato + basil sauce) [Rs 200]\n\t2.Tagliatelle ai Pomodori (Homemade pasta in creamy basil sauce) [Rs 450]\n\t3.Penne Arabiata (Penne pasta + spicy tomato sauce + bell peppers + green olives) [Rs 300]\n\t4.Chorizo (Spanish hotdog + Mozzarella) [Rs 280]\n\t5.Spaghetti Aglio Olio (Spaghetti pasta + garlic + olive oil) [Rs 310]\n";
-    cout << "\t\t\t\t\t\tIII.Sides\n\t1.Chocolate Cake [Rs 120]\n\t2.Affogato [Rs 150]\n\t3.Panacotta [Rs 180]\n\t4.Brownie Sundae [Rs 170]\n\t5.Blueberry Crumble [Rs 200]\n";
-    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Pepsi [Rs 80]\n\t2.Sprite [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
-
-
-}
-void Restaurants::Subway()
-{
-    cout << "The Menu is: " << endl;
-    cout << "\t\t\t\t\t\tI.Subs\n\t1.Hara Bhara Kebab (Patty + tomato + jalepenos) [Rs 235]\n\t2.Chatpatta Channa (Patty + black olives + jalepenos + parmesan + Mozzarella) [Rs 260]\n\t3.Mexican Patty (Patty + Paneer + tomatoes + jalepenos + Mozzarella) [Rs 230]\n\t4.Veggie Delite (Patty + jalepenos + capsicum + Mozzarella) [Rs 250]\n\t5.Veg Seekh (Patty + jalepenos + cucumber)[Rs 250]\n";
-    cout << "\t\t\t\t\t\tII.Wraps\n\t1.Veg Shammi (Roll + cucumber + capsicum + jalepeno) [Rs 120]\n\t2.Chatpatta Shammi (Roll + capsicum + jalepeno) [Rs 120]\n";
-    cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookie [Rs 45]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n";
-    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
-
-
-}
-void Restaurants::Tiara()
-{
-    cout << "\t\t\t\t\t\tThe Menu is: " << endl;
-    cout << "\t\t\t\t\t\tI.Sandwiches\n\t1.Paneer Tikka Roll (Frankie + cottage cheese) [Rs 235]\n\t2.Tiara Vegetable Club Special (Triple Layered Sandwich + lettuce + tomato + cheese) [Rs 260]\n\t3.Mexican gardern sanwich (Guacomole + tomatoes + jalepenos + Mozzarella) [Rs 230]\n";
-    cout << "\t\t\t\t\t\tII.Pastas\n\t1.Tagliatelle ai Pomodori (Garlic + chilli + parmesan cheese + jalepeno) [Rs 320]\n\t2.Conchiglioni Al Funghi Porcini (Pasta with creamy Porcini mushroom + scallion sauce) [Rs 220]\n";
-    cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookies [Rs 85]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n\t4.Cripss [Rs 65]\n";
-    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
-
-    
-}
-void Restaurants::McDonalds()
-{ // To be completed
-    cout << "The Menu is: " << endl;
-    cout << "\t\t\t\t\t\tI.Burgers\n\t1.Maharajan Mac (Frankie + cottage cheese) [Rs 235]\n\t2.Tiara Vegetable Club Special (Triple Layered Sandwich + lettuce + tomato + cheese) [Rs 260]\n\t3.Mexican gardern sanwich (Guacomole + tomatoes + jalepenos + Mozzarella) [Rs 230]\n";
-    cout << "\t\t\t\t\t\tII.Pastas\n\t1.Tagliatelle ai Pomodori (Garlic + chilli + parmesan cheese + jalepeno) [Rs 320]\n\t2.Conchiglioni Al Funghi Porcini (Pasta with creamy Porcini mushroom + scallion sauce) [Rs 220]\n";
-    cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookies [Rs 85]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n\t4.Cripss [Rs 65]\n";
-    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
-
-}
-void Restaurants::Pizza_Express()
-{
-    
-}
-void Restaurants::Mainland_China()
-{
-    
-}
-void Restaurants::Sigree_Global_Grill()
-{
-    
-}
-void Restaurants::The_Fatty_Bao()
-{
-    
-}
-void Restaurants::Ticca_Tikka()
-{
-    
-}
-void Restaurants::Global_Fusion()
-{
-    
-}
-void Restaurants::Kofuku()
-{
-    
-}
-void Restaurants::Shizusan()
-{
-    
-}
-
 
 class Veg : public Restaurants
 {
@@ -212,6 +140,54 @@ public:
     void Mainland_China();
     void Show_Veg_Restaurants();
 };
+
+void Veg::Mia_Cucina()
+{
+    cout << "\t\t\t\t\t\tThe Menu is: " << endl;
+    cout << "\t\t\t\t\t\tI.Pizzas\n\t1.Margherita (Mozzarella + tomato + basil) [Rs 245]\n\t2.Pizza Verdura (Roasted Veggies + black olives + jalepenos + parmesan + Mozzarella) [Rs 256]\n\t3.Pizza Arabiata (Spicy Paneer + cherry tomatoes + Mozzarella) [Rs 230]\n\t4.Chorizo (Spanish hotdog + Mozzarella) [Rs 400]\n\t5.Feta e Peparone (Feta + Mozzarella + roasted bell peppers)[Rs 350]\n";
+    cout << "\t\t\t\t\t\tII.Pastas\n\t1.Tagliatelle ai Pomodori (Homemade pasta + tomato + basil sauce) [Rs 200]\n\t2.Tagliatelle ai Pomodori (Homemade pasta in creamy basil sauce) [Rs 450]\n\t3.Penne Arabiata (Penne pasta + spicy tomato sauce + bell peppers + green olives) [Rs 300]\n\t4.Chorizo (Spanish hotdog + Mozzarella) [Rs 280]\n\t5.Spaghetti Aglio Olio (Spaghetti pasta + garlic + olive oil) [Rs 310]\n";
+    cout << "\t\t\t\t\t\tIII.Sides\n\t1.Chocolate Cake [Rs 120]\n\t2.Affogato [Rs 150]\n\t3.Panacotta [Rs 180]\n\t4.Brownie Sundae [Rs 170]\n\t5.Blueberry Crumble [Rs 200]\n";
+    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Pepsi [Rs 80]\n\t2.Sprite [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
+}
+
+void Veg::Subway()
+{
+    
+    cout << "The Menu is: " << endl;
+    cout << "\t\t\t\t\t\tI.Subs\n\t1.Hara Bhara Kebab (Patty + tomato + jalepenos) [Rs 235]\n\t2.Chatpatta Channa (Patty + black olives + jalepenos + parmesan + Mozzarella) [Rs 260]\n\t3.Mexican Patty (Patty + Paneer + tomatoes + jalepenos + Mozzarella) [Rs 230]\n\t4.Veggie Delite (Patty + jalepenos + capsicum + Mozzarella) [Rs 250]\n\t5.Veg Seekh (Patty + jalepenos + cucumber)[Rs 250]\n";
+    cout << "\t\t\t\t\t\tII.Wraps\n\t1.Veg Shammi (Roll + cucumber + capsicum + jalepeno) [Rs 120]\n\t2.Chatpatta Shammi (Roll + capsicum + jalepeno) [Rs 120]\n";
+    cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookie [Rs 45]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n";
+    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
+
+}
+void Veg::Tiara()
+{
+    cout << "\t\t\t\t\t\tThe Menu is: " << endl;
+    cout << "\t\t\t\t\t\tI.Sandwiches\n\t1.Paneer Tikka Roll (Frankie + cottage cheese) [Rs 235]\n\t2.Tiara Vegetable Club Special (Triple Layered Sandwich + lettuce + tomato + cheese) [Rs 260]\n\t3.Mexican gardern sanwich (Guacomole + tomatoes + jalepenos + Mozzarella) [Rs 230]\n";
+    cout << "\t\t\t\t\t\tII.Pastas\n\t1.Tagliatelle ai Pomodori (Garlic + chilli + parmesan cheese + jalepeno) [Rs 320]\n\t2.Conchiglioni Al Funghi Porcini (Pasta with creamy Porcini mushroom + scallion sauce) [Rs 220]\n";
+    cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookies [Rs 85]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n\t4.Cripss [Rs 65]\n";
+    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
+
+}
+void Veg::McDonalds()
+{
+    cout << "The Menu is: " << endl;
+    cout << "\t\t\t\t\t\tI.Burgers\n\t1.Maharajan Mac (Frankie + cottage cheese) [Rs 235]\n\t2.Tiara Vegetable Club Special (Triple Layered Sandwich + lettuce + tomato + cheese) [Rs 260]\n\t3.Mexican gardern sanwich (Guacomole + tomatoes + jalepenos + Mozzarella) [Rs 230]\n";
+    cout << "\t\t\t\t\t\tII.Pastas\n\t1.Tagliatelle ai Pomodori (Garlic + chilli + parmesan cheese + jalepeno) [Rs 320]\n\t2.Conchiglioni Al Funghi Porcini (Pasta with creamy Porcini mushroom + scallion sauce) [Rs 220]\n";
+    cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookies [Rs 85]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n\t4.Cripss [Rs 65]\n";
+    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
+
+}
+void Veg::Pizza_Express()
+{
+
+}
+void Veg::Mainland_China()
+{
+
+}
+
+
 
 void Veg::Show_Veg_Restaurants()
 {
@@ -260,6 +236,7 @@ int main()
         if(ch == 1)
         {
             int type_restaurant;
+            int type_choice_restaurant;
 
             customer.Input_Customer_Details();
 
@@ -271,6 +248,18 @@ int main()
             if (type_restaurant == 1)
             {
                 veg.Show_Veg_Restaurants();
+                cout << "Which restaurant do you pick?\n";
+                cin >> type_choice_restaurant;
+
+                switch (type_choice_restaurant)
+                {
+                case 1:
+                    
+                    break;
+                
+                default:
+                    break;
+                }
             }
             else if (type_restaurant == 2)
             {
