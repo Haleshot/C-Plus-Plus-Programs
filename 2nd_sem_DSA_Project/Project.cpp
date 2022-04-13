@@ -200,10 +200,10 @@ public:
     void McDonalds();
     void Pizza_Express();
     void Mainland_China();
-    void Show_Restaurants();
+    void Show_Veg_Restaurants();
 };
 
-void Veg::Show_Restaurants()
+void Veg::Show_Veg_Restaurants()
 {
     cout << "The List of Veg Restaurants is:\n1.Mia Cucina\n2.Subway\n3.Tiara\n4.Parabola\n5.Pizza Express\n6.Mainland China\n";
 }
@@ -220,11 +220,11 @@ public:
     void Global_Fusion();
     void Kofuku();
     void Shizusan();
-    void Show_Restaurants();
+    void Show_NonVeg_Restaurants();
 
 };
 
-void Non_Veg::Show_Restaurants()
+void Non_Veg::Show_NonVeg_Restaurants()
 {
     cout << "The List of Non-Veg Restaurants is:\n1.Sigree Global Grill\n2.The Fatty Bao\n3.Ticca Tikka\n4.Global Fusion\n5.Kofuku\n6.Shizusan\n";
 }
@@ -260,11 +260,11 @@ int main()
             cin >> type_restaurant;
             if (type_restaurant == 1)
             {
-                veg.Show_nearby_restaurants();
+                veg.Show_Veg_Restaurants();
             }
             else if (type_restaurant == 2)
             {
-                non_Veg.Show_Restaurants();
+                non_Veg.Show_NonVeg_Restaurants();
             }
             cout << "\nWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
