@@ -439,7 +439,162 @@ void Veg::Show_Veg_Restaurants()
 class Non_Veg : public Restaurants
 {
 private:
-    int items;
+    string menu_1[25], menu_2[25], menu_3[25], menu_4[25], menu_5[25], menu_6[25];
+    float price_1[25], price_2[25], price_3[25], price_4[25], price_5[25], price_6[25];
+
+    
+    string menu_1[25] =
+    {
+        "Dhuandhar Murgh Tikka",
+        "Kasoori Mirch Fish Tikka",
+        "Tandoori Chicken",
+        "Butter Chicken",
+        "Bhuna Murgh Kali Mirch",
+        "Penne chicken",
+        "Spaghetti Chicken"
+
+    };
+
+    float price_1[25] = 
+    {
+
+        325.0,
+        325.0,
+        575.0,
+        345.0,
+        355.0,
+        375.0,
+        375.0
+
+    };
+
+
+    
+    string menu_2[25] =
+    {
+        "Pork And Chineese Cabbage",
+        "Smoked Chicken And Spinach",
+        "Tuna Tartare Roll",
+        "Prawn Tempura Roll",
+        "Non Veg Spider Roll",
+        "Pennang Curry With Chicken",
+        "Japanese Chicken Kabocha Curry"
+
+    };
+
+    float price_2[25] = 
+    {
+
+        400.0,
+        425.0,
+        400.0,
+        375.0,
+        400.0,
+        450.0,
+        450.0
+
+    };
+
+    
+    string menu_3[25] =
+    {
+        "Classic Chicken Tikka",
+        "Basil Chicken Tikka",
+        "Malai Chicken Tikka",
+        "Chicken Tikka wrap",
+        "Chicken Malai Wrap",
+        "Mutton Seekh Wrap",
+        "Chicken Seekh Kebab",
+        "Chicken Chapli Kebab",
+        "Tawa Chicken"
+
+    };
+
+    float price_3[25] = 
+    {
+
+        425.0,
+        395.0,
+        425.0,
+        280.0,
+        280.0,
+        300.0,
+        365.0,
+        385.0,
+        365.0
+
+    };
+
+    
+    string menu_4[25] =
+    {
+        "Mutton Seekh kebab",
+        "Fish Tikka",
+        "Chicken Tikka",
+        "Pepper Chicken",
+        "Prawns Tepanyakki",
+        "Dory Fish",
+        "One Chicken Gravy And One Mutton Gravy"
+    };
+
+    float price_4[25] = 
+    {
+
+        400.0,
+        450.0,
+        400.0,
+        350.0,
+        400.0,
+        350.0,
+        550.0
+
+    };
+
+    
+    string menu_5[25] =
+    {
+        "Popcorn Chicken Large",
+        "Boneless Strips 6 pcs",
+        "Classic Zinger",
+        "Spicy Zinger"
+    };
+
+    float price_5[25] = 
+    {
+
+        180.0,
+        205.0,
+        150.0,
+        160.0
+
+    };
+
+        string menu_6[25] =
+    {
+        "Crunchy Tuna Rol",
+        "Hamachi New York Drago",
+        "Chicken Gyoza",
+        "Chilli Coriander Chicken",
+        "Poached Chicken Dumpling",
+        "Hakka Basil Chicken",
+        "Hot Garlic Chick",
+        
+    };
+
+    float price_6[25] = 
+    {
+
+        450.0,
+        550.0,
+        395.0,
+        695.0,
+        995.0,
+        350.0,
+        350.0
+
+    };
+
+
 public:
     void Sigree_Global_Grill();
     void The_Fatty_Bao();
@@ -457,30 +612,6 @@ void Non_Veg::Sigree_Global_Grill()
     cout << "MAIN COURSE\n 4. Butter Chicken (RS 345)\n 5. Bhuna Murgh Kali Mirch (RS 355)" << endl;
     cout << "PASTAS\n 6. Penne chicken (RS  375) \n 7. Spaghetti Chicken (RS 375) "<< endl;
 
-    string menu[25] =
-    {
-        "Dhuandhar Murgh Tikka",
-        "Kasoori Mirch Fish Tikka",
-        "Tandoori Chicken",
-        "Butter Chicken",
-        "Bhuna Murgh Kali Mirch",
-        "Penne chicken",
-        "Spaghetti Chicken"
-
-    };
-
-    float price[25] = 
-    {
-
-        325.0,
-        325.0,
-        575.0,
-        345.0,
-        355.0,
-        375.0,
-        375.0
-
-    };
 
 
 
@@ -492,30 +623,6 @@ void Non_Veg::The_Fatty_Bao()
     cout << "SUSHI ROLL\n 3. Tuna Tartare Roll (RS 400)\n 4. Prawn Tempura Roll (RS 375)\n 5. Non Veg Spider Roll (RS 400)" << endl;
     cout << "MAIN COURSE\n 6. Pennang Curry With Chicken (RS 450)\n 7. Japanese Chicken Kabocha Curry (RS 450)" << endl;
 
-    string menu[25] =
-    {
-        "Pork And Chineese Cabbage",
-        "Smoked Chicken And Spinach",
-        "Tuna Tartare Roll",
-        "Prawn Tempura Roll",
-        "Non Veg Spider Roll",
-        "Pennang Curry With Chicken",
-        "Japanese Chicken Kabocha Curry"
-
-    };
-
-    float price[25] = 
-    {
-
-        400.0,
-        425.0,
-        400.0,
-        375.0,
-        400.0,
-        450.0,
-        450.0
-
-    };
 
 }
 
@@ -525,34 +632,6 @@ void Non_Veg::Ticca_Tikka()
     cout << "ROLLS AND WRAPS\n 4.Chicken Tikka wrap (RS 280) \n 5. Chicken Malai Wrap (Rs 280)\n 6. Mutton Seekh Wrap (RS 300)" << endl;
     cout << "KEBABS\n 7. Chicken Seekh Kebab (RS 365)\n 8. Chicken Chapli Kebab (RS 385)\n 9. Tawa Chicken (RS 385)" << endl; 
 
-    string menu[25] =
-    {
-        "Classic Chicken Tikka",
-        "Basil Chicken Tikka",
-        "Malai Chicken Tikka",
-        "Chicken Tikka wrap",
-        "Chicken Malai Wrap",
-        "Mutton Seekh Wrap",
-        "Chicken Seekh Kebab",
-        "Chicken Chapli Kebab",
-        "Tawa Chicken"
-
-    };
-
-    float price[25] = 
-    {
-
-        425.0,
-        395.0,
-        425.0,
-        280.0,
-        280.0,
-        300.0,
-        365.0,
-        385.0,
-        365.0
-
-    };
 
 
 }
@@ -563,29 +642,6 @@ void Non_Veg::Global_Fusion()
     cout << "CHINESE STARTERS \n 4. Pepper Chicken (RS 350) \n 5. Prawns Tepanyakki (RS 400)\n 6. Dory Fish (RS 350)" << endl;
     cout << "MAIN COURSE \n 7. One Chicken Gravy And One Mutton Gravy (RS 550)" << endl;
 
-    string menu[25] =
-    {
-        "Mutton Seekh kebab",
-        "Fish Tikka",
-        "Chicken Tikka",
-        "Pepper Chicken",
-        "Prawns Tepanyakki",
-        "Dory Fish",
-        "One Chicken Gravy And One Mutton Gravy"
-    };
-
-    float price[25] = 
-    {
-
-        400.0,
-        450.0,
-        400.0,
-        350.0,
-        400.0,
-        350.0,
-        550.0
-
-    };
 
 }
 
@@ -595,23 +651,6 @@ void Non_Veg::KFC()
     cout << "SNACKS \n 1. Popcorn Chicken Large (Rs 180) \n 2. Boneless Strips 6 pcs (RS 205) " << endl;
     cout << "BURGERS \n 3. Classic Zinger (Rs 150) \n 4. Spicy Zinger (Rs 160)" << endl;
 
-    string menu[25] =
-    {
-        "Popcorn Chicken Large",
-        "Boneless Strips 6 pcs",
-        "Classic Zinger",
-        "Spicy Zinger"
-    };
-
-    float price[25] = 
-    {
-
-        180.0,
-        205.0,
-        150.0,
-        160.0
-
-    };
 
 }
 
@@ -621,30 +660,7 @@ void Non_Veg::Shizusan()
     cout <<"DIMSUM \n 3. Chicken Gyoza (Rs 395) \n 4. Chilli Coriander Chicken (RS 695) \n 5. Poached Chicken Dumpling (RS 995)" << endl;
     cout <<"ASIAN TAPAS \n 6. Hakka Basil Chicken (RS 350) \n 7. Hot Garlic Chicken (RS 350)" << endl;
 
-    string menu[25] =
-    {
-        "Crunchy Tuna Rol",
-        "Hamachi New York Drago",
-        "Chicken Gyoza",
-        "Chilli Coriander Chicken",
-        "Poached Chicken Dumpling",
-        "Hakka Basil Chicken",
-        "Hot Garlic Chick",
-        
-    };
 
-    float price[25] = 
-    {
-
-        450.0,
-        550.0,
-        395.0,
-        695.0,
-        995.0,
-        350.0,
-        350.0
-
-    };
 }
 
 void Non_Veg::Show_NonVeg_Restaurants()
