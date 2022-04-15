@@ -13,7 +13,7 @@ struct Order
     string order_name[100];
     int quantity[50];
     float price[50], disc[50];
-};
+}order[50];
 
 
 class Customer
@@ -128,7 +128,7 @@ void Restaurants::Bill_Generation(int counter)
             
     for(int i = 0; i < counter; i++)
     {
-
+        cout << i << setw(9) << order->order_name[i] << setw(9) << order->quantity[i] << setw(12) << "Rs. " << setw(10) << endl;
     }
 }
 
@@ -884,9 +884,29 @@ int main()
             return 0;
         }
 
+
+
+        float total_amount = 0.0;
+        int total_items = 0;
+
+        // Function for calculating Net Bill
+        for(int i = 0; i < k; i++)
+        {
+            total_amount += order->price[i];
+        }
+
+        // Function for calculating Total Number of Items
+        for(int i = 0; i < k; i++)
+        {
+            total_items += order->quantity[i];;
+        }
+
+
+
         int ch;
         bool run = true;
         string coupon;
+        float discount;
         cout << "\t\t\t\t\t\tWhat would you like to do now?\n1.Update Customer Information\n2.Apply Coupons (Pick up food from a restaurant)\n3.Generate Bill\n4.Exit\n";
         cin >> ch;
         do
@@ -902,6 +922,9 @@ int main()
                     if(restaurant.Validity_Of_Coupon(coupon, sizeof(coupon)))
                     {
                         cout << "Coupon is Valid! Further Discount applied to Bill\n";
+                        discount = 0.02 * total_amount;
+                        total_amount = total_amount - discount;
+
                     }
                     else if(!(restaurant.Validity_Of_Coupon(coupon, sizeof(coupon))))
                     {
