@@ -669,8 +669,6 @@ int main()
     Order order[50];
     
     bool run = true;
-    do
-    {
         int ch;
         int k = 0;
         cout << "\t\t\t\t\t\tWelcome to the <insertname> Food Delivery System!\n\n";
@@ -720,7 +718,7 @@ int main()
                 
                 case 2:
 
-                    veg.Mia_Cucina();
+                    veg.Subway();
                     cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                     cin >> order_number;
                     k++;
@@ -739,7 +737,7 @@ int main()
                 
                 case 3:
 
-                    veg.Mia_Cucina();
+                    veg.Tiara();
                     cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                     cin >> order_number;
                     k++;
@@ -758,7 +756,7 @@ int main()
                 
                 case 4:
 
-                    veg.Mia_Cucina();
+                    veg.McDonalds();
                     cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                     cin >> order_number;
                     k++;
@@ -777,7 +775,7 @@ int main()
                 
                 case 5:
 
-                    veg.Mia_Cucina();
+                    veg.Pizza_Express();
                     cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                     cin >> order_number;
                     k++;
@@ -796,7 +794,7 @@ int main()
                 
                 case 6:
 
-                    veg.Mia_Cucina();
+                    veg.Mainland_China();
                     cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                     cin >> order_number;
                     k++;
@@ -829,11 +827,6 @@ int main()
         {
             return 0;
         }
-        
-
-    } while (run == true);
-    
-
     
 
     return 0;
