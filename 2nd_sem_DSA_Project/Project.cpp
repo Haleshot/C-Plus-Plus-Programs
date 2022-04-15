@@ -354,9 +354,9 @@ void Veg::McDonalds()
 }
 void Veg::Pizza_Express()
 {
-    cout<<"PIZZAS\n1.Picoolo Classic Margherita (RS 245)\n2. Picoolo Classic Mushroom (RS 245)\n3.Piccolo Classic American (RS 295)\n4. Kids Verdure (RS 245)\n5. Polla Verde (RS 295) "<<endl;
-    cout<<"PASTAS\n6.Baked Mac And Cheese (RS 225)\n 2. Penna Forestier (RS 225)\n   "<<endl;
-    cout<<"SIDES\n1.Dough Balls With Cheese Dip (RS 135)\n 2. Baked Smileys (RS 135)"<<endl;
+    cout << "PIZZAS\n1.Picoolo Classic Margherita (RS 245)\n2. Picoolo Classic Mushroom (RS 245)\n3.Piccolo Classic American (RS 295)\n4. Kids Verdure (RS 245)\n5. Polla Verde (RS 295) \n" << endl;
+    cout << "PASTAS\n6.Baked Mac And Cheese (RS 225)\n7. Penna Forestier (RS 225)\n\n" << endl;
+    cout << "SIDES\n8.Dough Balls With Cheese Dip (RS 135)\n9. Baked Smileys (RS 135)" << endl;
 
     string menu[25] =
     {
@@ -393,9 +393,9 @@ void Veg::Pizza_Express()
 void Veg::Mainland_China()
 {
 
-    cout<<"BEVERAGES\n 1. Watermelo Cilantro Crush (RS 200)\n 2. Fresh Lime Soda (RS 110)"<<endl;
-    cout<<"DIMSUMS\n 1. Basil Flavoured Vegetable Dumplings (RS 310)\n 2. Corn and Cheese Dumplings (RS 310)"<<endl;
-    cout<<"APPETIZERS\n 1. Sichuan Chilli Babycorn (RS 435)\n 2. Jiang's Chilli Cottage Cheese (RS 475)"<<endl;
+    cout << "BEVERAGES\n 1. Watermelo Cilantro Crush (RS 200)\n 2. Fresh Lime Soda (RS 110)" << endl;
+    cout << "DIMSUMS\n 3. Basil Flavoured Vegetable Dumplings (RS 310)\n 4. Corn and Cheese Dumplings (RS 310)" << endl;
+    cout << "APPETIZERS\n 5. Sichuan Chilli Babycorn (RS 435)\n 6. Jiang's Chilli Cottage Cheese (RS 475)" << endl;
 
     string menu[25] =
     {
