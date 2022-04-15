@@ -88,6 +88,7 @@ class Restaurants
 public:
 
     void Show_nearby_restaurants();
+    bool Validity_Of_Coupon(string, int);
     void Bill_Generation();
 };
 
@@ -96,6 +97,26 @@ void Restaurants::Show_nearby_restaurants()
 {
     cout << "\t\t\t\t\t\t1.Veg Restaurants\n\n\n";
     cout << "\t\t\t\t\t\t2.Non-Veg Restaurants\n\n\n";
+}
+
+bool Restaurants::Validity_Of_Coupon(string str, int n)
+{
+    // Checking for Invalid Coupons
+    if (!((str[0] >= 'a' && str[0] <= 'z')
+          || (str[0] >= 'A' && str[0] <= 'Z')
+          || str[0] == '_'))
+        return false;
+ 
+    for (int i = 1; i < str.length(); i++) {
+        if (!((str[i] >= 'a' && str[i] <= 'z')
+              || (str[i] >= 'A' && str[i] <= 'Z')
+              || (str[i] >= '0' && str[i] <= '9')
+              || str[i] == '_'))
+            return false;
+    }
+ 
+    // String is a coupon
+    return true;
 }
 
 void Restaurants::Bill_Generation()
@@ -645,7 +666,7 @@ void Non_Veg::Show_NonVeg_Restaurants()
     cout << "The List of Non-Veg Restaurants is:\n1.Sigree Global Grill\n2.The Fatty Bao\n3.Ticca Tikka\n4.Global Fusion\n5.Kofuku\n6.Shizusan\n";
 }
 
-
+// Main Function of the Program
 int main()
 {
 
@@ -709,8 +730,7 @@ int main()
 
                     } while (run == true);
                     
-                    
-
+                
                     break;
                 
                 case 2:
@@ -730,11 +750,11 @@ int main()
                         order->order_name[k] = veg.menu_2[order_number - 1];
                         order->quantity[k] = quantity;
                         order->price[k] = quantity * veg.price_2[order_number - 1];
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
 
                     } while (run == true);
                     
-
-
                     break;
                 
                 case 3:
@@ -754,10 +774,12 @@ int main()
                         order->order_name[k] = veg.menu_3[order_number - 1];
                         order->quantity[k] = quantity;
                         order->price[k] = quantity * veg.price_3[order_number - 1];
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
                     } while (run == true);
                     
-                    
-
                     break;
                 
                 case 4:
@@ -777,10 +799,11 @@ int main()
                         order->order_name[k] = veg.menu_1[order_number - 1];
                         order->quantity[k] = quantity;
                         order->price[k] = quantity * veg.price_4[order_number - 1];
-                    } while (run == true);
-                    
 
-                    
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
+                    } while (run == true);
 
                     break;
                 
@@ -801,11 +824,12 @@ int main()
                         order->order_name[k] = veg.menu_1[order_number - 1];
                         order->quantity[k] = quantity;
                         order->price[k] = quantity * veg.price_5[order_number - 1];
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
                     } while (run == true);
                     
-
-                    
-
                     break;
                 
                 case 6:
@@ -826,10 +850,14 @@ int main()
                         order->order_name[k] = veg.menu_1[order_number - 1];
                         order->quantity[k] = quantity;
                         order->price[k] = quantity * veg.price_6[order_number - 1];
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
+
                     } while (run == true);
                     
                     
-
                     break;
                 
                 default:
@@ -848,8 +876,31 @@ int main()
             return 0;
         }
 
+        int ch;
+        bool run = true;
+        string coupon;
         cout << "\t\t\t\t\t\tWhat would you like to do now?\n1.Update Customer Information\n2.Apply Coupons (Pick up food from a restaurant)\n3.Generate Bill\n4.Exit\n";
-        
+        cin >> ch;
+        do
+        {
+            switch (ch)
+            {
+                case 1:
+                customer.Input_Customer_Details();
+                break;
+
+                case 2:
+                cin >> coupon;
+
+
+
+                
+                default:
+                    break;
+            }
+
+        } while (run == true);
+       
     
 
     return 0;
