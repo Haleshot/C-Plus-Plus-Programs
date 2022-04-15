@@ -24,26 +24,9 @@ public:
     string premium_pass_number;
     bool premium_pass_number_exists = true;
 
-public:
     void Input_Customer_Details();
     void Display_Customer_Details();
 
-     int getcustid()
-      {
-            return cust_id;
-      }
-      char *getcustnm()
-      {
-            return Name;
-      }
-      char *getcustadd()
-      {
-            return address;
-      }
-      char *getphno()
-      {
-            return phonenumber;
-      }
 
 };
 
@@ -102,8 +85,7 @@ void Customer::Display_Customer_Details()
 class Restaurants
 {
 public:
-    /* data */
-public:
+
     void Show_nearby_restaurants();
     void Place_Order();
 };
@@ -111,8 +93,8 @@ public:
 
 void Restaurants::Show_nearby_restaurants()
 {
-    cout << "\t\t\t\t\t\t1.Veg Restaurants\n\n\n\n\n\n";
-    cout << "\t\t\t\t\t\t2.Non-Veg Restaurants\n\n\n\n\n\n";
+    cout << "\t\t\t\t\t\t1.Veg Restaurants\n\n\n";
+    cout << "\t\t\t\t\t\t2.Non-Veg Restaurants\n\n\n";
 }
 
 
@@ -699,20 +681,29 @@ int main()
                 {
                 case 1:
 
-                    veg.Mia_Cucina();
-                    cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
-                    cin >> order_number;
-                    k++;
-                    cout << "\nYou have selected " << veg.menu_1[order_number - 1];
+                    do
+                    {
+                        veg.Mia_Cucina();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << veg.menu_1[order_number - 1];
 
-                    cout << "\nEnter Quantity : ";
-                    cin >> quantity;
-                    cout << endl;
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
 
+                        
+                        order->order_name[k] = veg.menu_1[order_number - 1];
+                        order->quantity[k] = quantity;
+                        order->price[k] = quantity * veg.price_1[order_number - 1];
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
+                    } while (run == true);
                     
-                    order->order_name[k] = veg.menu_1[order_number - 1];
-                    order->quantity[k] = quantity;
-                    order->price[k] = quantity * veg.price_1[order_number - 1];
+                    
 
                     break;
                 
