@@ -413,7 +413,6 @@ void Veg::Mainland_China()
 
         200.0,
         110.0,
-        295.0,
         310.0,
         310.0,
         435.0,
@@ -449,8 +448,8 @@ public:
 void Non_Veg::Sigree_Global_Grill()
 {
     cout << "STARTERS\n 1. Dhuandhar Murgh Tikka(RS 325)\n 2. Kasoori Mirch Fish Tikka(RS 325)\n 3. Tandoori Chicken(Rs 575)" << endl;
-    cout << "MAIN COURSE\n 1. Butter Chicken (RS 345)\n 2. Bhuna Murgh Kali Mirch (RS 355)" << endl;
-    cout << "PASTAS\n 1. Penne chicken (RS  375) \n 2. Spaghetti Chicken (RS 375) "<< endl;
+    cout << "MAIN COURSE\n 4. Butter Chicken (RS 345)\n 5. Bhuna Murgh Kali Mirch (RS 355)" << endl;
+    cout << "PASTAS\n 6. Penne chicken (RS  375) \n 7. Spaghetti Chicken (RS 375) "<< endl;
 
     string menu[25] =
     {
@@ -458,6 +457,7 @@ void Non_Veg::Sigree_Global_Grill()
         "Kasoori Mirch Fish Tikka",
         "Tandoori Chicken",
         "Butter Chicken",
+        "Bhuna Murgh Kali Mirch",
         "Penne chicken",
         "Spaghetti Chicken"
 
@@ -482,9 +482,9 @@ void Non_Veg::Sigree_Global_Grill()
 
 void Non_Veg::The_Fatty_Bao()
 {
-    cout << "GYOZA \n 1. Pork And Chineese Cabbage (RS 400) \n 2. Smoked Chicken And Spinach (RS 425)"<< endl;
-    cout << "SUSHI ROLL\n 1. Tuna Tartare Roll (RS 400)\n 2. Prawn Tempura Roll (RS 375)\n 3. Non Veg Spider Roll (RS 400)" << endl;
-    cout << "MAIN COURSE\n 1. Pennang Curry With Chicken (RS 450)\n 2. Japanese Chicken Kabocha  Curry (RS 450)"<< endl;
+    cout << "GYOZA \n 1. Pork And Chineese Cabbage (RS 400) \n 2. Smoked Chicken And Spinach (RS 425)" << endl;
+    cout << "SUSHI ROLL\n 3. Tuna Tartare Roll (RS 400)\n 4. Prawn Tempura Roll (RS 375)\n 5. Non Veg Spider Roll (RS 400)" << endl;
+    cout << "MAIN COURSE\n 6. Pennang Curry With Chicken (RS 450)\n 7. Japanese Chicken Kabocha Curry (RS 450)" << endl;
 
     string menu[25] =
     {
@@ -494,7 +494,7 @@ void Non_Veg::The_Fatty_Bao()
         "Prawn Tempura Roll",
         "Non Veg Spider Roll",
         "Pennang Curry With Chicken",
-        "Japanese Chicken Kabocha  Curry"
+        "Japanese Chicken Kabocha Curry"
 
     };
 
@@ -515,9 +515,9 @@ void Non_Veg::The_Fatty_Bao()
 
 void Non_Veg::Ticca_Tikka()
 {
-    cout<<"APPETIZER \n 1. Classic Chicken Tikka (RS 425)\n 2. Basil Chicken Tikka (RS 395)\n 3. Malai Chicken Tikka (Rs 425)"<<endl;
-    cout<<"ROLLS AND WRAPS\n 1.Chicken Tikka wrap (RS 280) \n 2. Chicken Malai Wrap (Rs 280)\n 3. Mutton Seekh Wrap (RS 300)"<<endl;
-    cout<<"KEBABS\n 1. Chicken Seekh Kebab (RS 365)\n 2. Chicken Chapli Kebab (RS 385)\3. Tawa Chicken (RS 385)"<<endl; 
+    cout << "APPETIZER \n 1. Classic Chicken Tikka (RS 425)\n 2. Basil Chicken Tikka (RS 395)\n 3. Malai Chicken Tikka (Rs 425)" << endl;
+    cout << "ROLLS AND WRAPS\n 4.Chicken Tikka wrap (RS 280) \n 5. Chicken Malai Wrap (Rs 280)\n 6. Mutton Seekh Wrap (RS 300)" << endl;
+    cout << "KEBABS\n 7. Chicken Seekh Kebab (RS 365)\n 8. Chicken Chapli Kebab (RS 385)\n 9. Tawa Chicken (RS 385)" << endl; 
 
     string menu[25] =
     {
