@@ -124,11 +124,11 @@ void Restaurants::Bill_Generation(int counter, int total, int net_total, int ite
     cout <<"*************************************************************************\n" << endl;
     cout <<"*****************************   BILL   ******************************" << endl;
     cout <<"*************************************************************************" << endl;
-    cout << "Index No:" << setw(7) << "NAME" << setw(10) << "Qty" << setw(12) << "Price" << setw(13) << "Amount" << setw(23) << "Amount - discount" << endl;
+    cout << "Index No:" << setw(12) << "NAME" << setw(12) << "Qty" << setw(12) << "Price" << setw(12) << "Amount" << setw(12) << "Amount - discount" << endl;
             
     for(int i = 0; i < counter; i++)
     {
-        cout << (i + 1) << setw(7) << order->order_name[i] << setw(10) << order->quantity[i] << setw(12) << "Rs. " << total << setw(13) << net_total << setw(23) << endl;
+        cout << (i + 1) << setw(12) << order->order_name[i] << setw(12) << order->quantity[i] << setw(12) << "Rs. " << total << setw(12) << net_total << setw(12) << endl;
     }
 
 }
@@ -441,7 +441,7 @@ void Veg::Mainland_China()
 
 void Veg::Show_Veg_Restaurants()
 {
-    cout << "The List of Veg Restaurants is:\n1.Mia Cucina\n2.Subway\n3.Tiara\n4.Parabola\n5.Pizza Express\n6.Mainland China\n";
+    cout << "The List of Veg Restaurants is:\n1.Mia Cucina\n2.Subway\n3.Tiara\n4.McDonalds\n5.Pizza Express\n6.Mainland China\n";
 }
 
 
