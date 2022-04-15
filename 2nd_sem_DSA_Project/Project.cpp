@@ -89,7 +89,7 @@ public:
 
     void Show_nearby_restaurants();
     bool Validity_Of_Coupon(string, int);
-    void Bill_Generation();
+    void Bill_Generation(int);
 };
 
 
@@ -119,9 +119,17 @@ bool Restaurants::Validity_Of_Coupon(string str, int n)
     return true;
 }
 
-void Restaurants::Bill_Generation()
+void Restaurants::Bill_Generation(int counter)
 {
+    cout <<"*************************************************************************\n" << endl;
+    cout <<"*****************************   BILL   ******************************" << endl;
+    cout <<"*************************************************************************" << endl;
+    cout << "Index No:" << setw(7) << "NAME" << setw(10) << "Qty" << setw(12) << "Price" << setw(13) << "Amount" << setw(23) << "Amount - discount" << endl << endl;
+            
+    for(int i = 0; i < counter; i++)
+    {
 
+    }
 }
 
 class Veg : public Restaurants
@@ -886,11 +894,27 @@ int main()
             switch (ch)
             {
                 case 1:
-                customer.Input_Customer_Details();
-                break;
+                    customer.Input_Customer_Details();
+                    break;
 
                 case 2:
-                cin >> coupon;
+                    cin >> coupon;
+                    if(restaurant.Validity_Of_Coupon(coupon, sizeof(coupon)))
+                    {
+                        cout << "Coupon is Valid! Further Discount applied to Bill\n";
+                    }
+                    else if(!(restaurant.Validity_Of_Coupon(coupon, sizeof(coupon))))
+                    {
+                        cout << "Invalid Coupon!\n";
+                    }
+
+                case 3:
+                    restaurant.Bill_Generation(k);
+                    break;
+
+
+                case 4:
+                    exit(0);
 
 
 
