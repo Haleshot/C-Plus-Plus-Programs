@@ -124,11 +124,11 @@ void Restaurants::Bill_Generation(int counter, int total, int net_total, int ite
     cout <<"*************************************************************************\n" << endl;
     cout <<"*****************************   BILL   ******************************" << endl;
     cout <<"*************************************************************************" << endl;
-    cout << "Index No:" << setw(7) << "NAME" << setw(10) << "Qty" << setw(12) << "Price" << setw(13) << "Amount" << setw(23) << "Amount - discount" << endl << endl;
+    cout << "Index No:" << setw(7) << "NAME" << setw(10) << "Qty" << setw(12) << "Price" << setw(13) << "Amount" << setw(23) << "Amount - discount" << endl;
             
     for(int i = 0; i < counter; i++)
     {
-        cout << i << setw(9) << order->order_name[i] << setw(9) << order->quantity[i] << setw(12) << "Rs. " << total << setw(10) << net_total << setw(14) << endl;
+        cout << (i + 1) << setw(7) << order->order_name[i] << setw(10) << order->quantity[i] << setw(12) << "Rs. " << total << setw(13) << net_total << setw(23) << endl;
     }
 
 }
