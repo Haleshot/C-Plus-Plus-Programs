@@ -139,10 +139,10 @@ public:
 void Veg::Mia_Cucina()
 {
     cout << "\t\t\t\t\t\tThe Menu is: " << endl;
-    cout << "\t\t\t\t\t\tI.Pizzas\n\t1.Margherita (Mozzarella + tomato + basil) [Rs 245]\n\t2.Pizza Verdura (Roasted Veggies + black olives + jalepenos + parmesan + Mozzarella) [Rs 256]\n\t3.Pizza Arabiata (Spicy Paneer + cherry tomatoes + Mozzarella) [Rs 230]\n\t4.Chorizo (Spanish hotdog + Mozzarella) [Rs 400]\n\t5.Feta e Peparone (Feta + Mozzarella + roasted bell peppers)[Rs 350]\n";
-    cout << "\t\t\t\t\t\tII.Pastas\n\t6.Tagliatelle ai Pomodori (Homemade pasta + tomato + basil sauce) [Rs 200]\n\t7.Tagliatelle ai tusch (Homemade pasta in creamy basil sauce) [Rs 450]\n\t8.Penne Arabiata (Penne pasta + spicy tomato sauce + bell peppers + green olives) [Rs 300]\n\t9.Chorizo Pomodori(Spanish hotdog + Mozzarella + Garlic Bread) [Rs 280]\n\t10.Spaghetti Aglio Olio (Spaghetti pasta + garlic + olive oil) [Rs 310]\n";
-    cout << "\t\t\t\t\t\tIII.Sides\n\t11.Chocolate Cake [Rs 120]\n\t12.Affogato [Rs 150]\n\t13.Panacotta [Rs 180]\n\t14.Brownie Sundae [Rs 170]\n\t15.Blueberry Crumble [Rs 200]\n";
-    cout << "\t\t\t\t\t\tIV.Beverages\n\t16.Pepsi [Rs 80]\n\t17.Sprite [Rs 80]\n\t18.Slice [Rs 80]\n\t19.Chocolate Shake [Rs 100]\n\t20.Hot Chocolate [Rs 120]\n";
+    cout << "\t\t\t\t\t\tI.Pizzas\n\t1.Margherita (Mozzarella + tomato + basil) [Rs 245]\n\t2.Pizza Verdura (Roasted Veggies + black olives + jalepenos + parmesan + Mozzarella) [Rs 256]\n\t3.Pizza Arabiata (Spicy Paneer + cherry tomatoes + Mozzarella) [Rs 230]\n\t4.Chorizo (Spanish hotdog + Mozzarella) [Rs 400]\n\t5.Feta e Peparone (Feta + Mozzarella + roasted bell peppers)[Rs 350]\n\n";
+    cout << "\t\t\t\t\t\tII.Pastas\n\t6.Tagliatelle ai Pomodori (Homemade pasta + tomato + basil sauce) [Rs 200]\n\t7.Tagliatelle ai tusch (Homemade pasta in creamy basil sauce) [Rs 450]\n\t8.Penne Arabiata (Penne pasta + spicy tomato sauce + bell peppers + green olives) [Rs 300]\n\t9.Chorizo Pomodori(Spanish hotdog + Mozzarella + Garlic Bread) [Rs 280]\n\t10.Spaghetti Aglio Olio (Spaghetti pasta + garlic + olive oil) [Rs 310]\n\n";
+    cout << "\t\t\t\t\t\tIII.Sides\n\t11.Chocolate Cake [Rs 120]\n\t12.Affogato [Rs 150]\n\t13.Panacotta [Rs 180]\n\t14.Brownie Sundae [Rs 170]\n\t15.Blueberry Crumble [Rs 200]\n\n";
+    cout << "\t\t\t\t\t\tIV.Beverages\n\t16.Pepsi [Rs 80]\n\t17.Sprite [Rs 80]\n\t18.Slice [Rs 80]\n\t19.Chocolate Shake [Rs 100]\n\t20.Hot Chocolate [Rs 120]\n\n";
 
 
 
@@ -205,9 +205,9 @@ void Veg::Subway()
     
     cout << "The Menu is: " << endl;
     cout << "\t\t\t\t\t\tI.Subs\n\t1.Hara Bhara Kebab (Patty + tomato + jalepenos) [Rs 235]\n\t2.Chatpatta Channa (Patty + black olives + jalepenos + parmesan + Mozzarella) [Rs 260]\n\t3.Mexican Patty (Patty + Paneer + tomatoes + jalepenos + Mozzarella) [Rs 230]\n\t4.Veggie Delite (Patty + jalepenos + capsicum + Mozzarella) [Rs 250]\n\t5.Veg Seekh (Patty + jalepenos + cucumber)[Rs 250]\n";
-    cout << "\t\t\t\t\t\tII.Wraps\n\t1.Veg Shammi (Roll + cucumber + capsicum + jalepeno) [Rs 120]\n\t2.Chatpatta Shammi (Roll + capsicum + jalepeno) [Rs 120]\n";
-    cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookie [Rs 45]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n";
-    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 120]\n";
+    cout << "\t\t\t\t\t\tII.Wraps\n\t6.Veg Shammi (Roll + cucumber + capsicum + jalepeno) [Rs 120]\n\t7.Chatpatta Shammi (Roll + capsicum + jalepeno) [Rs 120]\n";
+    cout << "\t\t\t\t\t\tIII.Sides\n\t8.Cookie [Rs 45]\n\t9.Chocolate Truffle Cake [Rs 75]\n\t10.French Fries [Rs 90]\n";
+    cout << "\t\t\t\t\t\tIV.Beverages\n\t11.Lipton Ice Tea [Rs 80]\n\t12.Tropicanna Juice [Rs 80]\n\t13.Slice [Rs 80]\n\t14.Chocolate Shake [Rs 100]\n\t15.Hot Chocolate [Rs 120]\n";
 
     string menu[25] =
     {
@@ -256,9 +256,9 @@ void Veg::Tiara()
 {
     cout << "\t\t\t\t\t\tThe Menu is: " << endl;
     cout << "\t\t\t\t\t\tI.Sandwiches\n\t1.Paneer Tikka Roll (Frankie + cottage cheese) [Rs 235]\n\t2.Tiara Vegetable Club Special (Triple Layered Sandwich + lettuce + tomato + cheese) [Rs 260]\n\t3.Mexican gardern sanwich (Guacomole + tomatoes + jalepenos + Mozzarella) [Rs 230]\n";
-    cout << "\t\t\t\t\t\tII.Pastas\n\t1.Tagliatelle ai Pomodori (Garlic + chilli + parmesan cheese + jalepeno) [Rs 320]\n\t2.Conchiglioni Al Funghi Porcini (Pasta with creamy Porcini mushroom + scallion sauce) [Rs 220]\n";
-    cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookies [Rs 85]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n\t4.Crisps [Rs 65]\n";
-    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 120]\n";
+    cout << "\t\t\t\t\t\tII.Pastas\n\t4.Tagliatelle ai Pomodori (Garlic + chilli + parmesan cheese + jalepeno) [Rs 320]\n\t5.Conchiglioni Al Funghi Porcini (Pasta with creamy Porcini mushroom + scallion sauce) [Rs 220]\n";
+    cout << "\t\t\t\t\t\tIII.Sides\n\t6.Cookies [Rs 85]\n\t7.Chocolate Truffle Cake [Rs 75]\n\t8.French Fries [Rs 90]\n\t9.Crisps [Rs 65]\n";
+    cout << "\t\t\t\t\t\tIV.Beverages\n\t10.Lipton Ice Tea [Rs 80]\n\t11.Tropicanna Juice [Rs 80]\n\t12.Slice [Rs 80]\n\t13.Chocolate Shake [Rs 100]\n\t14.Hot Chocolate [Rs 120]\n";
 
     string menu[25] =
     {
@@ -307,9 +307,9 @@ void Veg::McDonalds()
 {
     cout << "The Menu is: " << endl;
     cout << "\t\t\t\t\t\tI.Burgers\n\t1.Maharajan Mac (Frankie + cottage cheese) [Rs 235]\n\t2.Triple Layer Veg Patty (Triple Layered Sandwich + lettuce + tomato + cheese) [Rs 260]\n\t3.Mexican Burger (Guacomole + tomatoes + jalepenos + Mozzarella) [Rs 230]\n";
-    cout << "\t\t\t\t\t\tII.Pastas\n\t1.Tagliatelle ai Pomodori (Garlic + chilli + parmesan cheese + jalepeno) [Rs 320]\n\t2.Conchiglioni Al Funghi Porcini (Pasta with creamy Porcini mushroom + scallion sauce) [Rs 220]\n";
-    cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookies [Rs 85]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n\t4.Cripss [Rs 65]\n";
-    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
+    cout << "\t\t\t\t\t\tII.Pastas\n\t4.Tagliatelle ai Pomodori (Garlic + chilli + parmesan cheese + jalepeno) [Rs 320]\n\t5.Conchiglioni Al Funghi Porcini (Pasta with creamy Porcini mushroom + scallion sauce) [Rs 220]\n";
+    cout << "\t\t\t\t\t\tIII.Sides\n\t6.Cookies [Rs 85]\n\t7.Chocolate Truffle Cake [Rs 75]\n\t8.French Fries [Rs 90]\n\t9.Cripss [Rs 65]\n";
+    cout << "\t\t\t\t\t\tIV.Beverages\n\t10.Lipton Ice Tea [Rs 80]\n\t11.Tropicanna Juice [Rs 80]\n\t12.Slice [Rs 80]\n\t13.Chocolate Shake [Rs 100]\n\t14.Hot Chocolate [Rs 120]\n";
 
     string menu[25] =
     {
@@ -355,8 +355,8 @@ void Veg::McDonalds()
 void Veg::Pizza_Express()
 {
     cout<<"PIZZAS\n1.Picoolo Classic Margherita (RS 245)\n2. Picoolo Classic Mushroom (RS 245)\n3.Piccolo Classic American (RS 295)\n4. Kids Verdure (RS 245)\n5. Polla Verde (RS 295) "<<endl;
-    cout<<"PASTAS\n 1. Baked Mac And Cheese (RS 225)\n 2. Penna Forestier (RS 225)\n   "<<endl;
-    cout<<"SIDES\n 1. Dough Balls With Cheese Dip (RS 135)\n 2. Baked Smileys (RS 135)"<<endl;
+    cout<<"PASTAS\n6.Baked Mac And Cheese (RS 225)\n 2. Penna Forestier (RS 225)\n   "<<endl;
+    cout<<"SIDES\n1.Dough Balls With Cheese Dip (RS 135)\n 2. Baked Smileys (RS 135)"<<endl;
 
     string menu[25] =
     {
