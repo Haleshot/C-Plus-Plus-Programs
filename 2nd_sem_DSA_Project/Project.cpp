@@ -28,6 +28,7 @@ public:
     void Display_Customer_Details();
 
 
+
 };
 
 void Customer::Input_Customer_Details()
@@ -87,7 +88,7 @@ class Restaurants
 public:
 
     void Show_nearby_restaurants();
-    void Place_Order();
+    void Bill_Generation();
 };
 
 
@@ -97,6 +98,10 @@ void Restaurants::Show_nearby_restaurants()
     cout << "\t\t\t\t\t\t2.Non-Veg Restaurants\n\n\n";
 }
 
+void Restaurants::Bill_Generation()
+{
+
+}
 
 class Veg : public Restaurants
 {
@@ -644,13 +649,13 @@ void Non_Veg::Show_NonVeg_Restaurants()
 int main()
 {
 
-    class Customer customer;
-    class Restaurants restaurant;
-    class Veg veg;
-    class Non_Veg non_Veg;
-    Order order[50];
+        class Customer customer;
+        class Restaurants restaurant;
+        class Veg veg;
+        class Non_Veg non_Veg;
+        Order order[50];
     
-    bool run = true;
+        bool run = true;
         int ch;
         int k = 0;
         cout << "\t\t\t\t\t\tWelcome to the <insertname> Food Delivery System!\n\n";
@@ -835,14 +840,16 @@ int main()
             {
                 non_Veg.Show_NonVeg_Restaurants();
             }
-            cout << "\nWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
-            cin >> run;
+            
             
         }
         if(ch == 3)
         {
             return 0;
         }
+
+        cout << "\t\t\t\t\t\tWhat would you like to do now?\n1.Update Customer Information\n2.Apply Coupons (Pick up food from a restaurant)\n3.Generate Bill\n4.Exit\n";
+        
     
 
     return 0;
