@@ -4,6 +4,7 @@
 #include<iomanip> // For setw function
 #include <stdlib.h>
 #include <string>
+#include <stack>
 using namespace std;
 
 
@@ -18,7 +19,7 @@ struct Order
 
 class Customer
 {
-private:
+public:
     int cust_id;
     char Name[100], address[100], phonenumber[11];
     string premium_pass_number;
@@ -54,7 +55,7 @@ void Customer::Input_Customer_Details()
         cin >> Name;
 
         
-        cout << "Enter your Address : ";
+        cout << "Enter your Address (Delivery/ Drop Off Location) : ";
         cin >> address;
 
         
@@ -101,7 +102,7 @@ void Customer::Display_Customer_Details()
 
 class Restaurants
 {
-private:
+public:
     /* data */
 public:
     void Show_nearby_restaurants();
@@ -115,18 +116,10 @@ void Restaurants::Show_nearby_restaurants()
     cout << "\t\t\t\t\t\t2.Non-Veg Restaurants\n\n\n\n\n\n";
 }
 
-void Restaurants::Place_Order()
-{
-    Order order[20];
-    float total = 0, atotal = 0, net_total = 0;
-
-}
 
 class Veg : public Restaurants
 {
-private:
-    string menu_1[25], menu_2[25], menu_3[25], menu_4[25], menu_5[25], menu_6[25];
-    float price_1[25], price_2[25], price_3[25], price_4[25], price_5[25], price_6[25];
+public:
 
     string menu_1[25] =
     {
@@ -355,7 +348,7 @@ private:
     };
 
 
-public:
+
     void Mia_Cucina();
     void Subway();
     void Tiara();
@@ -438,12 +431,10 @@ void Veg::Show_Veg_Restaurants()
 
 class Non_Veg : public Restaurants
 {
-private:
-    string menu_1[25], menu_2[25], menu_3[25], menu_4[25], menu_5[25], menu_6[25];
-    float price_1[25], price_2[25], price_3[25], price_4[25], price_5[25], price_6[25];
+public:
 
     
-    string menu_1[25] =
+    string menu_7[25] =
     {
         "Dhuandhar Murgh Tikka",
         "Kasoori Mirch Fish Tikka",
@@ -455,7 +446,7 @@ private:
 
     };
 
-    float price_1[25] = 
+    float price_7[25] = 
     {
 
         325.0,
@@ -470,7 +461,7 @@ private:
 
 
     
-    string menu_2[25] =
+    string menu_8[25] =
     {
         "Pork And Chineese Cabbage",
         "Smoked Chicken And Spinach",
@@ -482,7 +473,7 @@ private:
 
     };
 
-    float price_2[25] = 
+    float price_8[25] = 
     {
 
         400.0,
@@ -496,7 +487,7 @@ private:
     };
 
     
-    string menu_3[25] =
+    string menu_9[25] =
     {
         "Classic Chicken Tikka",
         "Basil Chicken Tikka",
@@ -510,7 +501,7 @@ private:
 
     };
 
-    float price_3[25] = 
+    float price_9[25] = 
     {
 
         425.0,
@@ -526,7 +517,7 @@ private:
     };
 
     
-    string menu_4[25] =
+    string menu_10[25] =
     {
         "Mutton Seekh kebab",
         "Fish Tikka",
@@ -537,7 +528,7 @@ private:
         "One Chicken Gravy And One Mutton Gravy"
     };
 
-    float price_4[25] = 
+    float price_10[25] = 
     {
 
         400.0,
@@ -551,7 +542,7 @@ private:
     };
 
     
-    string menu_5[25] =
+    string menu_11[25] =
     {
         "Popcorn Chicken Large",
         "Boneless Strips 6 pcs",
@@ -559,7 +550,7 @@ private:
         "Spicy Zinger"
     };
 
-    float price_5[25] = 
+    float price_11[25] = 
     {
 
         180.0,
@@ -569,7 +560,7 @@ private:
 
     };
 
-        string menu_6[25] =
+        string menu_12[25] =
     {
         "Crunchy Tuna Rol",
         "Hamachi New York Drago",
@@ -581,7 +572,7 @@ private:
         
     };
 
-    float price_6[25] = 
+    float price_12[25] = 
     {
 
         450.0,
@@ -595,7 +586,7 @@ private:
     };
 
 
-public:
+
     void Sigree_Global_Grill();
     void The_Fatty_Bao();
     void Ticca_Tikka();
@@ -690,6 +681,7 @@ int main()
             int type_restaurant;
             int type_choice_restaurant;
             int order_number;
+            int quantity;
 
             customer.Input_Customer_Details();
 
@@ -710,7 +702,13 @@ int main()
 
                     veg.Mia_Cucina();
                     cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
-                    cout << "\nYou have selected " << endl;
+                    cin >> order_number;
+                    cout << "\nYou have selected " << veg.menu_1[order_number - 1];
+
+                    cout << "\nEnter Quantity : ";
+                    cin >> order_number;
+                    cout << endl;
+
 
 
 
@@ -731,10 +729,6 @@ int main()
         if(ch == 3)
         {
             return 0;
-        }
-        else
-        {
-            cout << "Invalid Choice!\n";
         }
         
 
