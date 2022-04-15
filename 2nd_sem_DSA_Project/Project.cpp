@@ -553,9 +553,9 @@ void Non_Veg::Ticca_Tikka()
 
 void Non_Veg::Global_Fusion()
 {
-    cout<<"INDIAN STARTERS \n 1. Mutton Seekh kebab (Rs 400) \n 2. Fish Tikka (Rs 450) \n 3. Chicken Tikka (RS 400)"<<endl;
-    cout<<"CHINESE STARTERS \n 1. Pepper Chicken (RS 350) \n 2. Prawns Tepanyakki (RS 400)\n 3. Dory Fish (RS 350)"<<endl;
-    cout<<"MAIN COURSE \n 1. One Chicken Gravy And One Mutton Gravy (RS 550)"<<endl;
+    cout << "INDIAN STARTERS \n 1. Mutton Seekh kebab (Rs 400) \n 2. Fish Tikka (Rs 450) \n 3. Chicken Tikka (RS 400) "<< endl;
+    cout << "CHINESE STARTERS \n 4. Pepper Chicken (RS 350) \n 5. Prawns Tepanyakki (RS 400)\n 6. Dory Fish (RS 350)" << endl;
+    cout << "MAIN COURSE \n 7. One Chicken Gravy And One Mutton Gravy (RS 550)" << endl;
 
     string menu[25] =
     {
@@ -586,8 +586,8 @@ void Non_Veg::Global_Fusion()
 
 void Non_Veg::KFC()
 {
-    cout<<"SNACKS \n 1. Popcorn Chicken Large (Rs 180) \n 2. Boneless Strips 6 pcs (RS 205) "<<endl;
-    cout<<"BURGERS \n 1. Classic Zinger (Rs 150) \n 2. Spicy Zinger (Rs 160)"<<endl;
+    cout << "SNACKS \n 1. Popcorn Chicken Large (Rs 180) \n 2. Boneless Strips 6 pcs (RS 205) " << endl;
+    cout << "BURGERS \n 3. Classic Zinger (Rs 150) \n 4. Spicy Zinger (Rs 160)" << endl;
 
     string menu[25] =
     {
@@ -611,9 +611,9 @@ void Non_Veg::KFC()
 
 void Non_Veg::Shizusan()
 {
-    cout<<"SUSHI \n 1. Crunchy Tuna Roll (Rs 450) \n 2. Hamachi New York Dragon (RS 550)"<<endl;
-    cout<<"DIMSUM \n 1. Chicken Gyoza (Rs 395) \n 2. Chilli Coriander Chicken (RS 695) \n 3. Poached Chicken Dumpling (RS 995)"<<endl;
-    cout<<"ASIAN TAPAS \n 1. Hakka Basil Chicken (RS 350) \n 2. Hot Garlic Chicken (RS 350)"<<endl;
+    cout <<"SUSHI \n 1. Crunchy Tuna Roll (Rs 450) \n 2. Hamachi New York Dragon (RS 550)" << endl;
+    cout <<"DIMSUM \n 3. Chicken Gyoza (Rs 395) \n 4. Chilli Coriander Chicken (RS 695) \n 5. Poached Chicken Dumpling (RS 995)" << endl;
+    cout <<"ASIAN TAPAS \n 6. Hakka Basil Chicken (RS 350) \n 7. Hot Garlic Chicken (RS 350)" << endl;
 
     string menu[25] =
     {
