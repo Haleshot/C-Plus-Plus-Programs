@@ -10,10 +10,9 @@ using namespace std;
 
 struct Order
 {
-    int order_id;
-    char order_name[100];
-    int quantity;
-    float price, disc;
+    string order_name[100];
+    int quantity[50];
+    float price[50], disc[50];
 };
 
 
@@ -667,11 +666,13 @@ int main()
     class Restaurants restaurant;
     class Veg veg;
     class Non_Veg non_Veg;
+    Order order[50];
     
     bool run = true;
     do
     {
         int ch;
+        int k = 0;
         cout << "\t\t\t\t\t\tWelcome to the <insertname> Food Delivery System!\n\n";
         cout << "\t\t\t\t\t\tWhat would you like to do?\n1.Order Food to your house\n2.Takeaway (Pick up food from a restaurant)\n3.Exit\n";
         cin >> ch;
@@ -703,14 +704,112 @@ int main()
                     veg.Mia_Cucina();
                     cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                     cin >> order_number;
+                    k++;
                     cout << "\nYou have selected " << veg.menu_1[order_number - 1];
 
                     cout << "\nEnter Quantity : ";
-                    cin >> order_number;
+                    cin >> quantity;
                     cout << endl;
 
+                    
+                    order->order_name[k] = veg.menu_1[order_number - 1];
+                    order->quantity[k] = quantity;
+                    order->price[k] = quantity * veg.price_1[order_number - 1];
 
+                    break;
+                
+                case 2:
 
+                    veg.Mia_Cucina();
+                    cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                    cin >> order_number;
+                    k++;
+                    cout << "\nYou have selected " << veg.menu_2[order_number - 1];
+
+                    cout << "\nEnter Quantity : ";
+                    cin >> quantity;
+                    cout << endl;
+
+                    
+                    order->order_name[k] = veg.menu_2[order_number - 1];
+                    order->quantity[k] = quantity;
+                    order->price[k] = quantity * veg.price_2[order_number - 1];
+
+                    break;
+                
+                case 3:
+
+                    veg.Mia_Cucina();
+                    cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                    cin >> order_number;
+                    k++;
+                    cout << "\nYou have selected " << veg.menu_3[order_number - 1];
+
+                    cout << "\nEnter Quantity : ";
+                    cin >> quantity;
+                    cout << endl;
+
+                    
+                    order->order_name[k] = veg.menu_3[order_number - 1];
+                    order->quantity[k] = quantity;
+                    order->price[k] = quantity * veg.price_3[order_number - 1];
+
+                    break;
+                
+                case 4:
+
+                    veg.Mia_Cucina();
+                    cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                    cin >> order_number;
+                    k++;
+                    cout << "\nYou have selected " << veg.menu_4[order_number - 1];
+
+                    cout << "\nEnter Quantity : ";
+                    cin >> quantity;
+                    cout << endl;
+
+                    
+                    order->order_name[k] = veg.menu_1[order_number - 1];
+                    order->quantity[k] = quantity;
+                    order->price[k] = quantity * veg.price_4[order_number - 1];
+
+                    break;
+                
+                case 5:
+
+                    veg.Mia_Cucina();
+                    cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                    cin >> order_number;
+                    k++;
+                    cout << "\nYou have selected " << veg.menu_5[order_number - 1];
+
+                    cout << "\nEnter Quantity : ";
+                    cin >> quantity;
+                    cout << endl;
+
+                    
+                    order->order_name[k] = veg.menu_1[order_number - 1];
+                    order->quantity[k] = quantity;
+                    order->price[k] = quantity * veg.price_5[order_number - 1];
+
+                    break;
+                
+                case 6:
+
+                    veg.Mia_Cucina();
+                    cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                    cin >> order_number;
+                    k++;
+                    cout << "\nYou have selected " << veg.menu_6[order_number - 1];
+
+                    cout << "\nEnter Quantity : ";
+                    cin >> quantity;
+                    cout << endl;
+
+                    
+                    order->order_name[k] = veg.menu_1[order_number - 1];
+                    order->quantity[k] = quantity;
+                    order->price[k] = quantity * veg.price_6[order_number - 1];
 
                     break;
                 
