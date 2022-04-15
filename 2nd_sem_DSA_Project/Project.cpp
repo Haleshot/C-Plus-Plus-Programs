@@ -89,7 +89,7 @@ public:
 
     void Show_nearby_restaurants();
     bool Validity_Of_Coupon(string, int);
-    void Bill_Generation(int);
+    void Bill_Generation(int, int, int);
 };
 
 
@@ -119,7 +119,7 @@ bool Restaurants::Validity_Of_Coupon(string str, int n)
     return true;
 }
 
-void Restaurants::Bill_Generation(int counter)
+void Restaurants::Bill_Generation(int counter, int total, int items)
 {
     cout <<"*************************************************************************\n" << endl;
     cout <<"*****************************   BILL   ******************************" << endl;
@@ -932,7 +932,7 @@ int main()
                     }
 
                 case 3:
-                    restaurant.Bill_Generation(k);
+                    restaurant.Bill_Generation(k, total_amount, total_items);
                     break;
 
 
