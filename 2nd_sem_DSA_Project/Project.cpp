@@ -89,7 +89,7 @@ public:
 
     void Show_nearby_restaurants();
     bool Validity_Of_Coupon(string, int);
-    void Bill_Generation(int, int, int);
+    void Bill_Generation(int, int, int, int);
 };
 
 
@@ -119,7 +119,7 @@ bool Restaurants::Validity_Of_Coupon(string str, int n)
     return true;
 }
 
-void Restaurants::Bill_Generation(int counter, int total, int items)
+void Restaurants::Bill_Generation(int counter, int total, int net_total, int items)
 {
     cout <<"*************************************************************************\n" << endl;
     cout <<"*****************************   BILL   ******************************" << endl;
@@ -128,8 +128,9 @@ void Restaurants::Bill_Generation(int counter, int total, int items)
             
     for(int i = 0; i < counter; i++)
     {
-        cout << i << setw(9) << order->order_name[i] << setw(9) << order->quantity[i] << setw(12) << "Rs. " << setw(10) << endl;
+        cout << i << setw(9) << order->order_name[i] << setw(9) << order->quantity[i] << setw(12) << "Rs. " << total << setw(10) << net_total << setw(14) << endl;
     }
+
 }
 
 class Veg : public Restaurants
@@ -903,15 +904,15 @@ int main()
 
 
 
-        int ch;
-        bool run = true;
+        int choice;
+        bool run_choice = true;
         string coupon;
         float discount;
         cout << "\t\t\t\t\t\tWhat would you like to do now?\n1.Update Customer Information\n2.Apply Coupons (Pick up food from a restaurant)\n3.Generate Bill\n4.Exit\n";
-        cin >> ch;
+        cin >> choice;
         do
         {
-            switch (ch)
+            switch (choice)
             {
                 case 1:
                     customer.Input_Customer_Details();
@@ -932,7 +933,7 @@ int main()
                     }
 
                 case 3:
-                    restaurant.Bill_Generation(k, total_amount, total_items);
+                    restaurant.Bill_Generation(k, (total_amount + discount), total_amount, total_items);
                     break;
 
 
@@ -946,7 +947,10 @@ int main()
                     break;
             }
 
-        } while (run == true);
+            cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+            cin >> run_choice;
+
+        } while (run_choice == true);
        
     
 
