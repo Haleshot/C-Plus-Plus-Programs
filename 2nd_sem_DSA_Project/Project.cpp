@@ -681,6 +681,7 @@ int main()
                 {
                 case 1:
 
+
                     do
                     {
                         veg.Mia_Cucina();
@@ -708,97 +709,121 @@ int main()
                     break;
                 
                 case 2:
+                    do
+                    {
+                        veg.Subway();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << veg.menu_2[order_number - 1];
 
-                    veg.Subway();
-                    cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
-                    cin >> order_number;
-                    k++;
-                    cout << "\nYou have selected " << veg.menu_2[order_number - 1];
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
 
-                    cout << "\nEnter Quantity : ";
-                    cin >> quantity;
-                    cout << endl;
+                        
+                        order->order_name[k] = veg.menu_2[order_number - 1];
+                        order->quantity[k] = quantity;
+                        order->price[k] = quantity * veg.price_2[order_number - 1];
 
+                    } while (run == true);
                     
-                    order->order_name[k] = veg.menu_2[order_number - 1];
-                    order->quantity[k] = quantity;
-                    order->price[k] = quantity * veg.price_2[order_number - 1];
+
 
                     break;
                 
                 case 3:
+                    do
+                    {
+                        veg.Tiara();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << veg.menu_3[order_number - 1];
 
-                    veg.Tiara();
-                    cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
-                    cin >> order_number;
-                    k++;
-                    cout << "\nYou have selected " << veg.menu_3[order_number - 1];
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
 
-                    cout << "\nEnter Quantity : ";
-                    cin >> quantity;
-                    cout << endl;
-
+                        
+                        order->order_name[k] = veg.menu_3[order_number - 1];
+                        order->quantity[k] = quantity;
+                        order->price[k] = quantity * veg.price_3[order_number - 1];
+                    } while (run == true);
                     
-                    order->order_name[k] = veg.menu_3[order_number - 1];
-                    order->quantity[k] = quantity;
-                    order->price[k] = quantity * veg.price_3[order_number - 1];
+                    
 
                     break;
                 
                 case 4:
+                    do
+                    {
+                        veg.McDonalds();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << veg.menu_4[order_number - 1];
 
-                    veg.McDonalds();
-                    cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
-                    cin >> order_number;
-                    k++;
-                    cout << "\nYou have selected " << veg.menu_4[order_number - 1];
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
 
-                    cout << "\nEnter Quantity : ";
-                    cin >> quantity;
-                    cout << endl;
+                        
+                        order->order_name[k] = veg.menu_1[order_number - 1];
+                        order->quantity[k] = quantity;
+                        order->price[k] = quantity * veg.price_4[order_number - 1];
+                    } while (run == true);
+                    
 
                     
-                    order->order_name[k] = veg.menu_1[order_number - 1];
-                    order->quantity[k] = quantity;
-                    order->price[k] = quantity * veg.price_4[order_number - 1];
 
                     break;
                 
                 case 5:
+                    do
+                    {
+                        veg.Pizza_Express();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << veg.menu_5[order_number - 1];
 
-                    veg.Pizza_Express();
-                    cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
-                    cin >> order_number;
-                    k++;
-                    cout << "\nYou have selected " << veg.menu_5[order_number - 1];
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
 
-                    cout << "\nEnter Quantity : ";
-                    cin >> quantity;
-                    cout << endl;
+                        
+                        order->order_name[k] = veg.menu_1[order_number - 1];
+                        order->quantity[k] = quantity;
+                        order->price[k] = quantity * veg.price_5[order_number - 1];
+                    } while (run == true);
+                    
 
                     
-                    order->order_name[k] = veg.menu_1[order_number - 1];
-                    order->quantity[k] = quantity;
-                    order->price[k] = quantity * veg.price_5[order_number - 1];
 
                     break;
                 
                 case 6:
 
-                    veg.Mainland_China();
-                    cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
-                    cin >> order_number;
-                    k++;
-                    cout << "\nYou have selected " << veg.menu_6[order_number - 1];
+                    do
+                    {
+                        veg.Mainland_China();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << veg.menu_6[order_number - 1];
 
-                    cout << "\nEnter Quantity : ";
-                    cin >> quantity;
-                    cout << endl;
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
 
+                        
+                        order->order_name[k] = veg.menu_1[order_number - 1];
+                        order->quantity[k] = quantity;
+                        order->price[k] = quantity * veg.price_6[order_number - 1];
+                    } while (run == true);
                     
-                    order->order_name[k] = veg.menu_1[order_number - 1];
-                    order->quantity[k] = quantity;
-                    order->price[k] = quantity * veg.price_6[order_number - 1];
+                    
 
                     break;
                 
