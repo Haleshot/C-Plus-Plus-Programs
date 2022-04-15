@@ -208,6 +208,15 @@ void Veg::Subway()
     cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookie [Rs 45]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n";
     cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
 
+
+
+
+
+
+
+
+
+
 }
 void Veg::Tiara()
 {
@@ -216,6 +225,11 @@ void Veg::Tiara()
     cout << "\t\t\t\t\t\tII.Pastas\n\t1.Tagliatelle ai Pomodori (Garlic + chilli + parmesan cheese + jalepeno) [Rs 320]\n\t2.Conchiglioni Al Funghi Porcini (Pasta with creamy Porcini mushroom + scallion sauce) [Rs 220]\n";
     cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookies [Rs 85]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n\t4.Cripss [Rs 65]\n";
     cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
+
+
+
+
+
 
 }
 void Veg::McDonalds()
@@ -226,13 +240,26 @@ void Veg::McDonalds()
     cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookies [Rs 85]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n\t4.Cripss [Rs 65]\n";
     cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
 
+
+
+
+
 }
 void Veg::Pizza_Express()
 {
+    cout<<"PIZZAS\n1.Picoolo Classic Margherita (RS 245)\n2. Picoolo Classic Mushroom (RS 245)\n3.Piccolo Classic American (RS 295)\n4. Kids Verdure (RS 245)\n5. Polla Verde (RS 295) "<<endl;
+    cout<<"PASTAS\n 1. Baked Mac And Cheese (RS 225)\n 2. Penna Forestier (RS 225)\n   "<<endl;
+    cout<<"SIDES\n 1. Dough Balls With Cheese Dip (RS 135)\n 2. Baked Smileys (RS 135)"<<endl;
+
+
 
 }
 void Veg::Mainland_China()
 {
+
+    cout<<"BEVERAGES\n 1. Watermelo Cilantro Crush (RS 200)\n 2. Fresh Lime Soda (RS 110)"<<endl;
+    cout<<"DIMSUMS\n 1. Basil Flavoured Vegetable Dumplings (RS 310)\n 2. Corn and Cheese Dumplings (RS 310)"<<endl;
+    cout<<"APPETIZERS\n 1. Sichuan Chilli Babycorn (RS 435)\n 2. Jiang's Chilli Cottage Cheese (RS 475)"<<endl;
 
 }
 
@@ -253,17 +280,66 @@ public:
     void The_Fatty_Bao();
     void Ticca_Tikka();
     void Global_Fusion();
-    void Kofuku();
+    void KFC();
     void Shizusan();
     void Show_NonVeg_Restaurants();
 
 };
+
+void Non_Veg::Sigree_Global_Grill()
+{
+    cout<<"STARTERS\n 1. Dhuandhar Murgh Tikka(RS 325)\n 2. Kasoori Mirch Fish Tikka(RS 325)\n 3. Tandoori Chicken(rs 575)"<<endl;
+    cout<<"MAIN COURSE\n 1. Butter Chicken (RS 345)\n 2. Bhuna Murgh Kali Mirch (RS 355)"<<endl;
+    cout<<"PASTAS\n 1. Penne chicken (RS  375) \n 2. Spaghetti Chicken (RS 375) "<<endl;
+
+
+}
 
 void Non_Veg::Show_NonVeg_Restaurants()
 {
     cout << "The List of Non-Veg Restaurants is:\n1.Sigree Global Grill\n2.The Fatty Bao\n3.Ticca Tikka\n4.Global Fusion\n5.Kofuku\n6.Shizusan\n";
 }
 
+void Non_Veg::The_Fatty_Bao()
+{
+    cout<<"GYOZA \n 1. Pork And Chineese Cabbage (RS 400) \n 2. Smoked Chicken And Spinach (RS 425)"<<endl;
+    cout<<"aSUSHI ROLL\n 1. Tuna Tartare Roll (RS 400)\n 2. Prawn Tempura Roll (RS 375)\n 3. Non Veg Spider Roll (RS 400)";
+    cout<<"MAIN COURSE\n 1. Pennang Curry With Chicken (RS 450)\n 2. JapaneseChicken Kabocha  Curry (RS 450)"<<endl;
+
+
+}
+
+void Non_Veg::Ticca_Tikka()
+{
+    cout<<"APPETIZER \n 1. Classic Chicken Tikka (RS 425)\n 2. Basil Chicken Tikka (RS 395)\n 3. Malai Chicken Tikka (Rs 425)"<<endl;
+    cout<<"ROLLS AND WRAPS\n 1.Chicken Tikka wrap (RS 280) \n 2. Chicken Malai Wrap (Rs 280)\n 3. Mutton Seekh Wrap (RS 300)"<<endl;
+    cout<<"KEBABS\n 1. Chicken Seekh Kebab (RS 365)\n 2. Chicken Chapli Kebab (RS 385)\3. tawa Chicken (RS 385)"<<endl; 
+
+
+}
+
+void Non_Veg::Global_Fusion()
+{
+    cout<<"INDIAN STARTERS \n 1. Mutton Seekh kebab(Rs400) \n 2. Fish Tikka (Rs 450) \n 3. Chicken Tikka (RS 400)"<<endl;
+    cout<<"CHINESE STARTERS \n 1. pepper Chicken (RS 350) \n 2. Prawns Tepanyakki (RS 400)\n 3. Dory Fish (RS 350)"<<endl;
+    cout<<"MAIN COURSE \n 1. One Chicken Gravy And One Mutton Gravy (RS 550)"<<endl;
+
+
+}
+
+
+void Non_Veg::KFC()
+{
+    cout<<"SNACKS \n 1. Popcorn Chicken Large (Rs 180) \n 2. Boneless Strips 6 pcs (RS 205) "<<endl;
+    cout<<"BURGERS \n 1. Classic Zinger (Rs 150) \n 2. Spicy Zinger (Rs 160)"<<endl;
+}
+
+void Non_Veg::Shizusan()
+{
+    cout<<"SUSHI \n 1. Crunchy Tuna Roll (Rs 450) \n 2. Hamachi New York Dragon (RS 550)"<<endl;
+    cout<<"DIMSUM \n 1. Chicken Gyoza (Rs 395) \n 2. Chilli Coriander Chicken (RS 695) \n 3. Poached Chicken Dumpling (RS 995)"<<endl;
+    cout<<"ASIAN TAPAS \n 1. Hakka Basil Chicken (RS 350) \n 2. Hot Garlic Chicken (RS 350)"<<endl;
+}
 
 
 int main()
