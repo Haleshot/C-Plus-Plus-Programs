@@ -206,15 +206,48 @@ void Veg::Subway()
     cout << "\t\t\t\t\t\tI.Subs\n\t1.Hara Bhara Kebab (Patty + tomato + jalepenos) [Rs 235]\n\t2.Chatpatta Channa (Patty + black olives + jalepenos + parmesan + Mozzarella) [Rs 260]\n\t3.Mexican Patty (Patty + Paneer + tomatoes + jalepenos + Mozzarella) [Rs 230]\n\t4.Veggie Delite (Patty + jalepenos + capsicum + Mozzarella) [Rs 250]\n\t5.Veg Seekh (Patty + jalepenos + cucumber)[Rs 250]\n";
     cout << "\t\t\t\t\t\tII.Wraps\n\t1.Veg Shammi (Roll + cucumber + capsicum + jalepeno) [Rs 120]\n\t2.Chatpatta Shammi (Roll + capsicum + jalepeno) [Rs 120]\n";
     cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookie [Rs 45]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n";
-    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
+    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 120]\n";
 
+    string menu[25] =
+    {
+        "Hara Bhara Kebab",
+        "Chatpatta Channa",
+        "Mexican Patty",
+        "Veggie Delite",
+        "Veg Seekh",
+        "Veg Shammi",
+        "Chatpatta Shammi",
+        "Cookie",
+        "Chocolate Truffle Cake",
+        "French Fries", 
+        "Lipton Ice Tea", 
+        "Tropicanna Juice", 
+        "Slice", 
+        "Chocolate Shake", 
+        "Hot Chocolate"
 
+    };
 
+    float price[25] = 
+    {
 
+        235.0,
+        260.0,
+        230.0,
+        250.0,
+        250.0,
+        120.0,
+        120.0,
+        45.0,
+        75.0,
+        90.0,
+        80.0,
+        80.0,
+        80.0,
+        100.0,
+        120.0,
 
-
-
-
+    };
 
 
 }
@@ -223,10 +256,47 @@ void Veg::Tiara()
     cout << "\t\t\t\t\t\tThe Menu is: " << endl;
     cout << "\t\t\t\t\t\tI.Sandwiches\n\t1.Paneer Tikka Roll (Frankie + cottage cheese) [Rs 235]\n\t2.Tiara Vegetable Club Special (Triple Layered Sandwich + lettuce + tomato + cheese) [Rs 260]\n\t3.Mexican gardern sanwich (Guacomole + tomatoes + jalepenos + Mozzarella) [Rs 230]\n";
     cout << "\t\t\t\t\t\tII.Pastas\n\t1.Tagliatelle ai Pomodori (Garlic + chilli + parmesan cheese + jalepeno) [Rs 320]\n\t2.Conchiglioni Al Funghi Porcini (Pasta with creamy Porcini mushroom + scallion sauce) [Rs 220]\n";
-    cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookies [Rs 85]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n\t4.Cripss [Rs 65]\n";
-    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
+    cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookies [Rs 85]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n\t4.Crisps [Rs 65]\n";
+    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 120]\n";
 
+    string menu[25] =
+    {
+        "Paneer Tikka Roll",
+        "Tiara Vegetable Club Special",
+        "Mexican gardern sanwich",
+        "Tagliatelle ai Pomodori",
+        "Conchiglioni Al Funghi Porcini",
+        "Cookies",
+        "Chocolate Truffle Cake",
+        "French Fries",
+        "Crisps", 
+        "Lipton Ice Tea", 
+        "Tropicanna Juice", 
+        "Slice", 
+        "Chocolate Shake", 
+        "Hot Chocolate"
 
+    };
+
+    float price[25] = 
+    {
+
+        235.0,
+        260.0,
+        230.0,
+        320.0,
+        220.0,
+        85.0,
+        75.0,
+        90.0,
+        65.0,
+        80.0,
+        80.0,
+        80.0,
+        100.0,
+        120.0,
+
+    };
 
 
 
@@ -235,13 +305,49 @@ void Veg::Tiara()
 void Veg::McDonalds()
 {
     cout << "The Menu is: " << endl;
-    cout << "\t\t\t\t\t\tI.Burgers\n\t1.Maharajan Mac (Frankie + cottage cheese) [Rs 235]\n\t2.Tiara Vegetable Club Special (Triple Layered Sandwich + lettuce + tomato + cheese) [Rs 260]\n\t3.Mexican gardern sanwich (Guacomole + tomatoes + jalepenos + Mozzarella) [Rs 230]\n";
+    cout << "\t\t\t\t\t\tI.Burgers\n\t1.Maharajan Mac (Frankie + cottage cheese) [Rs 235]\n\t2.Triple Layer Veg Patty (Triple Layered Sandwich + lettuce + tomato + cheese) [Rs 260]\n\t3.Mexican Burger (Guacomole + tomatoes + jalepenos + Mozzarella) [Rs 230]\n";
     cout << "\t\t\t\t\t\tII.Pastas\n\t1.Tagliatelle ai Pomodori (Garlic + chilli + parmesan cheese + jalepeno) [Rs 320]\n\t2.Conchiglioni Al Funghi Porcini (Pasta with creamy Porcini mushroom + scallion sauce) [Rs 220]\n";
     cout << "\t\t\t\t\t\tIII.Sides\n\t1.Cookies [Rs 85]\n\t2.Chocolate Truffle Cake [Rs 75]\n\t3.French Fries [Rs 90]\n\t4.Cripss [Rs 65]\n";
     cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Lipton Ice Tea [Rs 80]\n\t2.Tropicanna Juice [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
 
+    string menu[25] =
+    {
+        "Maharajan Mac",
+        "Triple Layer Veg Patty",
+        "Mexican Burger",
+        "Tagliatelle ai Pomodori",
+        "Conchiglioni Al Funghi Porcini",
+        "Cookies",
+        "Chocolate Truffle Cake",
+        "French Fries",
+        "Crisps", 
+        "Lipton Ice Tea", 
+        "Tropicanna Juice", 
+        "Slice", 
+        "Chocolate Shake", 
+        "Hot Chocolate"
 
+    };
 
+    float price[25] = 
+    {
+
+        235.0,
+        260.0,
+        230.0,
+        320.0,
+        220.0,
+        85.0,
+        75.0,
+        90.0,
+        65.0,
+        80.0,
+        80.0,
+        80.0,
+        100.0,
+        120.0,
+
+    };
 
 
 }
@@ -250,6 +356,35 @@ void Veg::Pizza_Express()
     cout<<"PIZZAS\n1.Picoolo Classic Margherita (RS 245)\n2. Picoolo Classic Mushroom (RS 245)\n3.Piccolo Classic American (RS 295)\n4. Kids Verdure (RS 245)\n5. Polla Verde (RS 295) "<<endl;
     cout<<"PASTAS\n 1. Baked Mac And Cheese (RS 225)\n 2. Penna Forestier (RS 225)\n   "<<endl;
     cout<<"SIDES\n 1. Dough Balls With Cheese Dip (RS 135)\n 2. Baked Smileys (RS 135)"<<endl;
+
+    string menu[25] =
+    {
+        "Picoolo Classic Margherita",
+        "Picoolo Classic Mushroom",
+        "Piccolo Classic American",
+        "Kids Verdure",
+        "Polla Verde",
+        "Baked Mac And Cheese",
+        "Penna Forestier",
+        "Dough Balls With Cheese Dip",
+        "Baked Smileys"
+
+    };
+
+    float price[25] = 
+    {
+
+        245.0,
+        245.0,
+        295.0,
+        245.0,
+        295.0,
+        225.0,
+        225.0,
+        135.0,
+        135.0
+
+    };
 
 
 
@@ -260,6 +395,30 @@ void Veg::Mainland_China()
     cout<<"BEVERAGES\n 1. Watermelo Cilantro Crush (RS 200)\n 2. Fresh Lime Soda (RS 110)"<<endl;
     cout<<"DIMSUMS\n 1. Basil Flavoured Vegetable Dumplings (RS 310)\n 2. Corn and Cheese Dumplings (RS 310)"<<endl;
     cout<<"APPETIZERS\n 1. Sichuan Chilli Babycorn (RS 435)\n 2. Jiang's Chilli Cottage Cheese (RS 475)"<<endl;
+
+    string menu[25] =
+    {
+        "Watermelo Cilantro Crush",
+        "Fresh Lime Soda",
+        "Basil Flavoured Vegetable Dumplings",
+        "Corn and Cheese Dumpling",
+        "Sichuan Chilli Babycorn",
+        "Jiang's Chilli Cottage Cheese"
+
+    };
+
+    float price[25] = 
+    {
+
+        200.0,
+        110.0,
+        295.0,
+        310.0,
+        310.0,
+        435.0,
+        475.0
+
+    };
 
 }
 
@@ -288,24 +447,68 @@ public:
 
 void Non_Veg::Sigree_Global_Grill()
 {
-    cout<<"STARTERS\n 1. Dhuandhar Murgh Tikka(RS 325)\n 2. Kasoori Mirch Fish Tikka(RS 325)\n 3. Tandoori Chicken(rs 575)"<<endl;
-    cout<<"MAIN COURSE\n 1. Butter Chicken (RS 345)\n 2. Bhuna Murgh Kali Mirch (RS 355)"<<endl;
-    cout<<"PASTAS\n 1. Penne chicken (RS  375) \n 2. Spaghetti Chicken (RS 375) "<<endl;
+    cout << "STARTERS\n 1. Dhuandhar Murgh Tikka(RS 325)\n 2. Kasoori Mirch Fish Tikka(RS 325)\n 3. Tandoori Chicken(Rs 575)" << endl;
+    cout << "MAIN COURSE\n 1. Butter Chicken (RS 345)\n 2. Bhuna Murgh Kali Mirch (RS 355)" << endl;
+    cout << "PASTAS\n 1. Penne chicken (RS  375) \n 2. Spaghetti Chicken (RS 375) "<< endl;
+
+    string menu[25] =
+    {
+        "Dhuandhar Murgh Tikka",
+        "Kasoori Mirch Fish Tikka",
+        "Tandoori Chicken",
+        "Butter Chicken",
+        "Penne chicken",
+        "Spaghetti Chicken"
+
+    };
+
+    float price[25] = 
+    {
+
+        325.0,
+        325.0,
+        575.0,
+        345.0,
+        355.0,
+        375.0,
+        375.0
+
+    };
 
 
-}
 
-void Non_Veg::Show_NonVeg_Restaurants()
-{
-    cout << "The List of Non-Veg Restaurants is:\n1.Sigree Global Grill\n2.The Fatty Bao\n3.Ticca Tikka\n4.Global Fusion\n5.Kofuku\n6.Shizusan\n";
 }
 
 void Non_Veg::The_Fatty_Bao()
 {
-    cout<<"GYOZA \n 1. Pork And Chineese Cabbage (RS 400) \n 2. Smoked Chicken And Spinach (RS 425)"<<endl;
-    cout<<"aSUSHI ROLL\n 1. Tuna Tartare Roll (RS 400)\n 2. Prawn Tempura Roll (RS 375)\n 3. Non Veg Spider Roll (RS 400)";
-    cout<<"MAIN COURSE\n 1. Pennang Curry With Chicken (RS 450)\n 2. JapaneseChicken Kabocha  Curry (RS 450)"<<endl;
+    cout << "GYOZA \n 1. Pork And Chineese Cabbage (RS 400) \n 2. Smoked Chicken And Spinach (RS 425)"<< endl;
+    cout << "SUSHI ROLL\n 1. Tuna Tartare Roll (RS 400)\n 2. Prawn Tempura Roll (RS 375)\n 3. Non Veg Spider Roll (RS 400)" << endl;
+    cout << "MAIN COURSE\n 1. Pennang Curry With Chicken (RS 450)\n 2. Japanese Chicken Kabocha  Curry (RS 450)"<< endl;
 
+    string menu[25] =
+    {
+        "Pork And Chineese Cabbage",
+        "Smoked Chicken And Spinach",
+        "Tuna Tartare Roll",
+        "Prawn Tempura Roll",
+        "Non Veg Spider Roll",
+        "Pennang Curry With Chicken",
+        "Japanese Chicken Kabocha  Curry"
+
+    };
+
+    float price[25] = 
+    {
+
+        400.0,
+        425.0,
+        400.0,
+        375.0,
+        400.0,
+        450.0,
+        450.0
+
+    };
 
 }
 
@@ -313,17 +516,69 @@ void Non_Veg::Ticca_Tikka()
 {
     cout<<"APPETIZER \n 1. Classic Chicken Tikka (RS 425)\n 2. Basil Chicken Tikka (RS 395)\n 3. Malai Chicken Tikka (Rs 425)"<<endl;
     cout<<"ROLLS AND WRAPS\n 1.Chicken Tikka wrap (RS 280) \n 2. Chicken Malai Wrap (Rs 280)\n 3. Mutton Seekh Wrap (RS 300)"<<endl;
-    cout<<"KEBABS\n 1. Chicken Seekh Kebab (RS 365)\n 2. Chicken Chapli Kebab (RS 385)\3. tawa Chicken (RS 385)"<<endl; 
+    cout<<"KEBABS\n 1. Chicken Seekh Kebab (RS 365)\n 2. Chicken Chapli Kebab (RS 385)\3. Tawa Chicken (RS 385)"<<endl; 
+
+    string menu[25] =
+    {
+        "Classic Chicken Tikka",
+        "Basil Chicken Tikka",
+        "Malai Chicken Tikka",
+        "Chicken Tikka wrap",
+        "Chicken Malai Wrap",
+        "Mutton Seekh Wrap",
+        "Chicken Seekh Kebab",
+        "Chicken Chapli Kebab",
+        "Tawa Chicken"
+
+    };
+
+    float price[25] = 
+    {
+
+        425.0,
+        395.0,
+        425.0,
+        280.0,
+        280.0,
+        300.0,
+        365.0,
+        385.0,
+        365.0
+
+    };
 
 
 }
 
 void Non_Veg::Global_Fusion()
 {
-    cout<<"INDIAN STARTERS \n 1. Mutton Seekh kebab(Rs400) \n 2. Fish Tikka (Rs 450) \n 3. Chicken Tikka (RS 400)"<<endl;
-    cout<<"CHINESE STARTERS \n 1. pepper Chicken (RS 350) \n 2. Prawns Tepanyakki (RS 400)\n 3. Dory Fish (RS 350)"<<endl;
+    cout<<"INDIAN STARTERS \n 1. Mutton Seekh kebab (Rs 400) \n 2. Fish Tikka (Rs 450) \n 3. Chicken Tikka (RS 400)"<<endl;
+    cout<<"CHINESE STARTERS \n 1. Pepper Chicken (RS 350) \n 2. Prawns Tepanyakki (RS 400)\n 3. Dory Fish (RS 350)"<<endl;
     cout<<"MAIN COURSE \n 1. One Chicken Gravy And One Mutton Gravy (RS 550)"<<endl;
 
+    string menu[25] =
+    {
+        "Mutton Seekh kebab",
+        "Fish Tikka",
+        "Chicken Tikka",
+        "Pepper Chicken",
+        "Prawns Tepanyakki",
+        "Dory Fish",
+        "One Chicken Gravy And One Mutton Gravy"
+    };
+
+    float price[25] = 
+    {
+
+        400.0,
+        450.0,
+        400.0,
+        350.0,
+        400.0,
+        350.0,
+        550.0
+
+    };
 
 }
 
@@ -332,6 +587,25 @@ void Non_Veg::KFC()
 {
     cout<<"SNACKS \n 1. Popcorn Chicken Large (Rs 180) \n 2. Boneless Strips 6 pcs (RS 205) "<<endl;
     cout<<"BURGERS \n 1. Classic Zinger (Rs 150) \n 2. Spicy Zinger (Rs 160)"<<endl;
+
+    string menu[25] =
+    {
+        "Popcorn Chicken Large",
+        "Boneless Strips 6 pcs",
+        "Classic Zinger",
+        "Spicy Zinger"
+    };
+
+    float price[25] = 
+    {
+
+        180.0,
+        205.0,
+        150.0,
+        160.0
+
+    };
+
 }
 
 void Non_Veg::Shizusan()
@@ -339,6 +613,36 @@ void Non_Veg::Shizusan()
     cout<<"SUSHI \n 1. Crunchy Tuna Roll (Rs 450) \n 2. Hamachi New York Dragon (RS 550)"<<endl;
     cout<<"DIMSUM \n 1. Chicken Gyoza (Rs 395) \n 2. Chilli Coriander Chicken (RS 695) \n 3. Poached Chicken Dumpling (RS 995)"<<endl;
     cout<<"ASIAN TAPAS \n 1. Hakka Basil Chicken (RS 350) \n 2. Hot Garlic Chicken (RS 350)"<<endl;
+
+    string menu[25] =
+    {
+        "Crunchy Tuna Rol",
+        "Hamachi New York Drago",
+        "Chicken Gyoza",
+        "Chilli Coriander Chicken",
+        "Poached Chicken Dumpling",
+        "Hakka Basil Chicken",
+        "Hot Garlic Chick",
+        
+    };
+
+    float price[25] = 
+    {
+
+        450.0,
+        550.0,
+        395.0,
+        695.0,
+        995.0,
+        350.0,
+        350.0
+
+    };
+}
+
+void Non_Veg::Show_NonVeg_Restaurants()
+{
+    cout << "The List of Non-Veg Restaurants is:\n1.Sigree Global Grill\n2.The Fatty Bao\n3.Ticca Tikka\n4.Global Fusion\n5.Kofuku\n6.Shizusan\n";
 }
 
 
