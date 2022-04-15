@@ -140,9 +140,9 @@ void Veg::Mia_Cucina()
 {
     cout << "\t\t\t\t\t\tThe Menu is: " << endl;
     cout << "\t\t\t\t\t\tI.Pizzas\n\t1.Margherita (Mozzarella + tomato + basil) [Rs 245]\n\t2.Pizza Verdura (Roasted Veggies + black olives + jalepenos + parmesan + Mozzarella) [Rs 256]\n\t3.Pizza Arabiata (Spicy Paneer + cherry tomatoes + Mozzarella) [Rs 230]\n\t4.Chorizo (Spanish hotdog + Mozzarella) [Rs 400]\n\t5.Feta e Peparone (Feta + Mozzarella + roasted bell peppers)[Rs 350]\n";
-    cout << "\t\t\t\t\t\tII.Pastas\n\t1.Tagliatelle ai Pomodori (Homemade pasta + tomato + basil sauce) [Rs 200]\n\t2.Tagliatelle ai Pomodori (Homemade pasta in creamy basil sauce) [Rs 450]\n\t3.Penne Arabiata (Penne pasta + spicy tomato sauce + bell peppers + green olives) [Rs 300]\n\t4.Chorizo (Spanish hotdog + Mozzarella) [Rs 280]\n\t5.Spaghetti Aglio Olio (Spaghetti pasta + garlic + olive oil) [Rs 310]\n";
+    cout << "\t\t\t\t\t\tII.Pastas\n\t1.Tagliatelle ai Pomodori (Homemade pasta + tomato + basil sauce) [Rs 200]\n\t2.Tagliatelle ai tusch (Homemade pasta in creamy basil sauce) [Rs 450]\n\t3.Penne Arabiata (Penne pasta + spicy tomato sauce + bell peppers + green olives) [Rs 300]\n\t4.Chorizo Pomodori(Spanish hotdog + Mozzarella + Garlic Bread) [Rs 280]\n\t5.Spaghetti Aglio Olio (Spaghetti pasta + garlic + olive oil) [Rs 310]\n";
     cout << "\t\t\t\t\t\tIII.Sides\n\t1.Chocolate Cake [Rs 120]\n\t2.Affogato [Rs 150]\n\t3.Panacotta [Rs 180]\n\t4.Brownie Sundae [Rs 170]\n\t5.Blueberry Crumble [Rs 200]\n";
-    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Pepsi [Rs 80]\n\t2.Sprite [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 1200]\n";
+    cout << "\t\t\t\t\t\tIV.Beverages\n\t1.Pepsi [Rs 80]\n\t2.Sprite [Rs 80]\n\t3.Slice [Rs 80]\n\t4.Chocolate Shake [Rs 100]\n\t5.Hot Chocolate [Rs 120]\n";
 
 
 
@@ -154,10 +154,46 @@ void Veg::Mia_Cucina()
         "Chorizo",
         "Feta e Peparone",
         "Tagliatelle ai Pomodori",
-        "Faludha",
-        "Ice Cream",
-        "Pizza",
-        "Shawarma"
+        "Tagliatelle ai tusch",
+        "Penne Arabiata",
+        "Chorizo Pomodori",
+        "Spaghetti Aglio Olio", 
+        "Chocolate Cake", 
+        "Affogato", 
+        "Panacotta", 
+        "Brownie Sundae", 
+        "Blueberry Crumble", 
+        "Pepsi", 
+        "Sprite", 
+        "Slice", 
+        "Chocolate Shake", 
+        "Hot Chocolate"
+
+    };
+
+    float price[25] = 
+    {
+
+        245.0,
+        256.0,
+        230.0,
+        400.0,
+        350.0,
+        200.0,
+        450.0,
+        380.0,
+        310.0,
+        120.0,
+        150.0,
+        180.0,
+        170.0,
+        200.0,
+        80.0,
+        80.0,
+        80.0,
+        100.0,
+        120.0,
+
     };
 
 
