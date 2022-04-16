@@ -7,13 +7,52 @@
 #include <stack>
 using namespace std;
 
-
+// Structure containing the respective data members to store the detials of the food items ordered by customer.
 struct Order
 {
-    string order_name[100];
-    int quantity[50];
-    float price[50], disc[50];
-}order[50];
+    string order_name;
+    int quantity;
+    float price, disc;
+
+    Order *next;
+};
+
+
+Order *Head = NULL;
+
+// Linked List Data Structure Class
+class Customer_order
+{
+    public:
+
+        // Insert Beginning Function acts as a Stack since each item gets added to the beginning of the Linked List.
+        void Insert_Beg(string ordername_, int quantity_, float price_);
+
+        // Delete a Node which contains the Customer Order.
+        void Delete_Pos(int index);
+        {
+            Order *temp = Head;
+            int counter = 1;
+
+            if(index == 0)
+            {
+                Head = temp->next;
+            }
+            while(temp != NULL && counter < index - 1)
+            {
+                temp = temp->next;
+                counter++;
+            }
+            if(temp != NULL)
+            {
+                Order *a = temp->next;
+                Order *b = a->next;
+                temp->next = b;
+                delete a;
+            }
+        }
+};
+
 
 
 class Customer
@@ -683,6 +722,7 @@ int main()
         class Restaurants restaurant;
         class Veg veg;
         class Non_Veg non_Veg;
+        class Customer_Order cust;
         Order order[50];
     
         bool run = true;
