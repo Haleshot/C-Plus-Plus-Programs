@@ -21,7 +21,6 @@ void Insert_Beg(int value)
     first->data = value;
     first->next = Head;
     Head = first;
-
 }
 
 // Function to Insert value at the End of the Linked List
