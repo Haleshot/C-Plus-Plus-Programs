@@ -132,6 +132,7 @@ void Food::Discount()
     {
         float sum = 0;
         float discount;
+        
         while (current != NULL)
         {
             sum += current->amount;
@@ -139,7 +140,7 @@ void Food::Discount()
         }
         discount = 0.2 * sum;
         sum = sum - discount;
-        cout << "Total Amount (After applying Discount) = " << sum << endl;
+        cout << "\t\t\t\t\t\tTotal Amount (After applying Discount) = " << sum << endl;
         
     }
 }
