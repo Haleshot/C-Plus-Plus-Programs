@@ -82,15 +82,15 @@ void Food::Bill_Generation()
     }
     else
     {
-        cout <<"*************************************************************************\n" << endl;
-        cout <<"*****************************   BILL   ******************************" << endl;
-        cout <<"*************************************************************************" << endl;
-        cout << "Index No:" << "\t\t\t" << "NAME" << "\t\t\t\t\t" << "Qty" << "\t\t\t\t" << "Price" << "\t\t\t\t" << "Amount" << endl;
+        cout <<"\t\t\t\t\t\t*************************************************************************\n" << endl;
+        cout <<"\t\t\t\t\t\t*****************************   BILL   ******************************" << endl;
+        cout <<"\t\t\t\t\t\t*************************************************************************" << endl;
+        cout << "Index No:" << "\t\t" << "NAME" << "\t\t\t\t\t" << "Qty" << "\t\t\t\t" << "Price" << "\t\t\t\t\t" << "Amount" << endl;
 
         int i = 1;
         while (current != NULL)
         {
-            cout << i << "\t\t\t" << current->order_name << "\t\t\t\t\t" << current->quantity << "\t\t\t\t" << current->price << "\t\t\t\t" << current->amount<< endl;
+            cout << i << "\t\t\t" << current->order_name << "\t\t\t\t\t" << current->quantity << "\t\t\t\t\t" << current->price << "\t\t\t\t\t" << current->amount<< endl;
             current = current->next;
             i += 1;
         }
