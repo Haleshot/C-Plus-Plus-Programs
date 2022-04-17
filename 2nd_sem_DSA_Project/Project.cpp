@@ -85,12 +85,12 @@ void Food::Bill_Generation()
         cout <<"\t\t\t\t\t\t*************************************************************************\n" << endl;
         cout <<"\t\t\t\t\t\t*****************************   BILL   ******************************" << endl;
         cout <<"\t\t\t\t\t\t*************************************************************************" << endl;
-        cout << left << setw(9) << "Index No:" << left << setw(15) << "NAME" << left << setw(10) << "Qty" << left << setw(10) << "Price" << left << setw(10) << "Amount" << endl;
+        cout << left << setw(25) << "Index No:" << left << setw(30) << "NAME" << left << setw(15) << "Qty" << left << setw(10) << "Price" << left << setw(10) << "Amount" << endl;
 
         int i = 1;
         while (current != NULL)
         {
-            cout << left << setw(9) << i << left << setw(15) << current->order_name << left << setw(10) << current->quantity << left << setw(10) << current->price << left << setw(10) << current->amount<< endl;
+            cout << left << setw(25) << i << left << setw(30) << current->order_name << left << setw(15) << current->quantity << left << setw(10) << current->price << left << setw(10) << current->amount<< endl;
             current = current->next;
             i += 1;
         }
@@ -102,7 +102,7 @@ class Customer
 {
 public:
     int cust_id;
-    char Name[100], address[100], phonenumber[11];
+    string Name, address, phonenumber;
     string premium_pass_number;
     bool premium_pass_number_exists = true;
 
@@ -115,15 +115,15 @@ void Customer::Input_Customer_Details()
 {
         cout << "*************************************************************************" << endl;
         cout << "Customer Details:\nEnter your Name : ";
-        cin >> Name;
+        getline(cin, Name);
 
         
         cout << "Enter your Address (Delivery/ Drop Off Location) : ";
-        cin >> address;
+        getline(cin, address);
 
         
         cout << "Enter your Phone Number : ";
-        cin >> phonenumber;
+        getline(cin, phonenumber);
 
 
 
