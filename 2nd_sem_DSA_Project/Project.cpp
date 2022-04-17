@@ -1117,7 +1117,6 @@ int main()
 
 
         float total_amount = 0.0;
-        int total_items = 0;
 
         // Function for calculating Net Bill
         /*
@@ -1139,10 +1138,10 @@ int main()
         bool run_choice = true;
         string coupon;
         float discount;
-        cout << "\t\t\t\t\t\tWhat would you like to do now?\n1.Update Customer Information\n2.Apply Coupons (Pick up food from a restaurant)\n3.Generate Bill\n4.Exit\n";
-        cin >> choice;
         do
         {
+            cout << "\t\t\t\t\t\tWhat would you like to do now?\n1.Update Customer Information\n2.Apply Coupons (Pick up food from a restaurant)\n3.Generate Bill\n4.Exit\n";
+            cin >> choice;
             switch (choice)
             {
                 case 1:
@@ -1165,6 +1164,7 @@ int main()
                     {
                         cout << "Invalid Coupon!\n";
                         cout << "No discount applied!" << endl;
+                        return total_amount;
                     }
 
                 case 3:
