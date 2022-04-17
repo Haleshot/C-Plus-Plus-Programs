@@ -85,12 +85,12 @@ void Food::Bill_Generation()
         cout <<"\t\t\t\t\t\t*************************************************************************\n" << endl;
         cout <<"\t\t\t\t\t\t*****************************   BILL   ******************************" << endl;
         cout <<"\t\t\t\t\t\t*************************************************************************" << endl;
-        cout << "Index No:" << "\t\t" << "NAME" << "\t\t\t\t\t" << "Qty" << "\t\t\t\t" << "Price" << "\t\t\t\t\t" << "Amount" << endl;
+        cout << left << setw(9) << "Index No:" << left << setw(15) << "NAME" << left << setw(10) << "Qty" << left << setw(10) << "Price" << left << setw(10) << "Amount" << endl;
 
         int i = 1;
         while (current != NULL)
         {
-            cout << i << "\t\t\t" << current->order_name << "\t\t\t\t\t" << current->quantity << "\t\t\t\t\t" << current->price << "\t\t\t\t\t" << current->amount<< endl;
+            cout << left << setw(9) << i << left << setw(15) << current->order_name << left << setw(10) << current->quantity << left << setw(10) << current->price << left << setw(10) << current->amount<< endl;
             current = current->next;
             i += 1;
         }
@@ -152,7 +152,7 @@ void Customer::Input_Customer_Details()
 }
 
 void Customer::Display_Customer_Details()
-{
+{ 
         cout << "\n\n\n\n\n\n\t\t\t\t\t\t*************************************************************************" << endl << endl;
         cout <<"\t\t\t\t\t\t*************************************************************************\n" << endl;
         cout <<"\t\t\t\t\t\t*****************************  Customer Details:  ***********************" << endl;
