@@ -30,8 +30,8 @@ class Food
         // Delete a Node which contains the Customer Order.
         void Delete_Pos(int);
 
-        // Function to calculate the total number of items and amount to be paid.
-        void Calculate_Quantity_Amount();
+        // Function to calculate the total amount to be paid.
+        void Calculate_Amount();
 
         // Function to display the whole bill in tabulated manner.
         void Bill_Generation();
@@ -153,9 +153,11 @@ void Customer::Input_Customer_Details()
 
 void Customer::Display_Customer_Details()
 {
-    cout << "*************************************************************************" << endl;
+    cout << "*************************************************************************" << endl << endl;
         cout << "Customer Details: \n";
-        cout<<"   "<< cust_id << setw(15) << Name<< setw(23) << address << setw(27) << phonenumber <<endl;
+        cout << "Customer ID" << "\t\t" << "NAME" << "\t\t\t\t\t" << "Address" << "\t\t\t\t" << "Phonenumber" << "\t\t\t\t\t" << endl;
+        
+        cout<<"   "<< rand() % 200 + 39764 << setw(15) << Name<< setw(23) << address << setw(27) << phonenumber <<endl;
         cout << "Name : " << Name << endl; 
         cout << "Premium pass number : " << premium_pass_number << endl;
         cout << "*************************************************************************" << endl;
@@ -990,6 +992,7 @@ int main()
 
                 case 3:
                     food.Bill_Generation();
+                    customer.Display_Customer_Details();
                     break;
                 
 
