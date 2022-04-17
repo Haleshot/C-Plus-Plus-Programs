@@ -4,7 +4,6 @@
 #include<iomanip> // For setw function
 #include <stdlib.h>
 #include <string> // For inputting Customer Information
-#include <stack>
 using namespace std;
 
 // Structure containing the respective data members to store the detials of the food items ordered by customer.
@@ -38,7 +37,7 @@ class Food
         void Bill_Generation();
 
         // Function to apply discount on Total Amount.
-        bool Discount();
+        void Discount();
 };
 
 void Food::Insert_Beg(string ordername_, int quantity_, float price_, float amount_)
@@ -122,7 +121,7 @@ void Food::Calculate_Amount()
     }
 }
 
-bool Food::Discount()
+void Food::Discount()
 {
     Order *current = Head;
     if (Head == NULL)
@@ -142,7 +141,6 @@ bool Food::Discount()
         discount = 0.2 * sum;
         sum = sum - discount;
         cout << "\t\t\t\t\t\tTotal Amount (After applying Discount) = " << sum << endl;
-        return 1;
         
     }
 }
