@@ -12,48 +12,91 @@ struct Order
 {
     string order_name;
     int quantity;
-    float price, disc;
+    float price, amount;
 
     Order *next;
 };
 
-
 Order *Head = NULL;
 
 // Linked List Data Structure Class
-class Customer_order
+class Food
 {
     public:
 
         // Insert Beginning Function acts as a Stack since each item gets added to the beginning of the Linked List.
-        void Insert_Beg(string ordername_, int quantity_, float price_);
+        void Insert_Beg(string, int, float, float);
 
         // Delete a Node which contains the Customer Order.
-        void Delete_Pos(int index);
-        {
-            Order *temp = Head;
-            int counter = 1;
+        void Delete_Pos(int);
 
-            if(index == 0)
-            {
-                Head = temp->next;
-            }
-            while(temp != NULL && counter < index - 1)
-            {
-                temp = temp->next;
-                counter++;
-            }
-            if(temp != NULL)
-            {
-                Order *a = temp->next;
-                Order *b = a->next;
-                temp->next = b;
-                delete a;
-            }
-        }
+        // Function to calculate the total number of items and amount to be paid.
+        void Calculate_Quantity_Amount();
+
+        // Function to display the whole bill in tabulated manner.
+        void Bill_Generation();
 };
 
+void Food::Insert_Beg(string ordername_, int quantity_, float price_, float amount_)
+{
+        Order *item;
+        item = new Order();
+        item->order_name = ordername_;
+        item->quantity = quantity_;
+        item->price = price_;
+        item->amount = item->price * item->quantity;
 
+        item->next = Head;
+        Head = item;
+}
+
+void Food::Delete_Pos(int index)
+{
+    Order *temp = Head;
+    int counter = 1;
+
+        if(index == 0)
+        {
+            Head = temp->next;
+        }
+        while(temp != NULL && counter < index - 1)
+        {
+            temp = temp->next;
+            counter++;
+        }
+        if(temp != NULL)
+        {
+            Order *a = temp->next;
+            Order *b = a->next;
+            temp->next = b;
+            delete a;
+        }
+}
+
+void Food::Bill_Generation()
+{
+    Order *current = Head;
+    if (Head == NULL)
+    {
+        cout << "Cart is Empty! Please order food items from the restaurants provided." << endl;
+    }
+    else
+    {
+        cout <<"*************************************************************************\n" << endl;
+        cout <<"*****************************   BILL   ******************************" << endl;
+        cout <<"*************************************************************************" << endl;
+        cout << "Index No:" << "\t\t\t" << "NAME" << "\t\t\t\t\t" << "Qty" << "\t\t\t\t" << "Price" << "\t\t\t\t" << "Amount" << endl;
+
+        int i = 1;
+        while (current != NULL)
+        {
+            cout << i << "\t\t\t" << current->order_name << "\t\t\t\t\t" << current->quantity << "\t\t\t\t" << current->price << "\t\t\t\t" << current->amount<< endl;
+            current = current->next;
+            i += 1;
+        }
+        
+    }
+}
 
 class Customer
 {
@@ -65,8 +108,6 @@ public:
 
     void Input_Customer_Details();
     void Display_Customer_Details();
-
-
 
 };
 
@@ -128,7 +169,6 @@ public:
 
     void Show_nearby_restaurants();
     bool Validity_Of_Coupon(string, int);
-    void Bill_Generation(int, int, int, int);
 };
 
 
@@ -158,19 +198,6 @@ bool Restaurants::Validity_Of_Coupon(string str, int n)
     return true;
 }
 
-void Restaurants::Bill_Generation(int counter, int total, int net_total, int items)
-{
-    cout <<"*************************************************************************\n" << endl;
-    cout <<"*****************************   BILL   ******************************" << endl;
-    cout <<"*************************************************************************" << endl;
-    cout << "Index No:" << setw(12) << "NAME" << setw(12) << "Qty" << setw(12) << "Price" << setw(12) << "Amount" << setw(12) << "Amount - discount" << endl;
-            
-    for(int i = 0; i < counter; i++)
-    {
-        cout << (i + 1) << setw(12) << order->order_name[i] << setw(12) << order->quantity[i] << setw(12) << "Rs. " << total << setw(12) << net_total << setw(12) << endl;
-    }
-
-}
 
 class Veg : public Restaurants
 {
@@ -451,7 +478,7 @@ void Veg::McDonalds()
     cout << "The Menu is: " << endl;
     cout << "\t\t\t\t\t\tI.Burgers\n\t1.Maharajan Mac (Frankie + cottage cheese) [Rs 235]\n\t2.Triple Layer Veg Patty (Triple Layered Sandwich + lettuce + tomato + cheese) [Rs 260]\n\t3.Mexican Burger (Guacomole + tomatoes + jalepenos + Mozzarella) [Rs 230]\n";
     cout << "\t\t\t\t\t\tII.Pastas\n\t4.Tagliatelle ai Pomodori (Garlic + chilli + parmesan cheese + jalepeno) [Rs 320]\n\t5.Conchiglioni Al Funghi Porcini (Pasta with creamy Porcini mushroom + scallion sauce) [Rs 220]\n";
-    cout << "\t\t\t\t\t\tIII.Sides\n\t6.Cookies [Rs 85]\n\t7.Chocolate Truffle Cake [Rs 75]\n\t8.French Fries [Rs 90]\n\t9.Cripss [Rs 65]\n";
+    cout << "\t\t\t\t\t\tIII.Sides\n\t6.Cookies [Rs 85]\n\t7.Chocolate Truffle Cake [Rs 75]\n\t8.French Fries [Rs 90]\n\t9.Crisps [Rs 65]\n";
     cout << "\t\t\t\t\t\tIV.Beverages\n\t10.Lipton Ice Tea [Rs 80]\n\t11.Tropicanna Juice [Rs 80]\n\t12.Slice [Rs 80]\n\t13.Chocolate Shake [Rs 100]\n\t14.Hot Chocolate [Rs 120]\n";
 
 
@@ -459,9 +486,9 @@ void Veg::McDonalds()
 }
 void Veg::Pizza_Express()
 {
-    cout << "PIZZAS\n1.Picoolo Classic Margherita (RS 245)\n2. Picoolo Classic Mushroom (RS 245)\n3.Piccolo Classic American (RS 295)\n4. Kids Verdure (RS 245)\n5. Polla Verde (RS 295) \n" << endl;
-    cout << "PASTAS\n6.Baked Mac And Cheese (RS 225)\n7. Penna Forestier (RS 225)\n\n" << endl;
-    cout << "SIDES\n8.Dough Balls With Cheese Dip (RS 135)\n9. Baked Smileys (RS 135)" << endl;
+    cout << "\t\t\t\t\t\tPIZZAS\n1.Picoolo Classic Margherita (RS 245)\n2. Picoolo Classic Mushroom (RS 245)\n3.Piccolo Classic American (RS 295)\n4. Kids Verdure (RS 245)\n5. Polla Verde (RS 295) \n" << endl;
+    cout << "\t\t\t\t\t\tPASTAS\n6.Baked Mac And Cheese (RS 225)\n7. Penna Forestier (RS 225)\n\n" << endl;
+    cout << "\t\t\t\t\t\tSIDES\n8.Dough Balls With Cheese Dip (RS 135)\n9. Baked Smileys (RS 135)" << endl;
 
 
 
@@ -469,9 +496,9 @@ void Veg::Pizza_Express()
 void Veg::Mainland_China()
 {
 
-    cout << "BEVERAGES\n 1. Watermelo Cilantro Crush (RS 200)\n 2. Fresh Lime Soda (RS 110)" << endl;
-    cout << "DIMSUMS\n 3. Basil Flavoured Vegetable Dumplings (RS 310)\n 4. Corn and Cheese Dumplings (RS 310)" << endl;
-    cout << "APPETIZERS\n 5. Sichuan Chilli Babycorn (RS 435)\n 6. Jiang's Chilli Cottage Cheese (RS 475)" << endl;
+    cout << "\t\t\t\t\t\tBEVERAGES\n 1. Watermelo Cilantro Crush (RS 200)\n 2. Fresh Lime Soda (RS 110)" << endl;
+    cout << "\t\t\t\t\t\tDIMSUMS\n 3. Basil Flavoured Vegetable Dumplings (RS 310)\n 4. Corn and Cheese Dumplings (RS 310)" << endl;
+    cout << "\t\t\t\t\t\tAPPETIZERS\n 5. Sichuan Chilli Babycorn (RS 435)\n 6. Jiang's Chilli Cottage Cheese (RS 475)" << endl;
 
 
 }
@@ -480,7 +507,7 @@ void Veg::Mainland_China()
 
 void Veg::Show_Veg_Restaurants()
 {
-    cout << "The List of Veg Restaurants is:\n1.Mia Cucina\n2.Subway\n3.Tiara\n4.McDonalds\n5.Pizza Express\n6.Mainland China\n";
+    cout << "\t\t\t\t\t\tThe List of Veg Restaurants is:\n1.Mia Cucina\n2.Subway\n3.Tiara\n4.McDonalds\n5.Pizza Express\n6.Mainland China\n";
 }
 
 
@@ -654,9 +681,9 @@ public:
 
 void Non_Veg::Sigree_Global_Grill()
 {
-    cout << "STARTERS\n 1. Dhuandhar Murgh Tikka(RS 325)\n 2. Kasoori Mirch Fish Tikka(RS 325)\n 3. Tandoori Chicken(Rs 575)" << endl;
-    cout << "MAIN COURSE\n 4. Butter Chicken (RS 345)\n 5. Bhuna Murgh Kali Mirch (RS 355)" << endl;
-    cout << "PASTAS\n 6. Penne chicken (RS  375) \n 7. Spaghetti Chicken (RS 375) "<< endl;
+    cout << "\t\t\t\t\t\tSTARTERS\n 1. Dhuandhar Murgh Tikka(RS 325)\n 2. Kasoori Mirch Fish Tikka(RS 325)\n 3. Tandoori Chicken(Rs 575)" << endl;
+    cout << "\t\t\t\t\t\tMAIN COURSE\n 4. Butter Chicken (RS 345)\n 5. Bhuna Murgh Kali Mirch (RS 355)" << endl;
+    cout << "\t\t\t\t\t\tPASTAS\n 6. Penne chicken (RS  375) \n 7. Spaghetti Chicken (RS 375) "<< endl;
 
 
 
@@ -665,18 +692,18 @@ void Non_Veg::Sigree_Global_Grill()
 
 void Non_Veg::The_Fatty_Bao()
 {
-    cout << "GYOZA \n 1. Pork And Chineese Cabbage (RS 400) \n 2. Smoked Chicken And Spinach (RS 425)" << endl;
-    cout << "SUSHI ROLL\n 3. Tuna Tartare Roll (RS 400)\n 4. Prawn Tempura Roll (RS 375)\n 5. Non Veg Spider Roll (RS 400)" << endl;
-    cout << "MAIN COURSE\n 6. Pennang Curry With Chicken (RS 450)\n 7. Japanese Chicken Kabocha Curry (RS 450)" << endl;
+    cout << "\t\t\t\t\t\tGYOZA \n 1. Pork And Chineese Cabbage (RS 400) \n 2. Smoked Chicken And Spinach (RS 425)" << endl;
+    cout << "\t\t\t\t\t\tSUSHI ROLL\n 3. Tuna Tartare Roll (RS 400)\n 4. Prawn Tempura Roll (RS 375)\n 5. Non Veg Spider Roll (RS 400)" << endl;
+    cout << "\t\t\t\t\t\tMAIN COURSE\n 6. Pennang Curry With Chicken (RS 450)\n 7. Japanese Chicken Kabocha Curry (RS 450)" << endl;
 
 
 }
 
 void Non_Veg::Ticca_Tikka()
 {
-    cout << "APPETIZER \n 1. Classic Chicken Tikka (RS 425)\n 2. Basil Chicken Tikka (RS 395)\n 3. Malai Chicken Tikka (Rs 425)" << endl;
-    cout << "ROLLS AND WRAPS\n 4.Chicken Tikka wrap (RS 280) \n 5. Chicken Malai Wrap (Rs 280)\n 6. Mutton Seekh Wrap (RS 300)" << endl;
-    cout << "KEBABS\n 7. Chicken Seekh Kebab (RS 365)\n 8. Chicken Chapli Kebab (RS 385)\n 9. Tawa Chicken (RS 385)" << endl; 
+    cout << "\t\t\t\t\t\tAPPETIZER \n 1. Classic Chicken Tikka (RS 425)\n 2. Basil Chicken Tikka (RS 395)\n 3. Malai Chicken Tikka (Rs 425)" << endl;
+    cout << "\t\t\t\t\t\tROLLS AND WRAPS\n 4.Chicken Tikka wrap (RS 280) \n 5. Chicken Malai Wrap (Rs 280)\n 6. Mutton Seekh Wrap (RS 300)" << endl;
+    cout << "\t\t\t\t\t\tKEBABS\n 7. Chicken Seekh Kebab (RS 365)\n 8. Chicken Chapli Kebab (RS 385)\n 9. Tawa Chicken (RS 385)" << endl; 
 
 
 
@@ -684,9 +711,9 @@ void Non_Veg::Ticca_Tikka()
 
 void Non_Veg::Global_Fusion()
 {
-    cout << "INDIAN STARTERS \n 1. Mutton Seekh kebab (Rs 400) \n 2. Fish Tikka (Rs 450) \n 3. Chicken Tikka (RS 400) "<< endl;
-    cout << "CHINESE STARTERS \n 4. Pepper Chicken (RS 350) \n 5. Prawns Tepanyakki (RS 400)\n 6. Dory Fish (RS 350)" << endl;
-    cout << "MAIN COURSE \n 7. One Chicken Gravy And One Mutton Gravy (RS 550)" << endl;
+    cout << "\t\t\t\t\t\tINDIAN STARTERS \n 1. Mutton Seekh kebab (Rs 400) \n 2. Fish Tikka (Rs 450) \n 3. Chicken Tikka (RS 400) "<< endl;
+    cout << "\t\t\t\t\t\tCHINESE STARTERS \n 4. Pepper Chicken (RS 350) \n 5. Prawns Tepanyakki (RS 400)\n 6. Dory Fish (RS 350)" << endl;
+    cout << "\t\t\t\t\t\tMAIN COURSE \n 7. One Chicken Gravy And One Mutton Gravy (RS 550)" << endl;
 
 
 }
@@ -694,24 +721,24 @@ void Non_Veg::Global_Fusion()
 
 void Non_Veg::KFC()
 {
-    cout << "SNACKS \n 1. Popcorn Chicken Large (Rs 180) \n 2. Boneless Strips 6 pcs (RS 205) " << endl;
-    cout << "BURGERS \n 3. Classic Zinger (Rs 150) \n 4. Spicy Zinger (Rs 160)" << endl;
+    cout << "\t\t\t\t\t\tSNACKS \n 1. Popcorn Chicken Large (Rs 180) \n 2. Boneless Strips 6 pcs (RS 205) " << endl;
+    cout << "\t\t\t\t\t\tBURGERS \n 3. Classic Zinger (Rs 150) \n 4. Spicy Zinger (Rs 160)" << endl;
 
 
 }
 
 void Non_Veg::Shizusan()
 {
-    cout <<"SUSHI \n 1. Crunchy Tuna Roll (Rs 450) \n 2. Hamachi New York Dragon (RS 550)" << endl;
-    cout <<"DIMSUM \n 3. Chicken Gyoza (Rs 395) \n 4. Chilli Coriander Chicken (RS 695) \n 5. Poached Chicken Dumpling (RS 995)" << endl;
-    cout <<"ASIAN TAPAS \n 6. Hakka Basil Chicken (RS 350) \n 7. Hot Garlic Chicken (RS 350)" << endl;
+    cout <<"\t\t\t\t\t\tSUSHI \n 1. Crunchy Tuna Roll (Rs 450) \n 2. Hamachi New York Dragon (RS 550)" << endl;
+    cout <<"\t\t\t\t\t\tDIMSUM \n 3. Chicken Gyoza (Rs 395) \n 4. Chilli Coriander Chicken (RS 695) \n 5. Poached Chicken Dumpling (RS 995)" << endl;
+    cout <<"\t\t\t\t\t\tASIAN TAPAS \n 6. Hakka Basil Chicken (RS 350) \n 7. Hot Garlic Chicken (RS 350)" << endl;
 
 
 }
 
 void Non_Veg::Show_NonVeg_Restaurants()
 {
-    cout << "The List of Non-Veg Restaurants is:\n1.Sigree Global Grill\n2.The Fatty Bao\n3.Ticca Tikka\n4.Global Fusion\n5.Kofuku\n6.Shizusan\n";
+    cout << "\t\t\t\t\t\tThe List of Non-Veg Restaurants is:\n1.Sigree Global Grill\n2.The Fatty Bao\n3.Ticca Tikka\n4.Global Fusion\n5.Kofuku\n6.Shizusan\n";
 }
 
 // Main Function of the Program
@@ -722,7 +749,7 @@ int main()
         class Restaurants restaurant;
         class Veg veg;
         class Non_Veg non_Veg;
-        class Customer_Order cust;
+        class Food food;
         Order order[50];
     
         bool run = true;
@@ -770,9 +797,7 @@ int main()
                         cout << endl;
 
                         
-                        order->order_name[k] = veg.menu_1[order_number - 1];
-                        order->quantity[k] = quantity;
-                        order->price[k] = quantity * veg.price_1[order_number - 1];
+                        food.Insert_Beg(veg.menu_1[order_number - 1], quantity, veg.price_1[order_number - 1], (quantity * veg.price_1[order_number - 1]));
 
                         cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
@@ -795,10 +820,8 @@ int main()
                         cin >> quantity;
                         cout << endl;
 
-                        
-                        order->order_name[k] = veg.menu_2[order_number - 1];
-                        order->quantity[k] = quantity;
-                        order->price[k] = quantity * veg.price_2[order_number - 1];
+                        food.Insert_Beg(veg.menu_2[order_number - 1], quantity, veg.price_2[order_number - 1], (quantity * veg.price_2[order_number - 1]));
+
                         cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
 
@@ -819,10 +842,8 @@ int main()
                         cin >> quantity;
                         cout << endl;
 
-                        
-                        order->order_name[k] = veg.menu_3[order_number - 1];
-                        order->quantity[k] = quantity;
-                        order->price[k] = quantity * veg.price_3[order_number - 1];
+                        food.Insert_Beg(veg.menu_3[order_number - 1], quantity, veg.price_3[order_number - 1], (quantity * veg.price_3[order_number - 1]));
+
 
                         cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
@@ -845,9 +866,7 @@ int main()
                         cout << endl;
 
                         
-                        order->order_name[k] = veg.menu_1[order_number - 1];
-                        order->quantity[k] = quantity;
-                        order->price[k] = quantity * veg.price_4[order_number - 1];
+                        food.Insert_Beg(veg.menu_4[order_number - 1], quantity, veg.price_4[order_number - 1], (quantity * veg.price_4[order_number - 1]));
 
                         cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
@@ -869,10 +888,7 @@ int main()
                         cin >> quantity;
                         cout << endl;
 
-                        
-                        order->order_name[k] = veg.menu_1[order_number - 1];
-                        order->quantity[k] = quantity;
-                        order->price[k] = quantity * veg.price_5[order_number - 1];
+                        food.Insert_Beg(veg.menu_5[order_number - 1], quantity, veg.price_5[order_number - 1], (quantity * veg.price_5[order_number - 1]));
 
                         cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
@@ -896,9 +912,7 @@ int main()
                         cout << endl;
 
                         
-                        order->order_name[k] = veg.menu_1[order_number - 1];
-                        order->quantity[k] = quantity;
-                        order->price[k] = quantity * veg.price_6[order_number - 1];
+                        food.Insert_Beg(veg.menu_6[order_number - 1], quantity, veg.price_6[order_number - 1], (quantity * veg.price_6[order_number - 1]));
 
                         cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
@@ -931,6 +945,7 @@ int main()
         int total_items = 0;
 
         // Function for calculating Net Bill
+        /*
         for(int i = 0; i < k; i++)
         {
             total_amount += order->price[i];
@@ -941,6 +956,7 @@ int main()
         {
             total_items += order->quantity[i];;
         }
+        */
 
 
 
@@ -973,9 +989,9 @@ int main()
                     }
 
                 case 3:
-                    restaurant.Bill_Generation(k, (total_amount + discount), total_amount, total_items);
+                    food.Bill_Generation();
                     break;
-
+                
 
                 case 4:
                     exit(0);
