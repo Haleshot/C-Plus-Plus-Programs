@@ -153,14 +153,17 @@ void Customer::Input_Customer_Details()
 
 void Customer::Display_Customer_Details()
 {
-    cout << "*************************************************************************" << endl << endl;
-        cout << "Customer Details: \n";
+        cout << "\n\n\n\n\n\n\t\t\t\t\t\t*************************************************************************" << endl << endl;
+        cout <<"\t\t\t\t\t\t*************************************************************************\n" << endl;
+        cout <<"\t\t\t\t\t\t*****************************  Customer Details:  ***********************" << endl;
+        cout <<"\t\t\t\t\t\t*************************************************************************" << endl;
+        
         cout << "Customer ID" << "\t\t" << "NAME" << "\t\t\t\t\t" << "Address" << "\t\t\t\t" << "Phonenumber" << "\t\t\t\t\t" << endl;
         
         cout<<"   "<< rand() % 200 + 39764 << setw(15) << Name<< setw(23) << address << setw(27) << phonenumber <<endl;
         cout << "Name : " << Name << endl; 
         cout << "Premium pass number : " << premium_pass_number << endl;
-        cout << "*************************************************************************" << endl;
+        cout << "\t\t\t\t\t\t*************************************************************************" << endl;
         
 }
 
