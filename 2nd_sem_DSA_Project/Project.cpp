@@ -201,7 +201,7 @@ void Customer::Display_Customer_Details()
 { 
         cout << "\n\n\n\n\n\n\t\t\t\t\t\t*************************************************************************" << endl << endl;
         cout <<"\t\t\t\t\t\t*************************************************************************\n" << endl;
-        cout <<"\t\t\t\t\t\t*****************************  Customer Details:  ***********************" << endl;
+        cout <<"\t\t\t\t\t\t*****************************  Customer Details  ***********************" << endl;
         cout <<"\t\t\t\t\t\t*************************************************************************\n\n\n" << endl;
         
         cout << left << setw(25) << "Customer ID" << left << setw(30) << "NAME" << left << setw(15) << "Address" << left << setw(20) << "Phone Number" << left << setw(15) << "Premium pass number" << endl;
@@ -1459,7 +1459,7 @@ int main()
 
 
             }
-            
+
 
             cout << "Order Received, Food is getting prepared!\nWait for a while before driving to the restaurant to collect your order!" << endl;
 
