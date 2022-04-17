@@ -31,7 +31,7 @@ class Food
         void Delete_Pos(int);
 
         // Function to calculate the total amount to be paid.
-        void Calculate_Amount();
+        int Calculate_Amount();
 
         // Function to display the whole bill in tabulated manner.
         void Bill_Generation();
@@ -83,9 +83,9 @@ void Food::Bill_Generation()
     else
     {
         cout <<"\t\t\t\t\t\t*************************************************************************\n" << endl;
-        cout <<"\t\t\t\t\t\t*****************************   BILL   ******************************" << endl;
-        cout <<"\t\t\t\t\t\t*************************************************************************" << endl;
-        cout << left << setw(25) << "Index No:" << left << setw(30) << "NAME" << left << setw(15) << "Qty" << left << setw(10) << "Price" << left << setw(10) << "Amount" << endl;
+        cout <<"\t\t\t\t\t\t*****************************   BILL   **********************************" << endl;
+        cout <<"\t\t\t\t\t\t*************************************************************************\n\n\n" << endl;
+        cout << left << setw(25) << "Index No" << left << setw(30) << "NAME" << left << setw(15) << "Qty" << left << setw(10) << "Price" << left << setw(10) << "Amount" << endl;
 
         int i = 1;
         while (current != NULL)
@@ -94,6 +94,27 @@ void Food::Bill_Generation()
             current = current->next;
             i += 1;
         }
+        
+    }
+}
+
+int Food::Calculate_Amount()
+{
+    Order *current = Head;
+    if (Head == NULL)
+    {
+        cout << "Amount = 0.0" << endl;
+    }
+    else
+    {
+        float sum = 0;
+        while (current != NULL)
+        {
+            sum += current->amount;
+            current = current->next;
+        }
+        cout << left << setw(25) << "" << left << setw(30) << "" << left << setw(15) << "" << left << setw(10) << "" << left << setw(10) << "Total Amount = " << sum << endl;
+        return sum;
         
     }
 }
@@ -115,15 +136,15 @@ void Customer::Input_Customer_Details()
 {
         cout << "*************************************************************************" << endl;
         cout << "Customer Details:\nEnter your Name : ";
-        getline(cin, Name);
+        cin >> Name;
 
         
         cout << "Enter your Address (Delivery/ Drop Off Location) : ";
-        getline(cin, address);
+        cin >> address;
 
         
         cout << "Enter your Phone Number : ";
-        getline(cin, phonenumber);
+        cin >> phonenumber;
 
 
 
@@ -156,13 +177,10 @@ void Customer::Display_Customer_Details()
         cout << "\n\n\n\n\n\n\t\t\t\t\t\t*************************************************************************" << endl << endl;
         cout <<"\t\t\t\t\t\t*************************************************************************\n" << endl;
         cout <<"\t\t\t\t\t\t*****************************  Customer Details:  ***********************" << endl;
-        cout <<"\t\t\t\t\t\t*************************************************************************" << endl;
+        cout <<"\t\t\t\t\t\t*************************************************************************\n\n\n" << endl;
         
-        cout << "Customer ID" << "\t\t" << "NAME" << "\t\t\t\t\t" << "Address" << "\t\t\t\t" << "Phonenumber" << "\t\t\t\t\t" << endl;
-        
-        cout<<"   "<< rand() % 200 + 39764 << setw(15) << Name<< setw(23) << address << setw(27) << phonenumber <<endl;
-        cout << "Name : " << Name << endl; 
-        cout << "Premium pass number : " << premium_pass_number << endl;
+        cout << left << setw(25) << "Customer ID" << left << setw(30) << "NAME" << left << setw(15) << "Address" << left << setw(20) << "Phone Number" << left << setw(15) << "Premium pass number" << endl;
+        cout << left << setw(25) << rand() % 200 + 39764 << left << setw(30) << Name << left << setw(15) << address << left << setw(20) << phonenumber << left << setw(15) << premium_pass_number << endl;
         cout << "\t\t\t\t\t\t*************************************************************************" << endl;
         
 }
@@ -984,8 +1002,10 @@ int main()
                     if(restaurant.Validity_Of_Coupon(coupon, sizeof(coupon)))
                     {
                         cout << "Coupon is Valid! Further Discount applied to Bill\n";
+                        total_amount = food.Calculate_Amount();
                         discount = 0.02 * total_amount;
                         total_amount = total_amount - discount;
+                        
 
                     }
                     else if(!(restaurant.Validity_Of_Coupon(coupon, sizeof(coupon))))
@@ -995,6 +1015,7 @@ int main()
 
                 case 3:
                     food.Bill_Generation();
+                    food.Calculate_Amount();
                     customer.Display_Customer_Details();
                     break;
                 
