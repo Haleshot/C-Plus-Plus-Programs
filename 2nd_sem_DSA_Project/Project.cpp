@@ -160,16 +160,17 @@ public:
 void Customer::Input_Customer_Details()
 {
         cout << "*************************************************************************" << endl;
-        cout << "Customer Details:\nEnter your Name : ";
-        cin >> Name;
+        cout << "Customer Details:\nEnter your Name and Address : " << endl;
+        getline(cin, Name);
+
+        cout << endl;
+
+        getline(cin, Name);
+        getline(cin, address);
 
         
-        cout << "Enter your Address (Delivery/ Drop Off Location) : ";
-        cin >> address;
-
-        
-        cout << "Enter your Phone Number : ";
-        cin >> phonenumber;
+        cout << "Enter your Phone Number : " << endl;
+        getline(cin, phonenumber);
 
 
 
@@ -534,9 +535,9 @@ void Veg::McDonalds()
 }
 void Veg::Pizza_Express()
 {
-    cout << "\t\t\t\t\t\tPIZZAS\n1.Picoolo Classic Margherita (RS 245)\n2. Picoolo Classic Mushroom (RS 245)\n3.Piccolo Classic American (RS 295)\n4. Kids Verdure (RS 245)\n5. Polla Verde (RS 295) \n" << endl;
-    cout << "\t\t\t\t\t\tPASTAS\n6.Baked Mac And Cheese (RS 225)\n7. Penna Forestier (RS 225)\n\n" << endl;
-    cout << "\t\t\t\t\t\tSIDES\n8.Dough Balls With Cheese Dip (RS 135)\n9. Baked Smileys (RS 135)" << endl;
+    cout << "\t\t\t\t\t\tPIZZAS\n\t1.Picoolo Classic Margherita (RS 245)\n\t2. Picoolo Classic Mushroom (RS 245)\n3\t.Piccolo Classic American (RS 295)\n4. Kids Verdure (RS 245)\n5. Polla Verde (RS 295) \n" << endl;
+    cout << "\t\t\t\t\t\tPASTAS\n\t6.Baked Mac And Cheese (RS 225)\n\t7. Penna Forestier (RS 225)\n\n" << endl;
+    cout << "\t\t\t\t\t\tSIDES\n\t8.Dough Balls With Cheese Dip (RS 135)\n\t9. Baked Smileys (RS 135)" << endl;
 
 
 
@@ -544,9 +545,9 @@ void Veg::Pizza_Express()
 void Veg::Mainland_China()
 {
 
-    cout << "\t\t\t\t\t\tBEVERAGES\n 1. Watermelo Cilantro Crush (RS 200)\n 2. Fresh Lime Soda (RS 110)" << endl;
-    cout << "\t\t\t\t\t\tDIMSUMS\n 3. Basil Flavoured Vegetable Dumplings (RS 310)\n 4. Corn and Cheese Dumplings (RS 310)" << endl;
-    cout << "\t\t\t\t\t\tAPPETIZERS\n 5. Sichuan Chilli Babycorn (RS 435)\n 6. Jiang's Chilli Cottage Cheese (RS 475)" << endl;
+    cout << "\t\t\t\t\t\tBEVERAGES\n\t 1. Watermelo Cilantro Crush (RS 200)\n\t 2. Fresh Lime Soda (RS 110)" << endl;
+    cout << "\t\t\t\t\t\tDIMSUMS\n\t 3. Basil Flavoured Vegetable Dumplings (RS 310)\n\t 4. Corn and Cheese Dumplings (RS 310)" << endl;
+    cout << "\t\t\t\t\t\tAPPETIZERS\n\t 5. Sichuan Chilli Babycorn (RS 435)\n\t 6. Jiang's Chilli Cottage Cheese (RS 475)" << endl;
 
 
 }
@@ -1477,7 +1478,7 @@ int main()
         string coupon;
         do
         {
-            cout << "\t\t\t\t\t\tWhat would you like to do now?\n1.Update Customer Information\n2.Apply Coupons\n3.Generate Bill\n4.Exit\n";
+            cout << "\t\t\t\t\t\tWhat would you like to do now?\n1.Update Customer Information\n2.Delete an Item from the Cart\n3.Apply Coupons\n4.Generate Bill\n5.Exit\n";
             cin >> choice;
             switch (choice)
             {
@@ -1486,6 +1487,22 @@ int main()
                     break;
 
                 case 2:
+
+                    int index_value;
+                    food.Bill_Generation();
+                    food.Calculate_Amount();
+                    cout << "Please enter the Index Number of the Item to be deleted" << endl;
+                    cin >> index_value;
+
+                    food.Delete_Pos(index_value);
+
+                    food.Bill_Generation();
+                    food.Calculate_Amount();
+
+
+                    break;
+
+                case 3:
                     cout << "Enter the Coupon Code : ";
                     cin >> coupon;
                     if(restaurant.Validity_Of_Coupon(coupon, sizeof(coupon)))
@@ -1501,14 +1518,14 @@ int main()
                     }
                     break;
 
-                case 3:
+                case 4:
                     food.Bill_Generation();
                     food.Calculate_Amount();
                     customer.Display_Customer_Details();
                     break;
                 
 
-                case 4:
+                case 5:
                     exit(0);
 
 
