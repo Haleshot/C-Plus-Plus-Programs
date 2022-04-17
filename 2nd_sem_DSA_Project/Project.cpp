@@ -37,7 +37,7 @@ class Food
         void Bill_Generation();
 
         // Function to apply discount on Total Amount.
-        void Discount();
+        bool Discount();
 };
 
 void Food::Insert_Beg(string ordername_, int quantity_, float price_, float amount_)
@@ -121,7 +121,7 @@ void Food::Calculate_Amount()
     }
 }
 
-void Food::Discount()
+bool Food::Discount()
 {
     Order *current = Head;
     if (Head == NULL)
@@ -141,6 +141,7 @@ void Food::Discount()
         discount = 0.2 * sum;
         sum = sum - discount;
         cout << "\t\t\t\t\t\tTotal Amount (After applying Discount) = " << sum << endl;
+        return 1;
         
     }
 }
