@@ -703,9 +703,9 @@ public:
 
 void Non_Veg::Sigree_Global_Grill()
 {
-    cout << "\t\t\t\t\t\tSTARTERS\n 1. Dhuandhar Murgh Tikka(RS 325)\n 2. Kasoori Mirch Fish Tikka(RS 325)\n 3. Tandoori Chicken(Rs 575)" << endl;
-    cout << "\t\t\t\t\t\tMAIN COURSE\n 4. Butter Chicken (RS 345)\n 5. Bhuna Murgh Kali Mirch (RS 355)" << endl;
-    cout << "\t\t\t\t\t\tPASTAS\n 6. Penne chicken (RS  375) \n 7. Spaghetti Chicken (RS 375) "<< endl;
+    cout << "\t\t\t\t\t\tSTARTERS\n\t 1. Dhuandhar Murgh Tikka(RS 325)\n\t 2. Kasoori Mirch Fish Tikka(RS 325)\n\t 3. Tandoori Chicken(Rs 575)" << endl;
+    cout << "\t\t\t\t\t\tMAIN COURSE\n\t 4. Butter Chicken (RS 345)\n\t 5. Bhuna Murgh Kali Mirch (RS 355)" << endl;
+    cout << "\t\t\t\t\t\tPASTAS\n\t 6. Penne chicken (RS  375) \n\t 7. Spaghetti Chicken (RS 375) "<< endl;
 
 
 
@@ -714,18 +714,18 @@ void Non_Veg::Sigree_Global_Grill()
 
 void Non_Veg::The_Fatty_Bao()
 {
-    cout << "\t\t\t\t\t\tGYOZA \n 1. Pork And Chineese Cabbage (RS 400) \n 2. Smoked Chicken And Spinach (RS 425)" << endl;
-    cout << "\t\t\t\t\t\tSUSHI ROLL\n 3. Tuna Tartare Roll (RS 400)\n 4. Prawn Tempura Roll (RS 375)\n 5. Non Veg Spider Roll (RS 400)" << endl;
-    cout << "\t\t\t\t\t\tMAIN COURSE\n 6. Pennang Curry With Chicken (RS 450)\n 7. Japanese Chicken Kabocha Curry (RS 450)" << endl;
+    cout << "\t\t\t\t\t\tGYOZA \n\t 1. Pork And Chineese Cabbage (RS 400) \n\t 2. Smoked Chicken And Spinach (RS 425)" << endl;
+    cout << "\t\t\t\t\t\tSUSHI ROLL\n\t 3. Tuna Tartare Roll (RS 400)\n\t 4. Prawn Tempura Roll (RS 375)\n\t 5. Non Veg Spider Roll (RS 400)" << endl;
+    cout << "\t\t\t\t\t\tMAIN COURSE\n\t 6. Pennang Curry With Chicken (RS 450)\n\t 7. Japanese Chicken Kabocha Curry (RS 450)" << endl;
 
 
 }
 
 void Non_Veg::Ticca_Tikka()
 {
-    cout << "\t\t\t\t\t\tAPPETIZER \n 1. Classic Chicken Tikka (RS 425)\n 2. Basil Chicken Tikka (RS 395)\n 3. Malai Chicken Tikka (Rs 425)" << endl;
-    cout << "\t\t\t\t\t\tROLLS AND WRAPS\n 4.Chicken Tikka wrap (RS 280) \n 5. Chicken Malai Wrap (Rs 280)\n 6. Mutton Seekh Wrap (RS 300)" << endl;
-    cout << "\t\t\t\t\t\tKEBABS\n 7. Chicken Seekh Kebab (RS 365)\n 8. Chicken Chapli Kebab (RS 385)\n 9. Tawa Chicken (RS 385)" << endl; 
+    cout << "\t\t\t\t\t\tAPPETIZER \n\t 1. Classic Chicken Tikka (RS 425)\n\t 2. Basil Chicken Tikka (RS 395)\n\t 3. Malai Chicken Tikka (Rs 425)" << endl;
+    cout << "\t\t\t\t\t\tROLLS AND WRAPS\n\t 4.Chicken Tikka wrap (RS 280) \n 5. Chicken Malai Wrap (Rs 280)\n\t 6. Mutton Seekh Wrap (RS 300)" << endl;
+    cout << "\t\t\t\t\t\tKEBABS\n\t 7. Chicken Seekh Kebab (RS 365)\n\t 8. Chicken Chapli Kebab (RS 385)\n\t 9. Tawa Chicken (RS 385)" << endl; 
 
 
 
@@ -733,9 +733,9 @@ void Non_Veg::Ticca_Tikka()
 
 void Non_Veg::Global_Fusion()
 {
-    cout << "\t\t\t\t\t\tINDIAN STARTERS \n 1. Mutton Seekh kebab (Rs 400) \n 2. Fish Tikka (Rs 450) \n 3. Chicken Tikka (RS 400) "<< endl;
-    cout << "\t\t\t\t\t\tCHINESE STARTERS \n 4. Pepper Chicken (RS 350) \n 5. Prawns Tepanyakki (RS 400)\n 6. Dory Fish (RS 350)" << endl;
-    cout << "\t\t\t\t\t\tMAIN COURSE \n 7. One Chicken Gravy And One Mutton Gravy (RS 550)" << endl;
+    cout << "\t\t\t\t\t\tINDIAN STARTERS \n\t 1. Mutton Seekh kebab (Rs 400) \n\t 2. Fish Tikka (Rs 450) \n\t 3. Chicken Tikka (RS 400) "<< endl;
+    cout << "\t\t\t\t\t\tCHINESE STARTERS \n\t 4. Pepper Chicken (RS 350) \n\t 5. Prawns Tepanyakki (RS 400)\n\t 6. Dory Fish (RS 350)" << endl;
+    cout << "\t\t\t\t\t\tMAIN COURSE \n\t 7. One Chicken Gravy And One Mutton Gravy (RS 550)" << endl;
 
 
 }
@@ -743,17 +743,17 @@ void Non_Veg::Global_Fusion()
 
 void Non_Veg::KFC()
 {
-    cout << "\t\t\t\t\t\tSNACKS \n 1. Popcorn Chicken Large (Rs 180) \n 2. Boneless Strips 6 pcs (RS 205) " << endl;
-    cout << "\t\t\t\t\t\tBURGERS \n 3. Classic Zinger (Rs 150) \n 4. Spicy Zinger (Rs 160)" << endl;
+    cout << "\t\t\t\t\t\tSNACKS \n\t 1. Popcorn Chicken Large (Rs 180) \n\t 2. Boneless Strips 6 pcs (RS 205) " << endl;
+    cout << "\t\t\t\t\t\tBURGERS \n\t 3. Classic Zinger (Rs 150) \n\t 4. Spicy Zinger (Rs 160)" << endl;
 
 
 }
 
 void Non_Veg::Shizusan()
 {
-    cout <<"\t\t\t\t\t\tSUSHI \n 1. Crunchy Tuna Roll (Rs 450) \n 2. Hamachi New York Dragon (RS 550)" << endl;
-    cout <<"\t\t\t\t\t\tDIMSUM \n 3. Chicken Gyoza (Rs 395) \n 4. Chilli Coriander Chicken (RS 695) \n 5. Poached Chicken Dumpling (RS 995)" << endl;
-    cout <<"\t\t\t\t\t\tASIAN TAPAS \n 6. Hakka Basil Chicken (RS 350) \n 7. Hot Garlic Chicken (RS 350)" << endl;
+    cout <<"\t\t\t\t\t\tSUSHI \n\t 1. Crunchy Tuna Roll (Rs 450) \n\t 2. Hamachi New York Dragon (RS 550)" << endl;
+    cout <<"\t\t\t\t\t\tDIMSUM \n\t 3. Chicken Gyoza (Rs 395) \n\t 4. Chilli Coriander Chicken (RS 695) \n\t 5. Poached Chicken Dumpling (RS 995)" << endl;
+    cout <<"\t\t\t\t\t\tASIAN TAPAS \n\t 6. Hakka Basil Chicken (RS 350) \n\t 7. Hot Garlic Chicken (RS 350)" << endl;
 
 
 }
@@ -1152,11 +1152,11 @@ int main()
                     cin >> coupon;
                     if(restaurant.Validity_Of_Coupon(coupon, sizeof(coupon)))
                     {
-                        cout << "Coupon is Valid! Further Discount applied to Bill\n";
+                        cout << "Coupon is Valid! Further Discount applied to Bill!\n";
                         total_amount = food.Calculate_Amount();
                         discount = 0.02 * total_amount;
                         total_amount = total_amount - discount;
-                        return total_amount;
+                        return total_amount - discount;
 
 
                     }
