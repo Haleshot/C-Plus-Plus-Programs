@@ -31,10 +31,13 @@ class Food
         void Delete_Pos(int);
 
         // Function to calculate the total amount to be paid.
-        int Calculate_Amount();
+        void Calculate_Amount();
 
         // Function to display the whole bill in tabulated manner.
         void Bill_Generation();
+
+        // Function to apply discount on Total Amount.
+        void Discount();
 };
 
 void Food::Insert_Beg(string ordername_, int quantity_, float price_, float amount_)
@@ -98,7 +101,7 @@ void Food::Bill_Generation()
     }
 }
 
-int Food::Calculate_Amount()
+void Food::Calculate_Amount()
 {
     Order *current = Head;
     if (Head == NULL)
@@ -114,7 +117,26 @@ int Food::Calculate_Amount()
             current = current->next;
         }
         cout << left << setw(25) << "" << left << setw(30) << "" << left << setw(15) << "" << left << setw(10) << "" << left << setw(10) << "Total Amount = " << sum << endl;
-        return sum;
+        
+    }
+}
+
+void Food::Discount()
+{
+    Order *current = Head;
+    if (Head == NULL)
+    {
+        cout << "Amount = 0.0" << endl;
+    }
+    else
+    {
+        float sum = 0;
+        while (current != NULL)
+        {
+            sum += current->amount;
+            current = current->next;
+        }
+        cout << left << setw(25) << "" << left << setw(30) << "" << left << setw(15) << "" << left << setw(10) << "" << left << setw(10) << "Total Amount (After applying Discount) = " << sum << endl;
         
     }
 }
@@ -724,7 +746,7 @@ void Non_Veg::The_Fatty_Bao()
 void Non_Veg::Ticca_Tikka()
 {
     cout << "\t\t\t\t\t\tAPPETIZER \n\t 1. Classic Chicken Tikka (RS 425)\n\t 2. Basil Chicken Tikka (RS 395)\n\t 3. Malai Chicken Tikka (Rs 425)" << endl;
-    cout << "\t\t\t\t\t\tROLLS AND WRAPS\n\t 4.Chicken Tikka wrap (RS 280) \n 5. Chicken Malai Wrap (Rs 280)\n\t 6. Mutton Seekh Wrap (RS 300)" << endl;
+    cout << "\t\t\t\t\t\tROLLS AND WRAPS\n\t 4.Chicken Tikka wrap (RS 280) \n\t 5. Chicken Malai Wrap (Rs 280)\n\t 6. Mutton Seekh Wrap (RS 300)" << endl;
     cout << "\t\t\t\t\t\tKEBABS\n\t 7. Chicken Seekh Kebab (RS 365)\n\t 8. Chicken Chapli Kebab (RS 385)\n\t 9. Tawa Chicken (RS 385)" << endl; 
 
 
@@ -1149,14 +1171,12 @@ int main()
                     break;
 
                 case 2:
+                    cout << "Enter the Coupon Code : ";
                     cin >> coupon;
                     if(restaurant.Validity_Of_Coupon(coupon, sizeof(coupon)))
                     {
                         cout << "Coupon is Valid! Further Discount applied to Bill!\n";
-                        total_amount = food.Calculate_Amount();
-                        discount = 0.02 * total_amount;
-                        total_amount = total_amount - discount;
-                        return total_amount - discount;
+
 
 
                     }
