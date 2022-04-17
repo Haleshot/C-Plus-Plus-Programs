@@ -131,12 +131,15 @@ void Food::Discount()
     else
     {
         float sum = 0;
+        float discount;
         while (current != NULL)
         {
             sum += current->amount;
             current = current->next;
         }
-        cout << left << setw(25) << "" << left << setw(30) << "" << left << setw(15) << "" << left << setw(10) << "" << left << setw(10) << "Total Amount (After applying Discount) = " << sum << endl;
+        discount = 0.2 * sum;
+        sum = sum - discount;
+        cout << "Total Amount (After applying Discount) = " << sum << endl;
         
     }
 }
@@ -1131,38 +1134,350 @@ int main()
             
             
         }
+        else if (ch == 2)
+        {
+            int type_restaurant;
+            int type_choice_restaurant;
+            int order_number;
+            int quantity;
+
+            customer.Input_Customer_Details();
+
+
+            cout << "\t\t\t\t\t\tThe Restuarants near you (Veg & Non Veg) are: \n";
+            restaurant.Show_nearby_restaurants();
+            cout << "\t\t\t\t\t\tWhich type of restaurant would you like to place an order in?\n";
+            cin >> type_restaurant;
+            if (type_restaurant == 1)
+            {
+                veg.Show_Veg_Restaurants();
+                cout << "Which restaurant do you pick?\n";
+                cin >> type_choice_restaurant;
+
+                switch (type_choice_restaurant)
+                {
+                case 1:
+
+
+                    do
+                    {
+                        veg.Mia_Cucina();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << veg.menu_1[order_number - 1];
+
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
+
+                        
+                        food.Insert_Beg(veg.menu_1[order_number - 1], quantity, veg.price_1[order_number - 1], (quantity * veg.price_1[order_number - 1]));
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
+                    } while (run == true);
+                    
+                
+                    break;
+                
+                case 2:
+                    do
+                    {
+                        veg.Subway();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << veg.menu_2[order_number - 1];
+
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
+
+                        food.Insert_Beg(veg.menu_2[order_number - 1], quantity, veg.price_2[order_number - 1], (quantity * veg.price_2[order_number - 1]));
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
+                    } while (run == true);
+                    
+                    break;
+                
+                case 3:
+                    do
+                    {
+                        veg.Tiara();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << veg.menu_3[order_number - 1];
+
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
+
+                        food.Insert_Beg(veg.menu_3[order_number - 1], quantity, veg.price_3[order_number - 1], (quantity * veg.price_3[order_number - 1]));
+
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
+                    } while (run == true);
+                    
+                    break;
+                
+                case 4:
+                    do
+                    {
+                        veg.McDonalds();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << veg.menu_4[order_number - 1];
+
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
+
+                        
+                        food.Insert_Beg(veg.menu_4[order_number - 1], quantity, veg.price_4[order_number - 1], (quantity * veg.price_4[order_number - 1]));
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
+                    } while (run == true);
+
+                    break;
+                
+                case 5:
+                    do
+                    {
+                        veg.Pizza_Express();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << veg.menu_5[order_number - 1];
+
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
+
+                        food.Insert_Beg(veg.menu_5[order_number - 1], quantity, veg.price_5[order_number - 1], (quantity * veg.price_5[order_number - 1]));
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
+                    } while (run == true);
+                    
+                    break;
+                
+                case 6:
+
+                    do
+                    {
+                        veg.Mainland_China();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << veg.menu_6[order_number - 1];
+
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
+
+                        
+                        food.Insert_Beg(veg.menu_6[order_number - 1], quantity, veg.price_6[order_number - 1], (quantity * veg.price_6[order_number - 1]));
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
+
+                    } while (run == true);
+                    
+                    
+                    break;
+                
+                default:
+                    break;
+                }
+            }
+            else if (type_restaurant == 2)
+            {
+                non_Veg.Show_NonVeg_Restaurants();
+
+                cout << "Which restaurant do you pick?\n";
+                cin >> type_choice_restaurant;
+
+                switch (type_choice_restaurant)
+                {
+                case 1:
+
+                    do
+                    {
+                        non_Veg.Sigree_Global_Grill();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << non_Veg.menu_7[order_number - 1];
+
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
+
+                        
+                        food.Insert_Beg(non_Veg.menu_7[order_number - 1], quantity, non_Veg.price_7[order_number - 1], (quantity * non_Veg.price_7[order_number - 1]));
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
+                    } while (run == true);
+                    
+                
+                    break;
+                
+                case 2:
+                    do
+                    {
+                        non_Veg.The_Fatty_Bao();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << non_Veg.menu_8[order_number - 1];
+
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
+
+                        food.Insert_Beg(non_Veg.menu_8[order_number - 1], quantity, non_Veg.price_8[order_number - 1], (quantity * non_Veg.price_8[order_number - 1]));
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
+                    } while (run == true);
+                    
+                    break;
+                
+                case 3:
+                    do
+                    {
+                        non_Veg.Ticca_Tikka();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << non_Veg.menu_9[order_number - 1];
+
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
+
+                        food.Insert_Beg(non_Veg.menu_9[order_number - 1], quantity, non_Veg.price_9[order_number - 1], (quantity * non_Veg.price_9[order_number - 1]));
+
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
+                    } while (run == true);
+                    
+                    break;
+                
+                case 4:
+                    do
+                    {
+                        non_Veg.Global_Fusion();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << non_Veg.menu_10[order_number - 1];
+
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
+
+                        
+                        food.Insert_Beg(non_Veg.menu_10[order_number - 1], quantity, non_Veg.price_10[order_number - 1], (quantity * non_Veg.price_10[order_number - 1]));
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
+                    } while (run == true);
+
+                    break;
+                
+                case 5:
+                    do
+                    {
+                        non_Veg.KFC();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << non_Veg.menu_11[order_number - 1];
+
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
+
+                        food.Insert_Beg(non_Veg.menu_11[order_number - 1], quantity, non_Veg.price_11[order_number - 1], (quantity * non_Veg.price_11[order_number - 1]));
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
+                    } while (run == true);
+                    
+                    break;
+                
+                case 6:
+
+                    do
+                    {
+                        non_Veg.Shizusan();
+                        cout << "\nSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cin >> order_number;
+                        k++;
+                        cout << "\nYou have selected " << non_Veg.menu_12[order_number - 1];
+
+                        cout << "\nEnter Quantity : ";
+                        cin >> quantity;
+                        cout << endl;
+
+                        
+                        food.Insert_Beg(non_Veg.menu_12[order_number - 1], quantity, non_Veg.price_12[order_number - 1], (quantity * non_Veg.price_12[order_number - 1]));
+
+                        cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cin >> run;
+
+
+                    } while (run == true);
+                    
+                    
+                    break;
+                
+                default:
+                    break;
+                }
+
+
+
+            }
+            
+
+            cout << "Order Received, Food is getting prepared!\nWait for a while before driving to the restaurant to collect your order!" << endl;
+
+        }
         if(ch == 3)
         {
-            return 0;
+            exit(0);
         }
 
-
-
-        float total_amount = 0.0;
-
-        // Function for calculating Net Bill
-        /*
-        for(int i = 0; i < k; i++)
-        {
-            total_amount += order->price[i];
-        }
-
-        // Function for calculating Total Number of Items
-        for(int i = 0; i < k; i++)
-        {
-            total_items += order->quantity[i];;
-        }
-        */
 
 
 
         int choice;
         bool run_choice = true;
         string coupon;
-        float discount;
         do
         {
-            cout << "\t\t\t\t\t\tWhat would you like to do now?\n1.Update Customer Information\n2.Apply Coupons (Pick up food from a restaurant)\n3.Generate Bill\n4.Exit\n";
+            cout << "\t\t\t\t\t\tWhat would you like to do now?\n1.Update Customer Information\n2.Apply Coupons\n3.Generate Bill\n4.Exit\n";
             cin >> choice;
             switch (choice)
             {
@@ -1176,16 +1491,15 @@ int main()
                     if(restaurant.Validity_Of_Coupon(coupon, sizeof(coupon)))
                     {
                         cout << "Coupon is Valid! Further Discount applied to Bill!\n";
-
-
+                        food.Discount();
 
                     }
                     else if(!(restaurant.Validity_Of_Coupon(coupon, sizeof(coupon))))
                     {
                         cout << "Invalid Coupon!\n";
-                        cout << "No discount applied!" << endl;
-                        return total_amount;
+                        cout << "No discount applied! Total Amount remains same!" << endl;
                     }
+                    break;
 
                 case 3:
                     food.Bill_Generation();
