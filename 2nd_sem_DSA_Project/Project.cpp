@@ -3,7 +3,7 @@
 #include <iostream>
 #include<iomanip> // For setw function
 #include <stdlib.h>
-#include <string>
+#include <string> // For inputting Customer Information
 #include <stack>
 using namespace std;
 
@@ -25,6 +25,7 @@ class Food
     public:
 
         // Insert Beginning Function acts as a Stack since each item gets added to the beginning of the Linked List.
+        // Linked List is implemented as a Stack in this case.
         void Insert_Beg(string, int, float, float);
 
         // Delete a Node which contains the Customer Order.
