@@ -826,13 +826,14 @@ int main()
 
             customer.Input_Customer_Details();
 
-
+            // Displaying the nearby restaurants to user.
             cout << "\t\t\t\t\t\tThe Restuarants near you (Veg & Non Veg) are: \n";
             restaurant.Show_nearby_restaurants();
             cout << "\t\t\t\t\t\tWhich type of restaurant would you like to place an order in?\n";
             cin >> type_restaurant;
             if (type_restaurant == 1)
             {
+                // Displaying the Veg restaurants to user.
                 veg.Show_Veg_Restaurants();
                 cout << "\t\t\t\t\t\tWhich restaurant do you pick?\n";
                 cin >> type_choice_restaurant;
@@ -844,6 +845,7 @@ int main()
 
                     do
                     {
+                        // Printing the menu of the restaurant which was selected by user.
                         veg.Mia_Cucina();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                         cin >> order_number;
@@ -854,9 +856,10 @@ int main()
                         cin >> quantity;
                         cout << endl;
 
-                        
+                        // Inserting the Order Name, Quantity, Price and the calculated amount into the Linked List.
                         food.Insert_Beg(veg.menu_1[order_number - 1], quantity, veg.price_1[order_number - 1], (quantity * veg.price_1[order_number - 1]));
 
+                        // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
 
@@ -868,6 +871,7 @@ int main()
                 case 2:
                     do
                     {
+                        // Printing the menu of the restaurant which was selected by user.
                         veg.Subway();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                         cin >> order_number;
@@ -878,8 +882,10 @@ int main()
                         cin >> quantity;
                         cout << endl;
 
+                        // Inserting the Order Name, Quantity, Price and the calculated amount into the Linked List.
                         food.Insert_Beg(veg.menu_2[order_number - 1], quantity, veg.price_2[order_number - 1], (quantity * veg.price_2[order_number - 1]));
 
+                        // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
 
@@ -900,9 +906,10 @@ int main()
                         cin >> quantity;
                         cout << endl;
 
+                        // Inserting the Order Name, Quantity, Price and the calculated amount into the Linked List.
                         food.Insert_Beg(veg.menu_3[order_number - 1], quantity, veg.price_3[order_number - 1], (quantity * veg.price_3[order_number - 1]));
 
-
+                        // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
 
@@ -913,6 +920,7 @@ int main()
                 case 4:
                     do
                     {
+                        // Printing the menu of the restaurant which was selected by user.
                         veg.McDonalds();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                         cin >> order_number;
@@ -923,9 +931,10 @@ int main()
                         cin >> quantity;
                         cout << endl;
 
-                        
+                        // Inserting the Order Name, Quantity, Price and the calculated amount into the Linked List.
                         food.Insert_Beg(veg.menu_4[order_number - 1], quantity, veg.price_4[order_number - 1], (quantity * veg.price_4[order_number - 1]));
 
+                        // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
 
@@ -936,6 +945,7 @@ int main()
                 case 5:
                     do
                     {
+                        // Printing the menu of the restaurant which was selected by user.
                         veg.Pizza_Express();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                         cin >> order_number;
@@ -946,8 +956,10 @@ int main()
                         cin >> quantity;
                         cout << endl;
 
+                        // Inserting the Order Name, Quantity, Price and the calculated amount into the Linked List.
                         food.Insert_Beg(veg.menu_5[order_number - 1], quantity, veg.price_5[order_number - 1], (quantity * veg.price_5[order_number - 1]));
 
+                        // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
 
@@ -959,6 +971,7 @@ int main()
 
                     do
                     {
+                        // Printing the menu of the restaurant which was selected by user.
                         veg.Mainland_China();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                         cin >> order_number;
@@ -969,9 +982,10 @@ int main()
                         cin >> quantity;
                         cout << endl;
 
-                        
+                        // Inserting the Order Name, Quantity, Price and the calculated amount into the Linked List.
                         food.Insert_Beg(veg.menu_6[order_number - 1], quantity, veg.price_6[order_number - 1], (quantity * veg.price_6[order_number - 1]));
 
+                        // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
 
@@ -987,6 +1001,7 @@ int main()
             }
             else if (type_restaurant == 2)
             {
+                // Displaying the Non Veg Restaurants to user.
                 non_Veg.Show_NonVeg_Restaurants();
 
                 cout << "\t\t\t\t\t\tWhich restaurant do you pick?\n";
@@ -998,6 +1013,7 @@ int main()
 
                     do
                     {
+                        // Printing the menu of the restaurant which was selected by user.
                         non_Veg.Sigree_Global_Grill();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                         cin >> order_number;
@@ -1008,9 +1024,10 @@ int main()
                         cin >> quantity;
                         cout << endl;
 
-                        
+                        // Inserting the Order Name, Quantity, Price and the calculated amount into the Linked List.
                         food.Insert_Beg(non_Veg.menu_7[order_number - 1], quantity, non_Veg.price_7[order_number - 1], (quantity * non_Veg.price_7[order_number - 1]));
 
+                        // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
 
@@ -1022,6 +1039,7 @@ int main()
                 case 2:
                     do
                     {
+                        // Printing the menu of the restaurant which was selected by user.
                         non_Veg.The_Fatty_Bao();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                         cin >> order_number;
@@ -1032,8 +1050,10 @@ int main()
                         cin >> quantity;
                         cout << endl;
 
+                        // Inserting the Order Name, Quantity, Price and the calculated amount into the Linked List.
                         food.Insert_Beg(non_Veg.menu_8[order_number - 1], quantity, non_Veg.price_8[order_number - 1], (quantity * non_Veg.price_8[order_number - 1]));
 
+                        // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
 
@@ -1044,6 +1064,7 @@ int main()
                 case 3:
                     do
                     {
+                        // Printing the menu of the restaurant which was selected by user.
                         non_Veg.Ticca_Tikka();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                         cin >> order_number;
@@ -1054,9 +1075,10 @@ int main()
                         cin >> quantity;
                         cout << endl;
 
+                        // Inserting the Order Name, Quantity, Price and the calculated amount into the Linked List.
                         food.Insert_Beg(non_Veg.menu_9[order_number - 1], quantity, non_Veg.price_9[order_number - 1], (quantity * non_Veg.price_9[order_number - 1]));
 
-
+                        // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
 
@@ -1067,6 +1089,7 @@ int main()
                 case 4:
                     do
                     {
+                        // Printing the menu of the restaurant which was selected by user.
                         non_Veg.Global_Fusion();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                         cin >> order_number;
@@ -1077,9 +1100,10 @@ int main()
                         cin >> quantity;
                         cout << endl;
 
-                        
+                        // Inserting the Order Name, Quantity, Price and the calculated amount into the Linked List.
                         food.Insert_Beg(non_Veg.menu_10[order_number - 1], quantity, non_Veg.price_10[order_number - 1], (quantity * non_Veg.price_10[order_number - 1]));
 
+                        // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
 
@@ -1090,6 +1114,7 @@ int main()
                 case 5:
                     do
                     {
+                        // Printing the menu of the restaurant which was selected by user.
                         non_Veg.KFC();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                         cin >> order_number;
@@ -1100,8 +1125,10 @@ int main()
                         cin >> quantity;
                         cout << endl;
 
+                        // Inserting the Order Name, Quantity, Price and the calculated amount into the Linked List.
                         food.Insert_Beg(non_Veg.menu_11[order_number - 1], quantity, non_Veg.price_11[order_number - 1], (quantity * non_Veg.price_11[order_number - 1]));
 
+                        // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
 
@@ -1113,6 +1140,7 @@ int main()
 
                     do
                     {
+                        // Printing the menu of the restaurant which was selected by user.
                         non_Veg.Shizusan();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                         cin >> order_number;
@@ -1123,9 +1151,10 @@ int main()
                         cin >> quantity;
                         cout << endl;
 
-                        
+                        // Inserting the Order Name, Quantity, Price and the calculated amount into the Linked List.
                         food.Insert_Beg(non_Veg.menu_12[order_number - 1], quantity, non_Veg.price_12[order_number - 1], (quantity * non_Veg.price_12[order_number - 1]));
 
+                        // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
 
