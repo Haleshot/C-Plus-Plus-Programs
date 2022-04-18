@@ -18,10 +18,11 @@ struct Order
 
 Order *Head = NULL;
 
-// Linked List Data Structure Class
+// Linked List Data Structure Class to store the Food Items added to Cart by Customer.
 class Food
 {
     public:
+        // Function Prototyping of Member Functions inside the class.
 
         // Insert Beginning Function acts as a Stack since each item gets added to the beginning of the Linked List.
         // Linked List is implemented as a Stack in this case.
@@ -145,6 +146,7 @@ void Food::Discount()
     }
 }
 
+// Customer Class containing Functions to Store and Display the Customer Information.
 class Customer
 {
 public:
@@ -152,6 +154,8 @@ public:
     string Name, address, phonenumber;
     string premium_pass_number;
     bool premium_pass_number_exists = true;
+
+    // Function Prototyping of Member Functions inside the class.
 
     void Input_Customer_Details();
     void Display_Customer_Details();
@@ -215,6 +219,7 @@ void Customer::Display_Customer_Details()
 }
 
 
+// Restaurant Class containing Functions to display the nearby restaurants (Veg and Non Veg).
 class Restaurants
 {
 public:
@@ -251,10 +256,11 @@ bool Restaurants::Validity_Of_Coupon(string str, int n)
 }
 
 
+// The Veg class is a derived class of Restaurants which is a Base class.
 class Veg : public Restaurants
 {
 public:
-
+    // The Menus and Prices of the respective restaurants are stored in the form of String and Float Arrays respectively.
     string menu_1[25] =
     {
         "Margherita",
@@ -482,7 +488,7 @@ public:
     };
 
 
-
+    // Function prototyping of member functions inside the class.
     void Mia_Cucina();
     void Subway();
     void Tiara();
@@ -561,12 +567,13 @@ void Veg::Show_Veg_Restaurants()
     cout << "\t\t\t\t\t\tThe List of Veg Restaurants is:\n\t\t\t\t\t\t1.Mia Cucina\n\t\t\t\t\t\t2.Subway\n\t\t\t\t\t\t3.Tiara\n\t\t\t\t\t\t4.McDonalds\n\t\t\t\t\t\t5.Pizza Express\n\t\t\t\t\t\t6.Mainland China\n";
 }
 
-
+// The Non Veg class is a derived class of Restaurants which is a Base class.
 class Non_Veg : public Restaurants
 {
 public:
 
-    
+    // The Menus and Prices of the respective restaurants are stored in the form of String and Float Arrays respectively.
+
     string menu_7[25] =
     {
         "Dhuandhar Murgh Tikka",
@@ -718,7 +725,7 @@ public:
 
     };
 
-
+    // Function Prototyping of Member Functions inside the class.
 
     void Sigree_Global_Grill();
     void The_Fatty_Bao();
@@ -792,10 +799,10 @@ void Non_Veg::Show_NonVeg_Restaurants()
     cout << "\t\t\t\t\t\tThe List of Non-Veg Restaurants is:\n\t\t\t\t\t\t1.Sigree Global Grill\n\t\t\t\t\t\t2.The Fatty Bao\n\t\t\t\t\t\t3.Ticca Tikka\n\t\t\t\t\t\t4.Global Fusion\n\t\t\t\t\t\t5.Kofuku\n\t\t\t\t\t\t6.Shizusan\n";
 }
 
-// Main Function of the Program
+// Main Function of the Program which is Menu Driven.
 int main()
 {
-
+        // Creating objects/ instances for classes to use their data members/ member functions.
         class Customer customer;
         class Restaurants restaurant;
         class Veg veg;
