@@ -2536,6 +2536,19 @@ int main()
         {
             cout << "\n\t\t\t\t\t\tWhat would you like to do now?\n\t\t\t\t\t\t1.Update Customer Information\n\t\t\t\t\t\t2.Delete an Item from the Cart\n\t\t\t\t\t\t3.Apply Coupons\n\t\t\t\t\t\t4.Generate Bill\n\t\t\t\t\t\t5.Exit\n";
             cin >> choice;
+
+            while(cin.fail())
+            {
+                cin.clear();
+                cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
+                cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
+                cout << "\n\t\t\t\t\t\tEnter the Correct Choice from options provided : ";
+                cout << "\t\t\t\t\t\t";
+                cin >> choice;
+
+            }
+
+
             switch (choice)
             {
                 case 1:
@@ -2549,6 +2562,18 @@ int main()
                     food.Calculate_Amount();
                     cout << "\t\t\t\t\t\tPlease enter the Index Number of the Item to be deleted" << endl;
                     cin >> index_value;
+
+                    while(cin.fail())
+                    {
+                        cin.clear();
+                        cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
+                        cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
+                        cout << "\n\t\t\t\t\t\tPlease enter the Correct Index Number of the Item to be deleted : ";
+                        cout << "\t\t\t\t\t\t";
+                        cin >> index_value;
+
+                    }
+                    
 
                     food.Delete_Pos(index_value);
 
@@ -2593,6 +2618,20 @@ int main()
 
             cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run_choice;
+
+            while(cin.fail())
+            {
+                cin.clear();
+                cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
+                cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
+
+                cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
+                cout << "\t\t\t\t\t\t";
+                cin >> run_choice;
+
+            }
+
+
 
         } while (run_choice == true);
        
