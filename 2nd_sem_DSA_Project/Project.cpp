@@ -238,8 +238,8 @@ void Customer::Display_Customer_Details()
         cout <<"\t\t\t\t\t\t*****************************  Customer Details  ***********************" << endl;
         cout <<"\t\t\t\t\t\t*************************************************************************\n\n\n" << endl;
         
-        cout << left << setw(25) << "Customer ID" << left << setw(30) << "NAME" << left << setw(15) << "Address" << left << setw(20) << "Phone Number" << left << setw(15) << "Premium pass number" << endl;
-        cout << left << setw(25) << rand() % 200 + 39764 << left << setw(30) << Name << left << setw(15) << address << left << setw(20) << phonenumber << left << setw(15) << premium_pass_number << endl;
+        cout << left << setw(25) << "Customer ID" << left << setw(30) << "NAME" << left << setw(30) << "Address" << left << setw(20) << "Phone Number" << left << setw(15) << "Premium pass number" << endl;
+        cout << left << setw(25) << rand() % 200 + 39764 << left << setw(30) << Name << left << setw(30) << address << left << setw(20) << phonenumber << left << setw(15) << premium_pass_number << endl;
         cout << "\t\t\t\t\t\t*************************************************************************" << endl;
         
 }
