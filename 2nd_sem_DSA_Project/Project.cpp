@@ -544,7 +544,7 @@ void Veg::Mia_Cucina()
 void Veg::Subway()
 {
     
-    cout << "The Menu is: " << endl;
+    cout << "\t\t\t\t\t\tThe Menu is: " << endl;
     cout << "\t\t\t\t\t\tI.Subs\n\t1.Hara Bhara Kebab (Patty + tomato + jalepenos) [Rs 235]\n\t2.Chatpatta Channa (Patty + black olives + jalepenos + parmesan + Mozzarella) [Rs 260]\n\t3.Mexican Patty (Patty + Paneer + tomatoes + jalepenos + Mozzarella) [Rs 230]\n\t4.Veggie Delite (Patty + jalepenos + capsicum + Mozzarella) [Rs 250]\n\t5.Veg Seekh (Patty + jalepenos + cucumber)[Rs 250]\n";
     cout << "\t\t\t\t\t\tII.Wraps\n\t6.Veg Shammi (Roll + cucumber + capsicum + jalepeno) [Rs 120]\n\t7.Chatpatta Shammi (Roll + capsicum + jalepeno) [Rs 120]\n";
     cout << "\t\t\t\t\t\tIII.Sides\n\t8.Cookie [Rs 45]\n\t9.Chocolate Truffle Cake [Rs 75]\n\t10.French Fries [Rs 90]\n";
@@ -565,7 +565,7 @@ void Veg::Tiara()
 }
 void Veg::McDonalds()
 {
-    cout << "The Menu is: " << endl;
+    cout << "\t\t\t\t\t\tThe Menu is: " << endl;
     cout << "\t\t\t\t\t\tI.Burgers\n\t1.Maharajan Mac (Frankie + cottage cheese) [Rs 235]\n\t2.Triple Layer Veg Patty (Triple Layered Sandwich + lettuce + tomato + cheese) [Rs 260]\n\t3.Mexican Burger (Guacomole + tomatoes + jalepenos + Mozzarella) [Rs 230]\n";
     cout << "\t\t\t\t\t\tII.Pastas\n\t4.Tagliatelle ai Pomodori (Garlic + chilli + parmesan cheese + jalepeno) [Rs 320]\n\t5.Conchiglioni Al Funghi Porcini (Pasta with creamy Porcini mushroom + scallion sauce) [Rs 220]\n";
     cout << "\t\t\t\t\t\tIII.Sides\n\t6.Cookies [Rs 85]\n\t7.Chocolate Truffle Cake [Rs 75]\n\t8.French Fries [Rs 90]\n\t9.Crisps [Rs 65]\n";
