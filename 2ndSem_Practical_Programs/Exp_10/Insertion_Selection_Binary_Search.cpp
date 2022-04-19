@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-void Insertion_Sort(int, int);
-void Selection_Sort();
-int Binary_Search(int, int, int);
+void Insertion_Sort(int* , int);
+void Selection_Sort(int*, int, int);
+int Binary_Search(int*, int, int, int);
 int Smallest(int, int, int);
 int* Array_Formation(int);
 
@@ -19,39 +19,56 @@ int main()
 
         switch (ch)
         {
-        case 1:
+
             int limit;
-            cout << "Enter the limit for Array Elements\n";
-            cin >> limit;
             int *ptr;
-            ptr = Array_Formation(limit);
+            case 1:
+                
+                cout << "Enter the limit for Array Elements\n";
+                cin >> limit;
+                
+                ptr = Array_Formation(limit);
 
-            Insertion_Sort(ptr, limit);
-            break;
+                Insertion_Sort(ptr, limit);
+                break;
 
-        case 2:
-            int limit;
-            cout << "Enter the limit for Array Elements\n";
-            cin >> limit;
-            int *ptr;
-            ptr = Array_Formation(limit);
+            case 2:
+                
+                cout << "Enter the limit for Array Elements\n";
+                cin >> limit;
+                ptr = Array_Formation(limit);
 
-            Selection_Sort(ptr, ptr[0], limit);
-            break;
-        
-        case 3:
-            int limit;
-            cout << "Enter the limit for Array Elements\n";
-            cin >> limit;
-            int *ptr;
-            ptr = Array_Formation(limit);
-
+                Selection_Sort(ptr, ptr[0], limit);
+                break;
             
-            break;
-        
-        default:
-            break;
+            case 3:
+                
+                int value;
+                cout << "Enter the limit for Array Elements\n";
+                cin >> limit;
+                ptr = Array_Formation(limit);
+
+                cout << "Enter the Value to be searched in the Array Elements\n";
+                cin >> value;
+
+                int search_exists = (Binary_Search(ptr, ptr[0], ptr[0], value));
+                if (search_exists == -1)
+                {
+                    cout << "Value doesn't exist!" << endl;
+                }
+                else
+                {
+                    cout << "Value Exists!" << endl;
+                }
+
+
+                break;
+            
+            default:
+                cout << "Invalid Choice!" << endl;
+                break;
         }
+
     } while(run == true);
     
     return 0;
