@@ -19,6 +19,7 @@ struct Order
 };
 
 Order *Head = NULL;
+float discount = 0.0;
 
 // Linked List Data Structure Class to store the Food Items added to Cart by Customer.
 class Food
@@ -119,7 +120,7 @@ void Food::Calculate_Amount()
             sum += current->amount;
             current = current->next;
         }
-        cout << left << setw(25) << "" << left << setw(30) << "" << left << setw(15) << "" << left << setw(10) << "" << left << setw(10) << "Total Amount = " << sum << endl;
+        cout << left << setw(25) << "" << left << setw(30) << "" << left << setw(15) << "" << left << setw(10) << "" << left << setw(10) << "Total Amount = " << (sum - discount) << endl;
         
     }
 }
@@ -134,7 +135,7 @@ void Food::Discount()
     else
     {
         float sum = 0;
-        float discount;
+        
         
         while (current != NULL)
         {
