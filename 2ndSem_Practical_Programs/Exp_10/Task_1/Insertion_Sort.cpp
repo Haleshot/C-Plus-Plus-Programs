@@ -17,7 +17,6 @@ int main()
     cout << ptr;
     Insertion_Sort(ptr, limit);
 
-    delete[] ptr;
 
 
     return 0;
@@ -46,7 +45,7 @@ void Insertion_Sort(int array[], int n)
 int* Array_Formation(int n)
 {
     int a;
-    int *Array = new int[n];
+    static int Array[100];
     cout << "Enter the Array Elements\n";
     for(int i = 0; i < n; i++)
     {
