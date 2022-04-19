@@ -904,7 +904,6 @@ int main()
                 {
                 case 1:
 
-
                     do
                     {
                         // Printing the menu of the restaurant which was selected by user.
@@ -929,6 +928,16 @@ int main()
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
                         cin >> quantity;
+
+                        while(cin.fail())
+                        {
+                            cin.clear();
+                            cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
+                            cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
+                            cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
+                            cin >> quantity;
+
+                        }
                         cout << endl;
 
                         // Inserting the Order Name, Quantity, Price and the calculated amount into the Linked List.
@@ -937,6 +946,18 @@ int main()
                         // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
                         cin >> run;
+
+                        while(cin.fail())
+                        {
+                            cin.clear();
+                            cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
+                            cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
+
+                            cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
+                            cout << "\t\t\t\t\t\t";
+                            cin >> run;
+
+                        }
 
                     } while (run == true);
                     
