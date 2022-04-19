@@ -168,23 +168,23 @@ void Customer::Input_Customer_Details()
 {
         cout << "\t\t\t\t\t\t*************************************************************************" << endl;
         cout << "\t\t\t\t\t\tCustomer Details:\n\t\t\t\t\t\tEnter your Name and Address : " << endl;
-        cout << "\t\t\t\t\t\t";
+        cout << "\n\t\t\t\t\t\t";
         getline(cin, Name);
 
         getline(cin, Name);
 
-        cout << "\t\t\t\t\t\t";
+        cout << "\n\t\t\t\t\t\t";
         getline(cin, address);
 
         
         cout << "\t\t\t\t\t\tEnter your Phone Number : " << endl;
-        cout << "\t\t\t\t\t\t";
+        cout << "\n\t\t\t\t\t\t";
         getline(cin, phonenumber);
 
 
 
         cout << "\t\t\t\t\t\tDo you have a Premium pass number? If you do, then Input 1, otherwise Input 0" << endl;
-        cout << "\t\t\t\t\t\t";
+        cout << "\n\t\t\t\t\t\t";
         cin >> premium_pass_number_exists;
 
         while(cin.fail())
@@ -193,7 +193,7 @@ void Customer::Input_Customer_Details()
             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
             cout << "\t\t\t\t\t\tDo you have a Premium pass number? If you do, then Input 1, otherwise Input 0" << endl;
-            cout << "\t\t\t\t\t\t";
+            cout << "\n\t\t\t\t\t\t";
             cin >> premium_pass_number_exists;
 
         }
@@ -209,6 +209,7 @@ void Customer::Input_Customer_Details()
                     cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                     cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                     cout << "\t\t\t\t\t\tEnter the Premium pass number : ";
+                    cout << "\n\t\t\t\t\t\t";
                     cin >> premium_pass_number;
 
                 }
@@ -846,6 +847,7 @@ int main()
         int k = 0;
         cout << "\t\t\t\t\t\tWelcome to the Food Delivery System!\n\n";
         cout << "\t\t\t\t\t\tWhat would you like to do?\n\t\t\t\t\t\t1.Order Food to your house\n\t\t\t\t\t\t2.Takeaway (Pick up food from a restaurant)\n\t\t\t\t\t\t3.Exit\n";
+        cout << "\n\t\t\t\t\t\t";
         cin >> ch;
 
         while(cin.fail())
@@ -854,6 +856,7 @@ int main()
                 cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                 cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                 cout << "\t\t\t\t\t\tEnter Correct choice : ";
+                cout << "\n\t\t\t\t\t\t";
                 cin >> ch;
 
             }
@@ -871,6 +874,7 @@ int main()
             cout << "\t\t\t\t\t\tThe Restuarants near you (Veg & Non Veg) are: \n";
             restaurant.Show_nearby_restaurants();
             cout << "\t\t\t\t\t\tWhich type of restaurant would you like to place an order in?\n";
+            cout << "\n\t\t\t\t\t\t";
             cin >> type_restaurant;
 
             while(cin.fail())
@@ -879,7 +883,9 @@ int main()
                 cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                 cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                 cout << "\t\t\t\t\t\tEnter the Correct Type of Restaurant from which you would like : ";
+                cout << "\n\t\t\t\t\t\t";
                 cin >> type_restaurant;
+
 
             }
 
@@ -888,6 +894,7 @@ int main()
                 // Displaying the Veg restaurants to user.
                 veg.Show_Veg_Restaurants();
                 cout << "\t\t\t\t\t\tWhich restaurant do you pick?\n";
+                cout << "\n\t\t\t\t\t\t";
                 cin >> type_choice_restaurant;
 
                 while(cin.fail())
@@ -896,6 +903,7 @@ int main()
                     cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                     cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                     cout << "\t\t\t\t\t\tEnter Correct Number of the Restaurant from which you would like : ";
+                    cout << "\n\t\t\t\t\t\t";
                     cin >> type_choice_restaurant;
 
                 }
@@ -909,6 +917,7 @@ int main()
                         // Printing the menu of the restaurant which was selected by user.
                         veg.Mia_Cucina();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -918,7 +927,8 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -928,6 +938,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << veg.menu_1[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -936,7 +947,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -947,6 +958,7 @@ int main()
 
                         // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -956,7 +968,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -972,6 +984,7 @@ int main()
                         // Printing the menu of the restaurant which was selected by user.
                         veg.Subway();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -981,7 +994,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -991,6 +1004,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << veg.menu_2[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -999,7 +1013,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -1011,6 +1025,7 @@ int main()
 
                         // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -1020,7 +1035,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -1034,6 +1049,7 @@ int main()
                     {
                         veg.Tiara();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -1043,7 +1059,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -1053,6 +1069,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << veg.menu_3[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -1061,7 +1078,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -1074,6 +1091,7 @@ int main()
 
                         // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -1083,7 +1101,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -1098,6 +1116,7 @@ int main()
                         // Printing the menu of the restaurant which was selected by user.
                         veg.McDonalds();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -1107,7 +1126,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -1116,6 +1135,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << veg.menu_4[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -1124,7 +1144,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -1137,6 +1157,7 @@ int main()
 
                         // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -1146,7 +1167,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -1162,6 +1183,7 @@ int main()
                         // Printing the menu of the restaurant which was selected by user.
                         veg.Pizza_Express();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -1171,7 +1193,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -1181,6 +1203,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << veg.menu_5[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -1189,7 +1212,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -1202,6 +1225,7 @@ int main()
 
                         // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -1211,7 +1235,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -1228,6 +1252,7 @@ int main()
                         veg.Mainland_China();
 
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -1237,7 +1262,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -1247,6 +1272,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << veg.menu_6[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -1255,7 +1281,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -1268,6 +1294,7 @@ int main()
 
                         // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -1277,7 +1304,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -1298,6 +1325,7 @@ int main()
                 non_Veg.Show_NonVeg_Restaurants();
 
                 cout << "\t\t\t\t\t\tWhich restaurant do you pick?\n";
+                cout << "\n\t\t\t\t\t\t";
                 cin >> type_choice_restaurant;
 
                 while(cin.fail())
@@ -1306,6 +1334,7 @@ int main()
                     cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                     cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                     cout << "\t\t\t\t\t\tEnter Correct Number of the Restaurant from which you would like : ";
+                    cout << "\n\t\t\t\t\t\t";
                     cin >> type_choice_restaurant;
 
                 }
@@ -1321,6 +1350,7 @@ int main()
                         // Printing the menu of the restaurant which was selected by user.
                         non_Veg.Sigree_Global_Grill();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -1330,7 +1360,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -1340,6 +1370,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << non_Veg.menu_7[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -1348,7 +1379,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -1360,6 +1391,7 @@ int main()
 
                         // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -1369,7 +1401,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -1385,6 +1417,7 @@ int main()
                         // Printing the menu of the restaurant which was selected by user.
                         non_Veg.The_Fatty_Bao();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -1394,7 +1427,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -1403,6 +1436,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << non_Veg.menu_8[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -1411,7 +1445,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -1423,6 +1457,7 @@ int main()
 
                         // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -1432,7 +1467,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -1447,6 +1482,7 @@ int main()
                         // Printing the menu of the restaurant which was selected by user.
                         non_Veg.Ticca_Tikka();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -1456,7 +1492,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -1465,6 +1501,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << non_Veg.menu_9[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -1473,7 +1510,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -1485,6 +1522,7 @@ int main()
 
                         // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -1494,7 +1532,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -1509,6 +1547,7 @@ int main()
                         // Printing the menu of the restaurant which was selected by user.
                         non_Veg.Global_Fusion();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -1518,7 +1557,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -1527,6 +1566,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << non_Veg.menu_10[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -1535,7 +1575,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -1556,7 +1596,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -1580,7 +1620,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -1597,7 +1637,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -1618,7 +1658,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -1643,7 +1683,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -1660,7 +1700,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -1681,7 +1721,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -1761,7 +1801,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -1778,7 +1818,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -1798,7 +1838,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -1823,7 +1863,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -1840,7 +1880,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -1859,7 +1899,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -1883,7 +1923,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -1900,7 +1940,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -1920,7 +1960,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -1944,7 +1984,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -1961,7 +2001,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -1981,7 +2021,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -2005,7 +2045,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -2022,7 +2062,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -2041,7 +2081,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -2066,7 +2106,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -2083,7 +2123,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -2103,7 +2143,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -2154,7 +2194,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -2171,7 +2211,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -2191,7 +2231,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -2216,7 +2256,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -2233,7 +2273,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -2252,7 +2292,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -2276,7 +2316,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -2293,7 +2333,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -2313,7 +2353,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -2337,7 +2377,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -2354,7 +2394,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -2374,7 +2414,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -2398,7 +2438,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -2415,7 +2455,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -2434,7 +2474,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -2459,7 +2499,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> order_number;
 
                         }
@@ -2476,7 +2516,7 @@ int main()
                             cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> quantity;
 
                         }
@@ -2496,7 +2536,7 @@ int main()
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                             cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                            cout << "\t\t\t\t\t\t";
+                            cout << "\n\t\t\t\t\t\t";
                             cin >> run;
 
                         }
@@ -2543,7 +2583,7 @@ int main()
                 cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                 cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                 cout << "\n\t\t\t\t\t\tEnter the Correct Choice from options provided : ";
-                cout << "\t\t\t\t\t\t";
+                cout << "\n\t\t\t\t\t\t";
                 cin >> choice;
 
             }
@@ -2569,7 +2609,7 @@ int main()
                         cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                         cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                         cout << "\n\t\t\t\t\t\tPlease enter the Correct Index Number of the Item to be deleted : ";
-                        cout << "\t\t\t\t\t\t";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> index_value;
 
                     }
@@ -2626,7 +2666,7 @@ int main()
                 cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
 
                 cout << "\t\t\t\t\t\tWant to continue? If you do, then Input 1, otherwise Input 0" << endl;
-                cout << "\t\t\t\t\t\t";
+                cout << "\n\t\t\t\t\t\t";
                 cin >> run_choice;
 
             }
