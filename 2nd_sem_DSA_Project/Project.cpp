@@ -237,7 +237,7 @@ void Restaurants::Show_nearby_restaurants()
 
 bool Restaurants::Validity_Of_Coupon(string str, int n)
 {
-    // Checking for Invalid Coupons
+    // Checking for Invalid Coupons.
     if (!((str[0] >= 'a' && str[0] <= 'z')
           || (str[0] >= 'A' && str[0] <= 'Z')
           || str[0] == '_'))
