@@ -14,7 +14,7 @@ int main()
     do
     {
         int ch;
-        cout << "Menu\n1.Insertion Sort\n2.Selection Sort\n3.Binary Search\n4.Exit\n";
+        cout << "\nMenu\n1.Insertion Sort\n2.Selection Sort\n3.Binary Search\n4.Exit\n";
         cin >> ch;
 
         switch (ch)
@@ -22,17 +22,19 @@ int main()
 
             int limit;
             int *ptr;
+
             case 1:
+            {
                 
                 cout << "Enter the limit for Array Elements\n";
                 cin >> limit;
-                
                 ptr = Array_Formation(limit);
-
                 Insertion_Sort(ptr, limit);
                 break;
+            }
 
             case 2:
+            {
                 
                 cout << "Enter the limit for Array Elements\n";
                 cin >> limit;
@@ -40,8 +42,10 @@ int main()
 
                 Selection_Sort(ptr, ptr[0], limit);
                 break;
+            }
             
             case 3:
+            {
                 
                 int value;
                 cout << "Enter the limit for Array Elements\n";
@@ -52,17 +56,24 @@ int main()
                 cin >> value;
 
                 int search_exists = (Binary_Search(ptr, ptr[0], ptr[0], value));
-                if (search_exists == -1)
+                if (search_exists)
                 {
-                    cout << "Value doesn't exist!" << endl;
+                    cout << "Value Exists!" << endl;
                 }
                 else
                 {
-                    cout << "Value Exists!" << endl;
+                    cout << "Value doesn't exist!" << endl;
                 }
 
 
                 break;
+            }
+
+            case 4:
+            {
+                cout << "Thank You!" << endl;
+                exit(0);
+            }
             
             default:
                 cout << "Invalid Choice!" << endl;
@@ -106,6 +117,7 @@ int Smallest(int array[], int k, int n)
             position = j;
         }
     }
+    
     return position;
 }
 
@@ -152,7 +164,7 @@ int Binary_Search(int array[], int low, int high, int key)
 int* Array_Formation(int n)
 {
     int a;
-    int Array[n];
+    static int Array[100];
     cout << "Enter the Array Elements\n";
     for(int i = 0; i < n; i++)
     {

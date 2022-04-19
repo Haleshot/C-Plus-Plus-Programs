@@ -14,7 +14,6 @@ int main()
     cin >> limit;
 
     ptr = Array_Formation(limit);
-    cout << ptr;
     Insertion_Sort(ptr, limit);
 
 
