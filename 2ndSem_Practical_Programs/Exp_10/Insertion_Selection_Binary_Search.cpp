@@ -1,10 +1,12 @@
 #include <iostream>
 using namespace std;
 
-void Insertion_Sort();
+void Insertion_Sort(int, int);
 void Selection_Sort();
 int Binary_Search(int, int, int);
 int Smallest(int, int, int);
+int* Array_Formation(int);
+
 
 int main()
 {
@@ -18,14 +20,33 @@ int main()
         switch (ch)
         {
         case 1:
-            /* code */
+            int limit;
+            cout << "Enter the limit for Array Elements\n";
+            cin >> limit;
+            int *ptr;
+            ptr = Array_Formation(limit);
+
+            Insertion_Sort(ptr, limit);
             break;
 
         case 2:
-            
+            int limit;
+            cout << "Enter the limit for Array Elements\n";
+            cin >> limit;
+            int *ptr;
+            ptr = Array_Formation(limit);
+
+            Selection_Sort(ptr, ptr[0], limit);
             break;
         
         case 3:
+            int limit;
+            cout << "Enter the limit for Array Elements\n";
+            cin >> limit;
+            int *ptr;
+            ptr = Array_Formation(limit);
+
+            
             break;
         
         default:
@@ -36,9 +57,24 @@ int main()
     return 0;
 }
 
-void Insertion_Sort()
+void Insertion_Sort(int array[], int n)
 {
+    for(int i = 1; i < n; i++)
+    {
+        int temp = array[i];
+        int j = i - 1;
+        while(j >= 0 && temp < array[j])
+        {
+            array[j + 1] = array[j];
+            j = j - 1;
+        }
+        array[j + 1] = temp;
+    }
 
+    for(int i = 0; i < n; i++)
+    {
+        cout << array[i] << " ";
+    }
 }
 
 int Smallest(int array[], int k, int n)
@@ -67,6 +103,11 @@ void Selection_Sort(int array[], int k ,int n)
         array[position] = array[k];
 
     }
+
+    for(int i = 0; i < n; i++)
+    {
+        cout << array[i] << " ";
+    }
 }
 
 int Binary_Search(int array[], int low, int high, int key)
@@ -89,4 +130,17 @@ int Binary_Search(int array[], int low, int high, int key)
     }
     return -1;
     
+}
+
+int* Array_Formation(int n)
+{
+    int a;
+    int Array[n];
+    cout << "Enter the Array Elements\n";
+    for(int i = 0; i < n; i++)
+    {
+        cin >> a;
+        Array[i] = a;
+    }
+    return Array;
 }
