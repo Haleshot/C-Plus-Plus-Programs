@@ -4,6 +4,8 @@
 #include<iomanip> // For setw function
 #include <stdlib.h>
 #include <string> // For inputting Customer Information
+#include <limits> // To handle exceptions where user inputs invalid data.
+
 using namespace std;
 
 // Structure containing the respective data members to store the detials of the food items ordered by customer.
@@ -152,7 +154,7 @@ class Customer
 public:
     int cust_id;
     string Name, address, phonenumber;
-    string premium_pass_number;
+    int premium_pass_number;
     bool premium_pass_number_exists = true;
 
     // Function Prototyping of Member Functions inside the class.
@@ -184,23 +186,46 @@ void Customer::Input_Customer_Details()
         cout << "\t\t\t\t\t\tDo you have a Premium pass number? If you do, then Input 1, otherwise Input 0" << endl;
         cout << "\t\t\t\t\t\t";
         cin >> premium_pass_number_exists;
-        if(premium_pass_number_exists == 1)
+
+        while(cin.fail())
         {
-            cout << "\t\t\t\t\t\tEnter the Premium pass number : ";
-            cin >> premium_pass_number;
-            if(stoi(premium_pass_number) >= 1000 && stoi(premium_pass_number) <= 1999)
-            {
-                cout << endl;
-                cout << "\t\t\t\t\t\tValid Premium Pass Number!\n\t\t\t\t\t\t(Priority given while ordering)...\n" << endl;
-                cout << endl;
-            }
-            else
-            {
-                cout << "\t\t\t\t\t\tInvalid Premium Pass Number!" << endl;
-            }
+            cin.clear();
+            cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
+            cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
+            cout << "\t\t\t\t\t\tDo you have a Premium pass number? If you do, then Input 1, otherwise Input 0" << endl;
+            cout << "\t\t\t\t\t\t";
+            cin >> premium_pass_number_exists;
+
         }
 
-        cout << "\t\t\t\t\t\t*************************************************************************" << endl;
+        if(premium_pass_number_exists == 1)
+            {
+                cout << "\t\t\t\t\t\tEnter the Premium pass number : ";
+                cin >> premium_pass_number;
+
+                while(cin.fail())
+                {
+                    cin.clear();
+                    cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
+                    cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
+                    cout << "\t\t\t\t\t\tEnter the Premium pass number : ";
+                    cin >> premium_pass_number;
+
+                }
+
+                if(premium_pass_number >= 1000 && premium_pass_number <= 1999)
+                {
+                    cout << endl;
+                    cout << "\t\t\t\t\t\tValid Premium Pass Number!\n\t\t\t\t\t\t(Priority given while ordering)...\n" << endl;
+                    cout << endl;
+                }
+                else
+                {
+                    cout << "\t\t\t\t\t\tInvalid Premium Pass Number!" << endl;
+                }
+            }
+
+            cout << "\t\t\t\t\t\t*************************************************************************" << endl;
 
 
 
@@ -224,7 +249,12 @@ class Restaurants
 {
 public:
 
+    // Function to Show Nearby Restaurants to user.
     void Show_nearby_restaurants();
+
+    /* Function to check for the Validity of a coupon, valid coupons examples - _geek, _hastag.
+    They shouuld start with an underscore and should not contain any special characters or numbers after the underscore.
+    */ 
     bool Validity_Of_Coupon(string, int);
 };
 
@@ -234,6 +264,7 @@ void Restaurants::Show_nearby_restaurants()
     cout << "\t\t\t\t\t\t1.Veg Restaurants\n\n\n";
     cout << "\t\t\t\t\t\t2.Non-Veg Restaurants\n\n\n";
 }
+
 
 bool Restaurants::Validity_Of_Coupon(string str, int n)
 {
@@ -802,7 +833,7 @@ void Non_Veg::Show_NonVeg_Restaurants()
 // Main Function of the Program which is Menu Driven.
 int main()
 {
-        // Creating objects/ instances for classes to use their data members/ member functions.
+        // Creating objects/ instances for classes to use their public data members/ member functions in the main function.
         class Customer customer;
         class Restaurants restaurant;
         class Veg veg;
@@ -816,6 +847,16 @@ int main()
         cout << "\t\t\t\t\t\tWelcome to the Food Delivery System!\n\n";
         cout << "\t\t\t\t\t\tWhat would you like to do?\n\t\t\t\t\t\t1.Order Food to your house\n\t\t\t\t\t\t2.Takeaway (Pick up food from a restaurant)\n\t\t\t\t\t\t3.Exit\n";
         cin >> ch;
+
+        while(cin.fail())
+            {
+                cin.clear();
+                cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
+                cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
+                cout << "\t\t\t\t\t\tEnter Correct choice : ";
+                cin >> ch;
+
+            }
 
         if(ch == 1)
         {
@@ -831,12 +872,33 @@ int main()
             restaurant.Show_nearby_restaurants();
             cout << "\t\t\t\t\t\tWhich type of restaurant would you like to place an order in?\n";
             cin >> type_restaurant;
+
+            while(cin.fail())
+            {
+                cin.clear();
+                cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
+                cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
+                cout << "\t\t\t\t\t\tEnter the Correct Type of Restaurant from which you would like : ";
+                cin >> type_restaurant;
+
+            }
+
             if (type_restaurant == 1)
             {
                 // Displaying the Veg restaurants to user.
                 veg.Show_Veg_Restaurants();
                 cout << "\t\t\t\t\t\tWhich restaurant do you pick?\n";
                 cin >> type_choice_restaurant;
+
+                while(cin.fail())
+                {
+                    cin.clear();
+                    cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
+                    cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
+                    cout << "\t\t\t\t\t\tEnter Correct Number of the Restaurant from which you would like : ";
+                    cin >> type_choice_restaurant;
+
+                }
 
                 switch (type_choice_restaurant)
                 {
@@ -849,6 +911,19 @@ int main()
                         veg.Mia_Cucina();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
                         cin >> order_number;
+
+                        while(cin.fail())
+                        {
+
+                            cin.clear();
+                            cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
+                            cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
+                            cout << "\t\t\t\t\t\tEnter Correct Order Number of the item from the Menu : ";
+                            cin >> order_number;
+
+                        }
+
+                        
                         k++;
                         cout << "\n\t\t\t\t\t\tYou have selected " << veg.menu_1[order_number - 1];
 
