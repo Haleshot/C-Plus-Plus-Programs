@@ -1611,6 +1611,7 @@ int main()
                         // Printing the menu of the restaurant which was selected by user.
                         non_Veg.KFC();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -1629,6 +1630,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << non_Veg.menu_11[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -1649,6 +1651,7 @@ int main()
 
                         // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -1674,6 +1677,7 @@ int main()
                         // Printing the menu of the restaurant which was selected by user.
                         non_Veg.Shizusan();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -1692,6 +1696,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << non_Veg.menu_12[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -1712,6 +1717,7 @@ int main()
 
                         // Asking if the User wants to continue to order more items from the restaurant.
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -1755,6 +1761,7 @@ int main()
             cout << "\t\t\t\t\t\tThe Restuarants near you (Veg & Non Veg) are: \n";
             restaurant.Show_nearby_restaurants();
             cout << "\t\t\t\t\t\tWhich type of restaurant would you like to place an order in?\n";
+            cout << "\n\t\t\t\t\t\t";
             cin >> type_restaurant;
 
             while(cin.fail())
@@ -1763,6 +1770,7 @@ int main()
                 cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                 cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                 cout << "\t\t\t\t\t\tEnter the Correct Type of Restaurant from which you would like : ";
+                cout << "\n\t\t\t\t\t\t";
                 cin >> type_restaurant;
 
             }
@@ -1771,6 +1779,7 @@ int main()
             {
                 veg.Show_Veg_Restaurants();
                 cout << "\t\t\t\t\t\tWhich restaurant do you pick?\n";
+                cout << "\n\t\t\t\t\t\t";
                 cin >> type_choice_restaurant;
 
                 while(cin.fail())
@@ -1779,6 +1788,7 @@ int main()
                     cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                     cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                     cout << "\t\t\t\t\t\tEnter Correct Number of the Restaurant from which you would like : ";
+                    cout << "\n\t\t\t\t\t\t";
                     cin >> type_choice_restaurant;
 
                 }
@@ -1792,6 +1802,7 @@ int main()
                     {
                         veg.Mia_Cucina();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -1810,6 +1821,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << veg.menu_1[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -1829,6 +1841,7 @@ int main()
                         food.Insert_Beg(veg.menu_1[order_number - 1], quantity, veg.price_1[order_number - 1], (quantity * veg.price_1[order_number - 1]));
 
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -1854,6 +1867,7 @@ int main()
                     {
                         veg.Subway();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -1872,6 +1886,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << veg.menu_2[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -1890,6 +1905,7 @@ int main()
                         food.Insert_Beg(veg.menu_2[order_number - 1], quantity, veg.price_2[order_number - 1], (quantity * veg.price_2[order_number - 1]));
 
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -1914,6 +1930,7 @@ int main()
                     {
                         veg.Tiara();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -1932,6 +1949,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << veg.menu_3[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -1951,6 +1969,7 @@ int main()
 
 
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -1975,6 +1994,7 @@ int main()
                     {
                         veg.McDonalds();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -1993,6 +2013,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << veg.menu_4[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -2012,6 +2033,7 @@ int main()
                         food.Insert_Beg(veg.menu_4[order_number - 1], quantity, veg.price_4[order_number - 1], (quantity * veg.price_4[order_number - 1]));
 
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -2036,6 +2058,7 @@ int main()
                     {
                         veg.Pizza_Express();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -2054,6 +2077,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << veg.menu_5[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -2072,6 +2096,7 @@ int main()
                         food.Insert_Beg(veg.menu_5[order_number - 1], quantity, veg.price_5[order_number - 1], (quantity * veg.price_5[order_number - 1]));
 
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -2097,6 +2122,7 @@ int main()
                     {
                         veg.Mainland_China();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -2115,6 +2141,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << veg.menu_6[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -2134,6 +2161,7 @@ int main()
                         food.Insert_Beg(veg.menu_6[order_number - 1], quantity, veg.price_6[order_number - 1], (quantity * veg.price_6[order_number - 1]));
 
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -2164,6 +2192,7 @@ int main()
                 non_Veg.Show_NonVeg_Restaurants();
 
                 cout << "\t\t\t\t\t\tWhich restaurant do you pick?\n";
+                cout << "\n\t\t\t\t\t\t";
                 cin >> type_choice_restaurant;
 
                 while(cin.fail())
@@ -2172,6 +2201,7 @@ int main()
                     cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
                     cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                     cout << "\t\t\t\t\t\tEnter Correct Number of the Restaurant from which you would like : ";
+                    cout << "\n\t\t\t\t\t\t";
                     cin >> type_choice_restaurant;
 
                 }
@@ -2185,6 +2215,7 @@ int main()
                     {
                         non_Veg.Sigree_Global_Grill();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -2203,6 +2234,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << non_Veg.menu_7[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
@@ -2222,6 +2254,7 @@ int main()
                         food.Insert_Beg(non_Veg.menu_7[order_number - 1], quantity, non_Veg.price_7[order_number - 1], (quantity * non_Veg.price_7[order_number - 1]));
 
                         cout << "\t\t\t\t\t\tWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> run;
 
                         while(cin.fail())
@@ -2247,6 +2280,7 @@ int main()
                     {
                         non_Veg.The_Fatty_Bao();
                         cout << "\n\t\t\t\t\t\tSelect the food you want to order (Enter the Number displayed before the food you want to order) : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> order_number;
 
                         while(cin.fail())
@@ -2265,6 +2299,7 @@ int main()
                         cout << "\n\t\t\t\t\t\tYou have selected " << non_Veg.menu_8[order_number - 1];
 
                         cout << "\n\t\t\t\t\t\tEnter Quantity : ";
+                        cout << "\n\t\t\t\t\t\t";
                         cin >> quantity;
 
                         while(cin.fail())
