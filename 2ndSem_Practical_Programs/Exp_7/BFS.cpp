@@ -3,6 +3,8 @@
 using namespace std;
 void BFS(int, int, int);
 
+void Add_Edge(int, int);
+
 
 int main()
 {
@@ -38,5 +40,10 @@ void BFS(int adj[10][10], int source, int n)
             }
         }
     }
+}
 
+void Add_Edge(int v, int value)
+{
+    queue<int> adj;
+    
 }
