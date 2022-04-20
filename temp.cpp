@@ -1,4 +1,3 @@
-// DSA Project.
 // Railways Ticket Booking System.
 #include <conio.h>
 #include <stdio.h>
