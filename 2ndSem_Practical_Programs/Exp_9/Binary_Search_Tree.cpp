@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+
+// Structure for Binary Search Tree.
 struct Node
 {
     int data;
@@ -8,6 +10,7 @@ struct Node
     struct Node *right;
 };
 
+// Inserting Nodes into the Tree by comparing the value with the source and root nodes.
 Node *insertBST(Node *root, int value)
 {
     if(root == NULL)
@@ -38,6 +41,7 @@ Node *insertBST(Node *root, int value)
 }
 
 
+// Displaying the Inorder of the Binary Tree.
 Node *Inorder(Node *root)
 {
     if(!(root))

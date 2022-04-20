@@ -4,7 +4,7 @@ void Insertion_Sort(int*, int);
 int* Array_Formation(int);
 
 
-
+// Main Function.
 int main()
 {
     int limit;
@@ -21,6 +21,7 @@ int main()
     return 0;
 }
 
+// Function for Insertion Sort.
 void Insertion_Sort(int array[], int n)
 {
     for(int i = 1; i < n; i++)
@@ -41,6 +42,8 @@ void Insertion_Sort(int array[], int n)
     }
 }
 
+
+// Function for Array formation.
 int* Array_Formation(int n)
 {
     int a;
