@@ -54,14 +54,14 @@ int main()
                 cout << "Enter the Value to be searched in the Array Elements\n";
                 cin >> value;
 
-                int search_exists = Binary_Search(ptr, ptr[0], ptr[0], value);
+                int search_exists = Binary_Search(ptr, 0, (limit - 1), value);
                 if (search_exists == -1)
                 {
                     cout << "Value doesn't exist!" << endl;
                 }
                 else
                 {
-                    cout << "Value Exists!" << endl;
+                    cout << "Value Exists at index : " << search_exists << endl;
                 }
 
 
