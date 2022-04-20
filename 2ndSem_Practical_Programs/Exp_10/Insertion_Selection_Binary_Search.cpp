@@ -2,9 +2,8 @@
 using namespace std;
 
 void Insertion_Sort(int* , int);
-void Selection_Sort(int*, int, int);
+void Selection_Sort(int*, int);
 int Binary_Search(int*, int, int, int);
-int Smallest(int, int, int);
 int* Array_Formation(int);
 
 
@@ -40,7 +39,7 @@ int main()
                 cin >> limit;
                 ptr = Array_Formation(limit);
 
-                Selection_Sort(ptr, ptr[0], limit);
+                Selection_Sort(ptr, limit);
                 break;
             }
             
@@ -55,14 +54,14 @@ int main()
                 cout << "Enter the Value to be searched in the Array Elements\n";
                 cin >> value;
 
-                int search_exists = (Binary_Search(ptr, ptr[0], ptr[0], value));
-                if (search_exists)
+                int search_exists = Binary_Search(ptr, ptr[0], ptr[0], value);
+                if (search_exists == -1)
                 {
-                    cout << "Value Exists!" << endl;
+                    cout << "Value doesn't exist!" << endl;
                 }
                 else
                 {
-                    cout << "Value doesn't exist!" << endl;
+                    cout << "Value Exists!" << endl;
                 }
 
 
@@ -105,31 +104,22 @@ void Insertion_Sort(int array[], int n)
     }
 }
 
-int Smallest(int array[], int k, int n)
+void Selection_Sort(int array[], int n)
 {
-    int Small = array[k];
-    int position = k;
-    for(int j = k + 1; j <= n; j++)
-    {
-        if(Small > array[j])
-        {
-            Small = array[j];
-            position = j;
-        }
-    }
     
-    return position;
-}
-
-void Selection_Sort(int array[], int k ,int n)
-{
-    for(int k = 0; k < n; k++)
+    for(int i = 0; i < n - 1; i++)
     {
-        int position = Smallest(array, k, n);
-        int temp;
-        temp = array[k];
-        array[k] = array[position];
-        array[position] = array[k];
+        int smallest = i;
+        for(int j = i + 1; j < n; j++)
+        {
+            if(array[j] < array[smallest])
+            {
+                smallest = j;
+            }
+        }
+        int temp = array[smallest];
+        array[smallest] = array[i];
+        array[i] = temp;
 
     }
 
