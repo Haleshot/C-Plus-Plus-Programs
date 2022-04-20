@@ -1,36 +1,7 @@
 #include <iostream>
 #include <queue>
 using namespace std;
-void BFS(**int, int, int);
 
-void Add_Edge(int, int);
-
-
-int main()
-{
-    int row, column;
-    cout << "Enter Limit for Height(Row of matrix) of Image : ";
-
-    cin >> row;
-    cout << "Enter Limit for Width(Column of matrix)  of Image : ";
-    cin >> column;
-
-    int **adj = new int *[row];
-    for(int i = 0; i < row; i++)
-    {
-        adj[i] = new int [column];
-    }
-
-    Add_Edge(0, 1);
-    Add_Edge(0, 2);
-    Add_Edge(1, 2);
-    Add_Edge(2, 0);
-    Add_Edge(2, 3);
-    Add_Edge(3, 3);
-
-    BFS(adj, 2, 2);
-    return 0;
-}
 
 void BFS(int **array, int source, int n)
 {
@@ -69,3 +40,31 @@ void Add_Edge(int v, int value)
     adj[v].push(value);
 
 }
+
+
+int main()
+{
+    int row, column;
+    cout << "Enter Limit for Height(Row of matrix) of Image : ";
+
+    cin >> row;
+    cout << "Enter Limit for Width(Column of matrix)  of Image : ";
+    cin >> column;
+
+    int **adj = new int *[row];
+    for(int i = 0; i < row; i++)
+    {
+        adj[i] = new int [column];
+    }
+
+    Add_Edge(0, 1);
+    Add_Edge(0, 2);
+    Add_Edge(1, 2);
+    Add_Edge(2, 0);
+    Add_Edge(2, 3);
+    Add_Edge(3, 3);
+
+    BFS(adj, 2, 3);
+    return 0;
+}
+
