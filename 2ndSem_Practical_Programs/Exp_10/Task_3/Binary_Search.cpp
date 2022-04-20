@@ -3,6 +3,7 @@ using namespace std;
 int Binary_Search(int*, int, int, int);
 int* Array_Formation(int);
 
+// Main Function.
 int main()
 {
     int value, limit, *ptr;
@@ -28,6 +29,8 @@ int main()
     return 0;
 }
 
+
+// Function for Binary Search.
 int Binary_Search(int array[], int low, int high, int key)
 {
     while (low <= high)
@@ -50,6 +53,8 @@ int Binary_Search(int array[], int low, int high, int key)
     
 }
 
+
+// Function for Array formation.
 int* Array_Formation(int n)
 {
     int a;

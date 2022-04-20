@@ -3,7 +3,7 @@ using namespace std;
 void Selection_Sort(int*, int);
 int* Array_Formation(int);
 
-
+// Main Function.
 int main()
 {
     int limit;
@@ -20,7 +20,7 @@ int main()
     return 0;
 }
 
-
+// Function for Selection Sort.
 void Selection_Sort(int array[], int n)
 {
     
@@ -46,6 +46,8 @@ void Selection_Sort(int array[], int n)
     }
 }
 
+
+// Function for Array formation.
 int* Array_Formation(int n)
 {
     int a;
