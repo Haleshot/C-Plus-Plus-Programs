@@ -21,8 +21,8 @@ void BFS(int **array, int source, int n)
         q.pop();
         for(int k = 0; k < n; k++)
         {
-            
-            if(array[source][k] == 1)
+
+            if(array[source][k] > 0)
             {
                 if(visited[k] == 0)
                 {
@@ -34,7 +34,7 @@ void BFS(int **array, int source, int n)
     }
 }
 
-void Add_Edge(int v, int value)
+void Add_Edge(int **v, int value)
 {
     queue<int> *adj;
     adj = new queue <int>[v];
