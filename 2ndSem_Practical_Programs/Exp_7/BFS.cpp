@@ -21,6 +21,7 @@ void BFS(int **array, int source, int n)
         q.pop();
         for(int k = 0; k < n; k++)
         {
+            
             if(array[source][k] == 1)
             {
                 if(visited[k] == 0)
