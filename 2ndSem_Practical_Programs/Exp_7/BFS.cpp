@@ -16,40 +16,49 @@ void BFS(int **array, int source, int n)
     q.push(source);
     while(!(q.empty()))
     {
-        source = q.front();
-        cout << source;
+        int v = q.front();
+        cout << v << " - ";
         q.pop();
-        for(int k = 0; k < n; k++)
+        for(int i = 0; i < n; i++)
         {
 
-            if(array[source][k] > 0)
+            if(array[v][i] > 0)
             {
-                if(visited[k] == 0)
+                if(visited[i] == 0)
                 {
-                    visited[k] = 1;
-                    q.push(k);
+                    visited[i] = 1;
+                    q.push(i);
                 }
             }
         }
     }
 }
 
-void Add_Edge(int **v, int value)
+void Display_Adjacency_Matrix(int **array, int n)
 {
-    queue<int> *adj;
-    adj = new queue <int>[v];
-    adj[v].push(value);
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            cout << "\t";
+            cout << array[i][j];
+            cout << "\t";
+        }
+        cout << endl;
+    }
 
 }
 
-
 int main()
 {
-    int row, column;
-    cout << "Enter Limit for Height(Row of matrix) of Image : ";
+    int row, column, s;
 
+    cout << "Enter the Dimensions for the Square Matrix : " << endl << endl;
+
+    cout << "Enter Limit for Height(Row of matrix) of Image : " << endl;
     cin >> row;
-    cout << "Enter Limit for Width(Column of matrix)  of Image : ";
+
+    cout << "Enter Limit for Width(Column of matrix)  of Image : " << endl;
     cin >> column;
 
     int **adj = new int *[row];
@@ -58,14 +67,30 @@ int main()
         adj[i] = new int [column];
     }
 
-    Add_Edge(0, 1);
-    Add_Edge(0, 2);
-    Add_Edge(1, 2);
-    Add_Edge(2, 0);
-    Add_Edge(2, 3);
-    Add_Edge(3, 3);
+    for(int i = 0; i < row; i++)
+    {
+        for(int j = 0; j < row; j++)
+        {
+            if(i == j)
+            {
+                adj[i][j] = 0;
+                continue;
+            }
+            else
+            {
+                cin >> adj[i][j];
+            }
+        }
+    }
+    cout << endl;
 
-    BFS(adj, 2, 3);
+    cout << "The Adjacency Matrix is : " << endl;
+    Display_Adjacency_Matrix(adj, column);
+
+    cout << "Enter the Source Vertex : ";
+    cin >> s;
+
+    BFS(adj, s, column);
     return 0;
 }
 
