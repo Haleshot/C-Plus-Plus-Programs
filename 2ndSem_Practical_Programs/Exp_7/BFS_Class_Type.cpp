@@ -2,14 +2,14 @@
 #include <queue>
 using namespace std;
 
-class Breadth_Firsth_Search
+class Breadth_First_Search
 {
 public:
     void BFS(int** , int, int);
-    void Display_Adjacency_Matrix(int**);
+    void Display_Adjacency_Matrix(int**, int);
 };
 
-void Breadth_Firsth_Search::BFS(int **array, int source, int n)
+void Breadth_First_Search::BFS(int **array, int source, int n)
 {
     int visited[n];
     queue<int> q;
@@ -39,12 +39,27 @@ void Breadth_Firsth_Search::BFS(int **array, int source, int n)
 
 } 
 
+void Breadth_First_Search::Display_Adjacency_Matrix(int**array, int n)
+{
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            cout << "\t";
+            cout << array[i][j];
+            cout << "\t";
+        }
+        cout << endl;
+    }
+
+}
+
 
 
 
 int main()
 {
-    class Breadth_Firsth_Search bfs;
+    class Breadth_First_Search bfs;
     int row, column, s;
 
     
@@ -80,6 +95,9 @@ int main()
         }
     }
 
+    cout << "The Adjacency Matrix is :" << endl;
+    bfs.Display_Adjacency_Matrix(adj, column);
+    
     cout << "Enter the Source Vertex : ";
     cin >> s;
 
