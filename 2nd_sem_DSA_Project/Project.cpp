@@ -1956,7 +1956,7 @@ int main()
                         while(cin.fail())
                         {
                             cin.clear();
-                            cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encounterd, which in this case is '\n'
+                            cin.ignore(std::numeric_limits < std::streamsize > ::max(),'\n'); // Ignores the Input by user until the delimiter is encountered, which in this case is '\n'.
                             cout << "\n\t\t\t\t\t\tInvalid Entry!\n ";
                             cout << "\t\t\t\t\t\tEnter Correct quantity of the item (shold be a Whole number) : ";
                             cout << "\n\t\t\t\t\t\t";
