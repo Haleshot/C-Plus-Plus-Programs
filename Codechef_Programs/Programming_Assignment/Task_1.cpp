@@ -12,7 +12,6 @@ int main()
         long terms_1, terms_2, terms_3;
         for(int i = 0; i < T; i++)
         {
-            
             cin >> terms_1;
         }
     }
