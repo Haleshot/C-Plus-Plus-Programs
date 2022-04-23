@@ -7,7 +7,7 @@ int main()
     int T;
     cin >> T;
     int terms = pow(T, 2);
-    while(terms--)
+    while(T--)
     {
         long terms_1, terms_2, terms_3;
         for(int i = 0; i < T; i++)
