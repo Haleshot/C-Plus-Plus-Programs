@@ -14,7 +14,7 @@ int main()
         {
             cin >> terms_1;
         }
-
+        
     }
     return 0;
 }
