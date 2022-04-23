@@ -6,12 +6,18 @@ int main()
 {
     int T;
     cin >> T;
+    int terms = pow(T, 2);
     while(T--)
     {
         long terms_1, terms_2, terms_3;
-        cin >> terms_1;
+        for(int i = 0; i < terms; i++)
+        {
+            cin >> terms_1;
+        }
+
+
         
 
-    }
+    } 
     return 0;
 }
