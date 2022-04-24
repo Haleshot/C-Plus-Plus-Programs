@@ -36,8 +36,8 @@ int main()
                 sum += A[i];
             }
         }
-        avg = sum/ N;
-        cout << setprecision(2) << avg << endl;
+        avg = float(sum)/ float(N);
+        cout << setprecision(4) << avg << endl;
 
         for (int i = 0; i < N; i++)
         {
