@@ -52,6 +52,9 @@ int main()
                 Array_3[i] = int(array_3[i]);
             }
 
+            cout << Array_1 << endl;
+            cout << Array_2 << endl;
+            cout << Array_3 << endl;
         }
     }
     return 0;
