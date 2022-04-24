@@ -3,6 +3,18 @@
 #include <cstring>
 using namespace std;
 
+int Check(int Array_1[], int Array_2[], int Array_3[])
+{
+    if(Array_1[0] >= Array_2[0] && Array_1[1] >= Array_2[1] && Array_1[2] >= Array_2[2] && Array_2[0] > Array_3[0] && Array_2[1] > Array_3[1] && Array_2[2] > Array_3[2])
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
 int main()
 {
     int T;
@@ -52,9 +64,15 @@ int main()
                 Array_3[i] = int(array_3[i]);
             }
 
-            cout << Array_1 << endl;
-            cout << Array_2 << endl;
-            cout << Array_3 << endl;
+            if(Check(Array_1, Array_2, Array_3) || Check(Array_1, Array_3, Array_2) || Check(Array_2, Array_1, Array_3) || Check(Array_2, Array_3, Array_1) || Check(Array_3, Array_1, Array_2) || Check(Array_3, Array_2, Array_1))
+            {
+                cout << "yes";
+            }
+            else
+            {
+                cout << "no";
+            }
+            
         }
     }
     return 0;
