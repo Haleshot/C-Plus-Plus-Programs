@@ -1,6 +1,4 @@
 #include <iostream>
-#include <math.h>
-#include <cstring>
 using namespace std;
 
 int Check(int Array_1[], int Array_2[])
@@ -31,22 +29,20 @@ int main()
 {
     int T;
     cin >> T;
-    int terms = pow(T, 2);
     while(T--)
     {
-            long terms_1, terms_2, terms_3;
             int a1[3], a2[3], a3[3], check_1 = 0, check_2 = 0, check_3 = 0;
             for(int i = 0; i < 3; i++)
             {
-                a1[i] = a1[i];
+                cin >> a1[i];
             }
             for(int i = 0; i < 3; i++)
             {
-                a2[i] = a2[i];
+                cin >> a2[i];
             }
             for(int i = 0; i < 3; i++)
             {
-                a3[i] = a3[i];
+                cin >> a3[i];
             }
 
             check_1 = Check(a1, a2);
