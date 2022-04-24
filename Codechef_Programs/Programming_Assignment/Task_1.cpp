@@ -51,7 +51,7 @@ int main()
             {
                 Array_3[i] = int(array_3[i]);
             }
-            U
+
         }
     }
     return 0;
