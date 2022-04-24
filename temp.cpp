@@ -1,65 +1,83 @@
 #include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-int Check(int Array_1[], int Array_2[])
-{
-    if(Array_1[0] <= Array_2[0] && Array_1[1] <= Array_2[1] && Array_1[2] <= Array_2[2])
-    {
-        if(Array_1[0] < Array_2[0] || Array_1[1] < Array_2[1] || Array_1[2] < Array_2[2])
-        {
-            return 1;
-        }
-    }
-
-    else if(Array_1[0] >= Array_2[0] && Array_1[1] >= Array_2[1] && Array_1[2] >= Array_2[2])
-    {
-        if(Array_1[0] > Array_2[0] || Array_1[1] > Array_2[1] || Array_1[2] > Array_2[2])
-        {
-            return 1;
-        }
-    }
-
-    else
-    {
-        return 0;
-    }
-}
 
 int main()
 {
     int T;
+    cout << "Enter the Total Number of Test Cases : \n";
     cin >> T;
     for(int i = 0; i < T; i++)
     {
-            int a1[3], a2[3], a3[3], c_1 = 0, c_2 = 0, c_3 = 0;
-            cout << "Enter the Numbers 1 : " << endl;
-            for(int i = 0; i < 3; i++)
-            {
-                cin >> a1[i];
-            }
-            cout << "Enter the Numbers 2 : " << endl;
-            for(int i = 0; i < 3; i++)
-            {
-                cin >> a2[i];
-            }
-            cout << "Enter the Numbers 3 : " << endl;
-            for(int i = 0; i < 3; i++)
-            {
-                cin >> a3[i];
-            }
+        int N, sum = 0;
+	  cout << "Enter the Total Number of Array Elements : \n";
+        cin >> N;
+        int A[N], Top[N], Sort[N], Diff[N];
+        int  backlog_c = 0;
+        double avg;
+	  cout << "Enter the Array Elements : \n";
+        for(int i = 0; i < N; i++)
+        {
+            cin >> A[i];
+        }
+        int Max = A[0];
+        
 
-            c_1 = Check(a1, a2);
-            c_2 = Check(a2, a3);
-            c_3 = Check(a3, a1);
+        for (int i = 0; i < N; i++)
+        {
+            if(A[i] < 31)
+            {
+                backlog_c++;
+            }
+        }
+        cout << backlog_c << " ";
+        for (int i = 0; i < N; i++)
+        {
+            
+            if(A[i] >= 31)
+            {
+                sum += A[i];
+            }
+        }
+        avg = float(sum)/ float(N);
+        cout << setprecision(4) << avg << endl;
 
-            if((c_1 + c_2 + c_3) == 3)
+        for (int i = 0; i < N; i++)
+        {
+            
+            if(A[i] > Max)
             {
-                cout << "yes\n";
+                Max = A[i];
             }
-            else
+        }
+
+        for (int i = 0; i < N; i++)
+        {
+            Sort[i] = A[i];
+        }
+
+        sort(Sort, Sort + N);
+        for (int i = 0; i < N; i++)
+        {
+            if(Max == A[i])
             {
-                cout << "no\n";
+                cout << i << endl;
             }
+        }
+        for (int i = 0; i < N; i++)
+        {
+            Diff[i] = Max - A[i];
+        }
+
+        for (int i = 0; i < N; i++)
+        {
+            cout << Diff[i] << endl;
+        }
+
+        
+
+        
+
     }
     return 0;
 }
