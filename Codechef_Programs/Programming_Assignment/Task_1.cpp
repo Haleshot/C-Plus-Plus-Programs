@@ -49,9 +49,9 @@ int main()
                 a3[i] = a3[i];
             }
 
-            check_1 = Check(Array_1, Array_2);
-            check_2 = Check(Array_2, Array_3);
-            check_3 = Check(Array_3, Array_1);
+            check_1 = Check(a1, a2);
+            check_2 = Check(a2, a3);
+            check_3 = Check(a3, a1);
 
             if((check_1 + check_2 + check_3) == 3)
             {
