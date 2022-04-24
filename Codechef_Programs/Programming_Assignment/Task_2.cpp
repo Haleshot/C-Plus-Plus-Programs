@@ -63,7 +63,7 @@ int main()
         }
         for (int i = 0; i < N; i++)
         {
-            Diff[i] = A[i] - avg;
+            Diff[i] = Max - avg;
         }
 
         for (int i = 0; i < N; i++)
