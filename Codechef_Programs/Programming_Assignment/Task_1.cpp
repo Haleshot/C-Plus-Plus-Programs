@@ -51,11 +51,11 @@ int main()
 
             if((check_1 + check_2 + check_3) == 3)
             {
-                cout << "yes";
+                cout << "yes\n";
             }
             else
             {
-                cout << "no";
+                cout << "no\n";
             }
     }
     return 0;
