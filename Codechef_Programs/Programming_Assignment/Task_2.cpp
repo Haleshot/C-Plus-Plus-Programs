@@ -12,7 +12,7 @@ int main()
         cin >> N;
         int A[N], Topper[N], Sort[N], Diff[N];
         int  backlog_counter = 0;
-        float avg;
+        double avg;
         for(int i = 0; i < N; i++)
         {
             cin >> A[i];
@@ -63,7 +63,7 @@ int main()
         }
         for (int i = 0; i < N; i++)
         {
-            Diff[i] = Max - avg;
+            Diff[i] = Max - A[i];
         }
 
         for (int i = 0; i < N; i++)
