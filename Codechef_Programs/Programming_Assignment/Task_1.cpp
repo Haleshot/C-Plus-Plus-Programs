@@ -13,7 +13,7 @@ int Check(int Array_1[], int Array_2[])
         }
     }
 
-    if(Array_1[0] >= Array_2[0] && Array_1[1] >= Array_2[1] && Array_1[2] >= Array_2[2])
+    else if(Array_1[0] >= Array_2[0] && Array_1[1] >= Array_2[1] && Array_1[2] >= Array_2[2])
     {
         if(Array_1[0] > Array_2[0] || Array_1[1] > Array_2[1] || Array_1[2] > Array_2[2])
         {
@@ -35,38 +35,18 @@ int main()
     while(T--)
     {
             long terms_1, terms_2, terms_3;
-            int check_1 = 0, check_2 = 0, check_3 = 0;
-
-            for(int i = 0; i < T; i++)
-            {
-                cin >> terms_1;
-                cin >> terms_2;
-                cin >> terms_3;
-            }
-            string list_1 = to_string(terms_1);
-            string list_2 = to_string(terms_2);
-            string list_3 = to_string(terms_3);
-
-            int n;
-
-            char array_1[3], array_2[3], array_3[3];
-
-            strcpy(array_1, list_1.c_str());
-            strcpy(array_2, list_2.c_str());
-            strcpy(array_3, list_3.c_str());
-
-            int Array_1[n], Array_2[n], Array_3[n];
+            int a1[3], a2[3], a3[3], check_1 = 0, check_2 = 0, check_3 = 0;
             for(int i = 0; i < 3; i++)
             {
-                Array_1[i] = int(array_1[i]);
+                a1[i] = a1[i];
             }
             for(int i = 0; i < 3; i++)
             {
-                Array_2[i] = int(array_2[i]);
+                a2[i] = a2[i];
             }
             for(int i = 0; i < 3; i++)
             {
-                Array_3[i] = int(array_3[i]);
+                a3[i] = a3[i];
             }
 
             check_1 = Check(Array_1, Array_2);
