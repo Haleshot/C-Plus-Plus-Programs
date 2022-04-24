@@ -1,4 +1,5 @@
 #include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
@@ -9,7 +10,7 @@ int main()
     {
         int N, sum = 0;
         cin >> N;
-        int A[N];
+        int A[N], Topper[N], Sort[N], Diff[N];
         int  backlog_counter = 0;
         float avg;
         for(int i = 0; i < N; i++)
@@ -24,8 +25,9 @@ int main()
             if(A[i] < 31)
             {
                 backlog_counter++;
-            } 
+            }
         }
+        cout << backlog_counter << " ";
         for (int i = 0; i < N; i++)
         {
             
@@ -35,15 +37,42 @@ int main()
             }
         }
         avg = sum/ N;
+        cout << setprecision(2) << avg << endl;
 
         for (int i = 0; i < N; i++)
         {
             
-            if(A[i] >= 31)
+            if(A[i] > Max)
             {
-                sum += A[i];
+                Max = A[i];
             }
         }
+
+        for (int i = 0; i < N; i++)
+        {
+            Sort[i] = A[i];
+        }
+
+        sort(Sort, Sort + N);
+        for (int i = 0; i < N; i++)
+        {
+            if(Max == A[i])
+            {
+                cout << i << endl;
+            }
+        }
+        for (int i = 0; i < N; i++)
+        {
+            Diff[i] = A[i] - avg;
+        }
+
+        for (int i = 0; i < N; i++)
+        {
+            cout << Diff[i] << endl;
+        }
+
+        
+
         
 
     }
