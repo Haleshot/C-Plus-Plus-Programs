@@ -55,7 +55,6 @@ void Insert(int A[], int n, int values, int indices)
         {
             A[i + 1] = A[i];
         }
-
          A[indices] = values;
 
         cout << "\nElements of Array after Insertion :" << endl;
@@ -87,7 +86,7 @@ void Delete(int A[], int n, int indices)
         {
             A[i] = A[i + 1];
         }
-    
+
         cout << "\nElements of Array after Deletion :" << endl;
         for(i = 0; i < n - 1; i++)
         {
@@ -104,7 +103,7 @@ int main()
     bool run = true;
     
 
-    do while(run == true)
+    do
     {
         cout << "Enter Limit for Array Elements\n";
         cin >> limit;

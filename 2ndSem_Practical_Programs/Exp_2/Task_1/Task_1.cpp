@@ -22,7 +22,7 @@ void Push(int top_value)
 // Peek Function
 void Peek()
 {
-    if (top < 0)
+    if (top == -1)
     {
         cout << "Emtpy" << endl;
     }
@@ -35,7 +35,7 @@ void Peek()
 // Pop Function
 void Pop()
 {
-    if (top < 0)
+    if (top == -1)
     {
         cout << "Underflow!" << endl;
     }
@@ -84,28 +84,33 @@ int main()
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
+
         if (ch == 2)
         {
             Pop();
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
+
         if (ch == 3)
         {
             Peek();
             cout << "Want to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
+
         if (ch == 4)
         {
             Display();
             cout << "\nWant to continue? (Yes = Input 1/false = Input 0) : " << endl;
             cin >> run;
         }
+
         if (ch == 5)
         {
             return 0;
         }
+
     }while (run == true);
     return 0;
 }

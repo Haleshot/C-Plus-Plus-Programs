@@ -92,8 +92,6 @@ int Check_Balance_Parenthesis(string expression)
 
         }
     }
-
-    // Check whether stack is empty
     return(isEmpty());
 
 }
