@@ -214,13 +214,19 @@ void Display()
 void Length()
 {
     Node *current = Head;
+    int counter = 0;
     if(Head == NULL)
     {
         cout << "Length of Linked List is = 0 " << endl;
     }
     else
     {
-        
+        while(current != NULL)
+        {
+            current = current->next;
+            counter++;
+        }
+        cout << "The Length of the Linked List is : " << counter << "\n";
     }
 }
 
