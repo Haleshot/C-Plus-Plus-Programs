@@ -49,10 +49,38 @@ Node *Inorder(Node *root)
 
 int main()
 {
-    
+    Node *root = NULL;
     bool run = true;
-    int value_user;
-    cout << "Enter the value to be entered into the BST : " << endl;
-    cin >> value_user;
+    do
+    {
+        int ch;
+        cout << "Menu\n1.Insert Values into the Tree\n2.Display the Inorder of Tree\n3.Exit\n";
+        cin >> ch;
+
+        switch (ch)
+        {
+        case 1:
+            int value;
+            cout << "Enter the value to be inserted into the tree : ";
+            cin >> value;
+
+            root = Insert_BST(root, value);
+            break;
+        
+
+        case 2:
+            Inorder(root);
+
+        case 3:
+            exit(0);
+        
+        default:
+            cout << "Invalid Choice!\n";
+            break;
+        }
+
+    } while (run == true);
+    
+    
     return 0;
 }
