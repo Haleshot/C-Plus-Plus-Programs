@@ -17,7 +17,7 @@ Node *Insert_BST(struct Node *root, int value)
         newnode->data = value;
         newnode->left = NULL;
         newnode->right = NULL;
-        root = newnode
+        root = newnode;
     }
     else if (root->data > value)
     {
@@ -31,5 +31,6 @@ Node *Insert_BST(struct Node *root, int value)
 
 int main()
 {
+
     return 0;
 }
