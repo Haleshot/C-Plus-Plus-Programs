@@ -1,3 +1,5 @@
+// Function to check for Balanced Parantheses
+
 #include <iostream>
 using namespace std;
 #define MAX 100
