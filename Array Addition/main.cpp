@@ -1,5 +1,5 @@
-// Program that adds two 2D matrices.
-// 2d Matrices Addition
+// Program that adds two Matrices.
+// Matrices Addition
 #include<iostream>
 using namespace std;
 int main()

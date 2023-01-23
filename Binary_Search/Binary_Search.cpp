@@ -1,3 +1,4 @@
+// Program which helps in finding an element in a sorted array, Binary Search Technique, Complexity = O(log(n))
 #include <iostream>
 using namespace std;
 int Binary_Search(int*, int, int, int);

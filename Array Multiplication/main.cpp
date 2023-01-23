@@ -1,5 +1,5 @@
-// Program that multiplies two 2D matrices.
-// Multiplicaiton of 2 2D matrices
+// Program that multiplies Matrices.
+// Multiplicaiton of 2 Matrices
 #include<iostream>
 using namespace std;
 int main()
